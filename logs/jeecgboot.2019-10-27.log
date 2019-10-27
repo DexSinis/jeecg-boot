@@ -1437,3 +1437,1302 @@ org.apache.ibatis.binding.BindingException: Invalid bound statement (not found):
 2019-10-27 17:59:26.367 [http-nio-8080-exec-8] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==> Parameters: 2(String), e9ca23d68d884d4ebb19d07889727dae(String), 0(Long), 5(Long)
 2019-10-27 17:59:26.452 [http-nio-8080-exec-8] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - <==      Total: 1
 2019-10-27 17:59:28.888 [http-nio-8080-exec-9] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:09:35.268 [http-nio-8080-exec-1] INFO  org.jeecg.modules.message.websocket.WebSocket:46 - 【websocket消息】连接断开，总数为:0
+2019-10-27 18:09:36.776 [http-nio-8080-exec-3] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:09:37.066 [http-nio-8080-exec-3] INFO  o.j.m.system.controller.SysPermissionController:182 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:09:37.069 [http-nio-8080-exec-3] DEBUG o.j.m.s.mapper.SysPermissionMapper.queryByUser:143 - ==>  Preparing: SELECT p.* FROM sys_permission p WHERE exists( select a.id from sys_role_permission a join sys_role b on a.role_id = b.id join sys_user_role c on c.role_id = b.id join sys_user d on d.id = c.user_id where p.id = a.permission_id AND d.username = ? ) and p.del_flag = 0 order by p.sort_no ASC 
+2019-10-27 18:09:37.070 [http-nio-8080-exec-3] DEBUG o.j.m.s.mapper.SysPermissionMapper.queryByUser:143 - ==> Parameters: admin(String)
+2019-10-27 18:09:37.327 [http-nio-8080-exec-3] DEBUG o.j.m.s.mapper.SysPermissionMapper.queryByUser:143 - <==      Total: 95
+2019-10-27 18:09:37.333 [http-nio-8080-exec-3] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - ==>  Preparing: SELECT id,parent_id,name,perms,perms_type,icon,component,component_name,url,redirect,sort_no,menu_type,is_leaf AS leaf,is_route AS route,keep_alive,description,create_by,del_flag,rule_flag,hidden,create_time,update_by,update_time,status,always_show,internal_or_external FROM sys_permission WHERE del_flag = ? AND menu_type = ? 
+2019-10-27 18:09:37.334 [http-nio-8080-exec-3] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - ==> Parameters: 0(Integer), 2(Integer)
+2019-10-27 18:09:37.437 [http-nio-8080-exec-3] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - <==      Total: 3
+2019-10-27 18:09:38.263 [http-nio-8080-exec-4] INFO  org.jeecg.modules.message.websocket.WebSocket:37 - 【websocket消息】有新的连接，总数为:1
+2019-10-27 18:09:38.306 [http-nio-8080-exec-2] ERROR o.jeecg.common.system.controller.CommonController:119 - 预览图片失败D:/upFiles/user/20190119/logo-2_1547868176839.png (No such file or directory)
+2019-10-27 18:09:38.387 [http-nio-8080-exec-5] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:09:38.680 [http-nio-8080-exec-5] DEBUG o.j.m.s.m.SysAnnouncementSendMapper.queryByUserId:143 - ==>  Preparing: select sas.annt_id from sys_announcement_send sas where sas.user_id = ? 
+2019-10-27 18:09:38.682 [http-nio-8080-exec-5] DEBUG o.j.m.s.m.SysAnnouncementSendMapper.queryByUserId:143 - ==> Parameters: e9ca23d68d884d4ebb19d07889727dae(String)
+2019-10-27 18:09:38.773 [http-nio-8080-exec-5] DEBUG o.j.m.s.m.SysAnnouncementSendMapper.queryByUserId:143 - <==      Total: 1
+2019-10-27 18:09:38.778 [http-nio-8080-exec-5] DEBUG o.j.m.s.mapper.SysAnnouncementMapper.selectList:143 - ==>  Preparing: SELECT id,titile,msg_content,start_time,end_time,sender,priority,msg_category,msg_type,send_status,send_time,cancel_time,del_flag,create_by,create_time,update_by,update_time,user_ids FROM sys_announcement WHERE msg_type = ? AND del_flag = ? AND send_status = ? AND end_time >= ? AND id NOT IN (?) 
+2019-10-27 18:09:38.780 [http-nio-8080-exec-5] DEBUG o.j.m.s.mapper.SysAnnouncementMapper.selectList:143 - ==> Parameters: ALL(String), 0(String), 1(String), 2038-06-21 17:54:10.0(Timestamp), 93a9060a1c20e4bf98b3f768a02c2ff9(String)
+2019-10-27 18:09:38.852 [http-nio-8080-exec-5] DEBUG o.j.m.s.mapper.SysAnnouncementMapper.selectList:143 - <==      Total: 0
+2019-10-27 18:09:38.856 [http-nio-8080-exec-5] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==>  Preparing: SELECT COUNT(1) FROM sys_announcement WHERE send_status = '1' AND del_flag = '0' AND msg_category = ? AND id IN (SELECT annt_id FROM sys_announcement_send WHERE user_id = ? AND read_flag = '0') 
+2019-10-27 18:09:38.857 [http-nio-8080-exec-5] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==> Parameters: 1(String), e9ca23d68d884d4ebb19d07889727dae(String)
+2019-10-27 18:09:38.923 [http-nio-8080-exec-5] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==>  Preparing: SELECT COUNT(1) FROM sys_announcement WHERE send_status = '1' AND del_flag = '0' AND msg_category = ? AND id IN (SELECT annt_id FROM sys_announcement_send WHERE user_id = ? AND read_flag = '0') 
+2019-10-27 18:09:38.924 [http-nio-8080-exec-5] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==> Parameters: 2(String), e9ca23d68d884d4ebb19d07889727dae(String)
+2019-10-27 18:09:38.996 [http-nio-8080-exec-5] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==>  Preparing: select * from sys_announcement where send_status = '1' and del_flag = '0' and msg_category = ? and id IN ( select annt_id from sys_announcement_send where user_id = ? and read_flag = '0') LIMIT ?,? 
+2019-10-27 18:09:38.997 [http-nio-8080-exec-5] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==> Parameters: 2(String), e9ca23d68d884d4ebb19d07889727dae(String), 0(Long), 5(Long)
+2019-10-27 18:09:39.084 [http-nio-8080-exec-5] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - <==      Total: 1
+2019-10-27 18:09:52.234 [http-nio-8080-exec-7] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:09:53.054 [http-nio-8080-exec-7] DEBUG o.j.modules.system.mapper.SysRoleMapper.selectPage:143 - ==>  Preparing: SELECT COUNT(1) FROM sys_role 
+2019-10-27 18:09:53.057 [http-nio-8080-exec-7] DEBUG o.j.modules.system.mapper.SysRoleMapper.selectPage:143 - ==> Parameters: 
+2019-10-27 18:09:53.137 [http-nio-8080-exec-7] DEBUG o.j.modules.system.mapper.SysRoleMapper.selectPage:143 - ==>  Preparing: SELECT id,role_name,role_code,description,create_by,create_time,update_by,update_time FROM sys_role ORDER BY create_time DESC LIMIT ?,? 
+2019-10-27 18:09:53.138 [http-nio-8080-exec-7] DEBUG o.j.modules.system.mapper.SysRoleMapper.selectPage:143 - ==> Parameters: 0(Long), 10(Long)
+2019-10-27 18:09:53.215 [http-nio-8080-exec-7] DEBUG o.j.modules.system.mapper.SysRoleMapper.selectPage:143 - <==      Total: 3
+2019-10-27 18:09:57.325 [http-nio-8080-exec-6] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:09:57.626 [http-nio-8080-exec-6] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - ==>  Preparing: SELECT id,parent_id,name,perms,perms_type,icon,component,component_name,url,redirect,sort_no,menu_type,is_leaf AS leaf,is_route AS route,keep_alive,description,create_by,del_flag,rule_flag,hidden,create_time,update_by,update_time,status,always_show,internal_or_external FROM sys_permission WHERE del_flag = ? ORDER BY sort_no ASC 
+2019-10-27 18:09:57.627 [http-nio-8080-exec-6] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - ==> Parameters: 0(Integer)
+2019-10-27 18:09:57.860 [http-nio-8080-exec-6] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - <==      Total: 104
+2019-10-27 18:09:57.864 [http-nio-8080-exec-6] INFO  o.j.m.system.controller.SysPermissionController:82 - ======获取全部菜单数据=====耗时:242毫秒
+2019-10-27 18:10:02.767 [http-nio-8080-exec-9] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:10:03.034 [http-nio-8080-exec-9] DEBUG o.j.modules.system.mapper.SysRoleMapper.selectPage:143 - ==>  Preparing: SELECT COUNT(1) FROM sys_role 
+2019-10-27 18:10:03.035 [http-nio-8080-exec-9] DEBUG o.j.modules.system.mapper.SysRoleMapper.selectPage:143 - ==> Parameters: 
+2019-10-27 18:10:03.186 [http-nio-8080-exec-9] DEBUG o.j.modules.system.mapper.SysRoleMapper.selectPage:143 - ==>  Preparing: SELECT id,role_name,role_code,description,create_by,create_time,update_by,update_time FROM sys_role ORDER BY create_time DESC LIMIT ?,? 
+2019-10-27 18:10:03.187 [http-nio-8080-exec-9] DEBUG o.j.modules.system.mapper.SysRoleMapper.selectPage:143 - ==> Parameters: 0(Long), 10(Long)
+2019-10-27 18:10:03.257 [http-nio-8080-exec-9] DEBUG o.j.modules.system.mapper.SysRoleMapper.selectPage:143 - <==      Total: 3
+2019-10-27 18:10:26.036 [http-nio-8080-exec-4] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:10:26.306 [http-nio-8080-exec-4] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - ==>  Preparing: SELECT id,parent_id,name,perms,perms_type,icon,component,component_name,url,redirect,sort_no,menu_type,is_leaf AS leaf,is_route AS route,keep_alive,description,create_by,del_flag,rule_flag,hidden,create_time,update_by,update_time,status,always_show,internal_or_external FROM sys_permission WHERE del_flag = ? ORDER BY sort_no ASC 
+2019-10-27 18:10:26.307 [http-nio-8080-exec-4] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - ==> Parameters: 0(Integer)
+2019-10-27 18:10:26.466 [http-nio-8080-exec-4] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - <==      Total: 104
+2019-10-27 18:10:26.520 [http-nio-8080-exec-2] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:10:26.815 [http-nio-8080-exec-2] DEBUG o.j.m.s.mapper.SysRolePermissionMapper.selectList:143 - ==>  Preparing: SELECT id,role_id,permission_id,data_rule_ids FROM sys_role_permission WHERE role_id = ? 
+2019-10-27 18:10:26.816 [http-nio-8080-exec-2] DEBUG o.j.m.s.mapper.SysRolePermissionMapper.selectList:143 - ==> Parameters: e51758fa916c881624b046d26bd09230(String)
+2019-10-27 18:10:26.904 [http-nio-8080-exec-2] DEBUG o.j.m.s.mapper.SysRolePermissionMapper.selectList:143 - <==      Total: 22
+2019-10-27 18:10:38.001 [http-nio-8080-exec-5] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:10:38.747 [http-nio-8080-exec-5] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - ==>  Preparing: SELECT id,parent_id,name,perms,perms_type,icon,component,component_name,url,redirect,sort_no,menu_type,is_leaf AS leaf,is_route AS route,keep_alive,description,create_by,del_flag,rule_flag,hidden,create_time,update_by,update_time,status,always_show,internal_or_external FROM sys_permission WHERE del_flag = ? ORDER BY sort_no ASC 
+2019-10-27 18:10:38.747 [http-nio-8080-exec-5] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - ==> Parameters: 0(Integer)
+2019-10-27 18:10:39.030 [http-nio-8080-exec-5] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - <==      Total: 104
+2019-10-27 18:10:39.064 [http-nio-8080-exec-8] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:10:39.328 [http-nio-8080-exec-8] DEBUG o.j.m.s.mapper.SysRolePermissionMapper.selectList:143 - ==>  Preparing: SELECT id,role_id,permission_id,data_rule_ids FROM sys_role_permission WHERE role_id = ? 
+2019-10-27 18:10:39.328 [http-nio-8080-exec-8] DEBUG o.j.m.s.mapper.SysRolePermissionMapper.selectList:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String)
+2019-10-27 18:10:39.409 [http-nio-8080-exec-8] DEBUG o.j.m.s.mapper.SysRolePermissionMapper.selectList:143 - <==      Total: 45
+2019-10-27 18:10:53.687 [http-nio-8080-exec-9] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:10:54.366 [http-nio-8080-exec-9] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:66 - ===============Shiro权限认证开始============ [ roles、permissions]==========
+2019-10-27 18:10:54.373 [http-nio-8080-exec-9] DEBUG o.j.m.s.mapper.SysUserRoleMapper.getRoleByUserName:143 - ==>  Preparing: select role_code from sys_role where id in (select role_id from sys_user_role where user_id = (select id from sys_user where username=?)) 
+2019-10-27 18:10:54.378 [http-nio-8080-exec-9] DEBUG o.j.m.s.mapper.SysUserRoleMapper.getRoleByUserName:143 - ==> Parameters: admin(String)
+2019-10-27 18:10:54.503 [http-nio-8080-exec-9] DEBUG o.j.m.s.mapper.SysUserRoleMapper.getRoleByUserName:143 - <==      Total: 1
+2019-10-27 18:10:54.504 [http-nio-8080-exec-9] INFO  o.j.modules.system.service.impl.SysUserServiceImpl:166 - -------通过数据库读取用户拥有的角色Rules------username： admin,Roles size: 1
+2019-10-27 18:10:54.506 [http-nio-8080-exec-9] DEBUG o.j.m.s.mapper.SysPermissionMapper.queryByUser:143 - ==>  Preparing: SELECT p.* FROM sys_permission p WHERE exists( select a.id from sys_role_permission a join sys_role b on a.role_id = b.id join sys_user_role c on c.role_id = b.id join sys_user d on d.id = c.user_id where p.id = a.permission_id AND d.username = ? ) and p.del_flag = 0 order by p.sort_no ASC 
+2019-10-27 18:10:54.507 [http-nio-8080-exec-9] DEBUG o.j.m.s.mapper.SysPermissionMapper.queryByUser:143 - ==> Parameters: admin(String)
+2019-10-27 18:10:54.666 [http-nio-8080-exec-9] DEBUG o.j.m.s.mapper.SysPermissionMapper.queryByUser:143 - <==      Total: 95
+2019-10-27 18:10:54.667 [http-nio-8080-exec-9] INFO  o.j.modules.system.service.impl.SysUserServiceImpl:189 - -------通过数据库读取用户拥有的权限Perms------username： admin,Perms size: 9
+2019-10-27 18:10:54.667 [http-nio-8080-exec-9] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:81 - ===============Shiro权限认证成功==============
+2019-10-27 18:10:54.942 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.insert:143 - ==>  Preparing: INSERT INTO sys_role_permission ( id, role_id, permission_id ) VALUES ( ?, ?, ? ) 
+2019-10-27 18:10:54.944 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.insert:143 - ==> Parameters: 1188397654883192833(String), ee8626f80f7c2619917b6236f3a7f02b(String), e6f7e08521831945053bd48b737146ed(String)
+2019-10-27 18:10:54.946 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.insert:143 - ==> Parameters: 1188397654899970049(String), ee8626f80f7c2619917b6236f3a7f02b(String), b52820f081aeb4b3988690f8ef027e1e(String)
+2019-10-27 18:10:54.947 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.insert:143 - ==> Parameters: 1188397654904164353(String), ee8626f80f7c2619917b6236f3a7f02b(String), aa766be7a05ee9734e0fe04b8e1c2f54(String)
+2019-10-27 18:10:54.949 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.insert:143 - ==> Parameters: 1188397654904164354(String), ee8626f80f7c2619917b6236f3a7f02b(String), 64fd7b20249ec0d5ccc270e8d02939dc(String)
+2019-10-27 18:10:55.332 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:55.334 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), 05b3c82ddb2536a4a5ee1a4c46b5abef(String)
+2019-10-27 18:10:55.466 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:55.469 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:55.470 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), 078f9558cdeab239aecb2bda1a8ed0d1(String)
+2019-10-27 18:10:55.612 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:55.614 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:55.615 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), 08e6b9dc3c04489c8e1ff2ce6f105aa4(String)
+2019-10-27 18:10:55.752 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:55.755 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:55.756 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), 1367a93f2c410b169faa7abcbad2f77c(String)
+2019-10-27 18:10:55.908 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:55.911 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:55.912 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), 200006f0edf145a2b50eacca07585451(String)
+2019-10-27 18:10:56.067 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:56.070 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:56.070 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), 277bfabef7d76e89b33062b16a9a5020(String)
+2019-10-27 18:10:56.214 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:56.217 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:56.218 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), 2a470fc0c3954d9dbb61de6d80846549(String)
+2019-10-27 18:10:56.385 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:56.388 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:56.389 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), 2dbbafa22cda07fa5d169d741b81fe12(String)
+2019-10-27 18:10:56.528 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:56.530 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:56.531 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), 3f915b2769fc80648e92d04e84ca059d(String)
+2019-10-27 18:10:56.684 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:56.687 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:56.688 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), 4148ec82b6acd69f470bea75fe41c357(String)
+2019-10-27 18:10:56.835 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:56.838 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:56.839 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), 418964ba087b90a84897b62474496b93(String)
+2019-10-27 18:10:56.990 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:56.992 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:56.993 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), 45c966826eeff4c99b8f8ebfe74511fc(String)
+2019-10-27 18:10:57.137 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:57.141 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:57.142 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), 4f66409ef3bbd69c1d80469d6e2a885e(String)
+2019-10-27 18:10:57.344 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:57.346 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:57.347 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), 4f84f9400e5e92c95f05b554724c2b58(String)
+2019-10-27 18:10:57.504 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:57.506 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:57.507 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), 540a2936940846cb98114ffb0d145cb8(String)
+2019-10-27 18:10:57.658 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:57.661 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:57.662 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), 54dd5457a3190740005c1bfec55b1c34(String)
+2019-10-27 18:10:57.798 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:57.801 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:57.802 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), 58857ff846e61794c69208e9d3a85466(String)
+2019-10-27 18:10:57.981 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:57.984 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:57.984 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), 6531cf3421b1265aeeeabaab5e176e6d(String)
+2019-10-27 18:10:58.145 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:58.148 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:58.149 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), 693ce69af3432bd00be13c3971a57961(String)
+2019-10-27 18:10:58.323 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:58.326 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:58.326 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), 6e73eb3c26099c191bf03852ee1310a1(String)
+2019-10-27 18:10:58.482 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:58.484 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:58.485 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), 717f6bee46f44a3897eca9abd6e2ec44(String)
+2019-10-27 18:10:58.616 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:58.619 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:58.620 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), 73678f9daa45ed17a3674131b03432fb(String)
+2019-10-27 18:10:58.802 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:58.805 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:58.806 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), 7ac9eb9ccbde2f7a033cd4944272bf1e(String)
+2019-10-27 18:10:58.945 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:58.947 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:58.948 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), 882a73768cfd7f78f3a37584f7299656(String)
+2019-10-27 18:10:59.091 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:59.093 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:59.094 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), 8fb8172747a78756c11916216b8b8066(String)
+2019-10-27 18:10:59.231 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:59.233 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:59.234 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), 9502685863ab87f0ad1134142788a385(String)
+2019-10-27 18:10:59.380 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:59.383 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:59.383 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), a400e4f4d54f79bf5ce160ae432231af(String)
+2019-10-27 18:10:59.561 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:59.564 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:59.565 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), ae4fed059f67086fd52a73d913cf473d(String)
+2019-10-27 18:10:59.762 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:59.764 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:59.765 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), aedbf679b5773c1f25e9f7b10111da73(String)
+2019-10-27 18:10:59.910 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:10:59.912 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:10:59.912 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), b1cb0a3fedf7ed0e4653cb5a229837ee(String)
+2019-10-27 18:11:00.080 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:11:00.083 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:11:00.084 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), c6cf95444d80435eb37b2f9db3971ae6(String)
+2019-10-27 18:11:00.216 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:11:00.219 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:11:00.220 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), d7d6e2e4e2934f2c9385a623fd98c6f3(String)
+2019-10-27 18:11:00.370 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:11:00.373 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:11:00.374 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), d86f58e7ab516d3bc6bfb1fe10585f97(String)
+2019-10-27 18:11:00.563 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:11:00.565 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:11:00.566 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), de13e0f6328c069748de7399fcc1dbbd(String)
+2019-10-27 18:11:00.761 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:11:00.764 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:11:00.764 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), e08cb190ef230d5d4f03824198773950(String)
+2019-10-27 18:11:00.938 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:11:00.941 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:11:00.942 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), e3c13679c73a4f829bcff2aba8fd68b1(String)
+2019-10-27 18:11:01.071 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:11:01.074 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:11:01.075 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), e5973686ed495c379d829ea8b2881fc6(String)
+2019-10-27 18:11:01.266 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:11:01.269 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:11:01.271 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), e6bfd1fcabfd7942fdd05f076d1dad38(String)
+2019-10-27 18:11:01.404 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:11:01.407 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:11:01.408 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), e8af452d8948ea49d37c934f5100ae6a(String)
+2019-10-27 18:11:01.561 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:11:01.564 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:11:01.565 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), ec8d607d0156e198b11853760319c646(String)
+2019-10-27 18:11:01.710 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:11:01.713 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:11:01.714 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), f1cb187abf927c88b89470d08615f5ac(String)
+2019-10-27 18:11:01.888 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:11:01.890 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:11:01.890 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), f23d9bfff4d9aa6b68569ba2cff38415(String)
+2019-10-27 18:11:02.050 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:11:02.053 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:11:02.054 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), fb07ca05a3e13674dbf6d3245956da2e(String)
+2019-10-27 18:11:02.201 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:11:02.204 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:11:02.205 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), fb367426764077dcf94640c843733985(String)
+2019-10-27 18:11:02.390 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:11:02.392 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==>  Preparing: DELETE FROM sys_role_permission WHERE role_id = ? AND permission_id = ? 
+2019-10-27 18:11:02.393 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - ==> Parameters: ee8626f80f7c2619917b6236f3a7f02b(String), fedfbf4420536cacc0218557d263dfea(String)
+2019-10-27 18:11:02.567 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.delete:143 - <==    Updates: 1
+2019-10-27 18:11:02.568 [http-nio-8080-exec-9] INFO  o.j.m.system.controller.SysPermissionController:384 - ======角色授权成功=====耗时:7633毫秒
+2019-10-27 18:11:07.334 [http-nio-8080-exec-4] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:11:07.912 [http-nio-8080-exec-4] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - ==>  Preparing: SELECT id,parent_id,name,perms,perms_type,icon,component,component_name,url,redirect,sort_no,menu_type,is_leaf AS leaf,is_route AS route,keep_alive,description,create_by,del_flag,rule_flag,hidden,create_time,update_by,update_time,status,always_show,internal_or_external FROM sys_permission WHERE del_flag = ? ORDER BY sort_no ASC 
+2019-10-27 18:11:07.913 [http-nio-8080-exec-4] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - ==> Parameters: 0(Integer)
+2019-10-27 18:11:08.080 [http-nio-8080-exec-4] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - <==      Total: 104
+2019-10-27 18:11:08.128 [http-nio-8080-exec-2] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:11:08.356 [http-nio-8080-exec-2] DEBUG o.j.m.s.mapper.SysRolePermissionMapper.selectList:143 - ==>  Preparing: SELECT id,role_id,permission_id,data_rule_ids FROM sys_role_permission WHERE role_id = ? 
+2019-10-27 18:11:08.357 [http-nio-8080-exec-2] DEBUG o.j.m.s.mapper.SysRolePermissionMapper.selectList:143 - ==> Parameters: f6817f48af4fb3af11b9e8bf182f618b(String)
+2019-10-27 18:11:08.462 [http-nio-8080-exec-2] DEBUG o.j.m.s.mapper.SysRolePermissionMapper.selectList:143 - <==      Total: 115
+2019-10-27 18:11:13.219 [http-nio-8080-exec-7] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:11:13.640 [http-nio-8080-exec-7] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.insert:143 - ==>  Preparing: INSERT INTO sys_role_permission ( id, role_id, permission_id ) VALUES ( ?, ?, ? ) 
+2019-10-27 18:11:13.641 [http-nio-8080-exec-7] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.insert:143 - ==> Parameters: 1188397733304094721(String), f6817f48af4fb3af11b9e8bf182f618b(String), e6f7e08521831945053bd48b737146ed(String)
+2019-10-27 18:11:13.642 [http-nio-8080-exec-7] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.insert:143 - ==> Parameters: 1188397733316677634(String), f6817f48af4fb3af11b9e8bf182f618b(String), b52820f081aeb4b3988690f8ef027e1e(String)
+2019-10-27 18:11:13.643 [http-nio-8080-exec-7] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.insert:143 - ==> Parameters: 1188397733320871938(String), f6817f48af4fb3af11b9e8bf182f618b(String), aa766be7a05ee9734e0fe04b8e1c2f54(String)
+2019-10-27 18:11:13.644 [http-nio-8080-exec-7] DEBUG o.j.m.system.mapper.SysRolePermissionMapper.insert:143 - ==> Parameters: 1188397733325066242(String), f6817f48af4fb3af11b9e8bf182f618b(String), 64fd7b20249ec0d5ccc270e8d02939dc(String)
+2019-10-27 18:11:14.067 [http-nio-8080-exec-7] INFO  o.j.m.system.controller.SysPermissionController:384 - ======角色授权成功=====耗时:428毫秒
+2019-10-27 18:11:15.648 [http-nio-8080-exec-6] INFO  org.jeecg.modules.message.websocket.WebSocket:46 - 【websocket消息】连接断开，总数为:0
+2019-10-27 18:11:16.650 [http-nio-8080-exec-10] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:11:17.412 [http-nio-8080-exec-10] INFO  o.j.m.system.controller.SysPermissionController:182 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:11:17.414 [http-nio-8080-exec-10] DEBUG o.j.m.s.mapper.SysPermissionMapper.queryByUser:143 - ==>  Preparing: SELECT p.* FROM sys_permission p WHERE exists( select a.id from sys_role_permission a join sys_role b on a.role_id = b.id join sys_user_role c on c.role_id = b.id join sys_user d on d.id = c.user_id where p.id = a.permission_id AND d.username = ? ) and p.del_flag = 0 order by p.sort_no ASC 
+2019-10-27 18:11:17.415 [http-nio-8080-exec-10] DEBUG o.j.m.s.mapper.SysPermissionMapper.queryByUser:143 - ==> Parameters: admin(String)
+2019-10-27 18:11:17.611 [http-nio-8080-exec-10] DEBUG o.j.m.s.mapper.SysPermissionMapper.queryByUser:143 - <==      Total: 99
+2019-10-27 18:11:17.617 [http-nio-8080-exec-10] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - ==>  Preparing: SELECT id,parent_id,name,perms,perms_type,icon,component,component_name,url,redirect,sort_no,menu_type,is_leaf AS leaf,is_route AS route,keep_alive,description,create_by,del_flag,rule_flag,hidden,create_time,update_by,update_time,status,always_show,internal_or_external FROM sys_permission WHERE del_flag = ? AND menu_type = ? 
+2019-10-27 18:11:17.618 [http-nio-8080-exec-10] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - ==> Parameters: 0(Integer), 2(Integer)
+2019-10-27 18:11:17.710 [http-nio-8080-exec-10] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - <==      Total: 3
+2019-10-27 18:11:18.370 [http-nio-8080-exec-5] INFO  org.jeecg.modules.message.websocket.WebSocket:37 - 【websocket消息】有新的连接，总数为:1
+2019-10-27 18:11:18.429 [http-nio-8080-exec-8] ERROR o.jeecg.common.system.controller.CommonController:119 - 预览图片失败D:/upFiles/user/20190119/logo-2_1547868176839.png (No such file or directory)
+2019-10-27 18:11:18.548 [http-nio-8080-exec-3] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:11:18.556 [http-nio-8080-exec-1] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:11:19.119 [http-nio-8080-exec-3] DEBUG o.j.modules.system.mapper.SysRoleMapper.selectPage:143 - ==>  Preparing: SELECT COUNT(1) FROM sys_role 
+2019-10-27 18:11:19.120 [http-nio-8080-exec-3] DEBUG o.j.modules.system.mapper.SysRoleMapper.selectPage:143 - ==> Parameters: 
+2019-10-27 18:11:19.231 [http-nio-8080-exec-3] DEBUG o.j.modules.system.mapper.SysRoleMapper.selectPage:143 - ==>  Preparing: SELECT id,role_name,role_code,description,create_by,create_time,update_by,update_time FROM sys_role ORDER BY create_time DESC LIMIT ?,? 
+2019-10-27 18:11:19.232 [http-nio-8080-exec-3] DEBUG o.j.modules.system.mapper.SysRoleMapper.selectPage:143 - ==> Parameters: 0(Long), 10(Long)
+2019-10-27 18:11:19.233 [http-nio-8080-exec-1] DEBUG o.j.m.s.m.SysAnnouncementSendMapper.queryByUserId:143 - ==>  Preparing: select sas.annt_id from sys_announcement_send sas where sas.user_id = ? 
+2019-10-27 18:11:19.233 [http-nio-8080-exec-1] DEBUG o.j.m.s.m.SysAnnouncementSendMapper.queryByUserId:143 - ==> Parameters: e9ca23d68d884d4ebb19d07889727dae(String)
+2019-10-27 18:11:19.338 [http-nio-8080-exec-3] DEBUG o.j.modules.system.mapper.SysRoleMapper.selectPage:143 - <==      Total: 3
+2019-10-27 18:11:19.434 [http-nio-8080-exec-1] DEBUG o.j.m.s.m.SysAnnouncementSendMapper.queryByUserId:143 - <==      Total: 1
+2019-10-27 18:11:19.437 [http-nio-8080-exec-1] DEBUG o.j.m.s.mapper.SysAnnouncementMapper.selectList:143 - ==>  Preparing: SELECT id,titile,msg_content,start_time,end_time,sender,priority,msg_category,msg_type,send_status,send_time,cancel_time,del_flag,create_by,create_time,update_by,update_time,user_ids FROM sys_announcement WHERE msg_type = ? AND del_flag = ? AND send_status = ? AND end_time >= ? AND id NOT IN (?) 
+2019-10-27 18:11:19.438 [http-nio-8080-exec-1] DEBUG o.j.m.s.mapper.SysAnnouncementMapper.selectList:143 - ==> Parameters: ALL(String), 0(String), 1(String), 2038-06-21 17:54:10.0(Timestamp), 93a9060a1c20e4bf98b3f768a02c2ff9(String)
+2019-10-27 18:11:19.537 [http-nio-8080-exec-1] DEBUG o.j.m.s.mapper.SysAnnouncementMapper.selectList:143 - <==      Total: 0
+2019-10-27 18:11:19.541 [http-nio-8080-exec-1] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==>  Preparing: SELECT COUNT(1) FROM sys_announcement WHERE send_status = '1' AND del_flag = '0' AND msg_category = ? AND id IN (SELECT annt_id FROM sys_announcement_send WHERE user_id = ? AND read_flag = '0') 
+2019-10-27 18:11:19.542 [http-nio-8080-exec-1] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==> Parameters: 1(String), e9ca23d68d884d4ebb19d07889727dae(String)
+2019-10-27 18:11:19.618 [http-nio-8080-exec-1] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==>  Preparing: SELECT COUNT(1) FROM sys_announcement WHERE send_status = '1' AND del_flag = '0' AND msg_category = ? AND id IN (SELECT annt_id FROM sys_announcement_send WHERE user_id = ? AND read_flag = '0') 
+2019-10-27 18:11:19.619 [http-nio-8080-exec-1] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==> Parameters: 2(String), e9ca23d68d884d4ebb19d07889727dae(String)
+2019-10-27 18:11:19.694 [http-nio-8080-exec-1] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==>  Preparing: select * from sys_announcement where send_status = '1' and del_flag = '0' and msg_category = ? and id IN ( select annt_id from sys_announcement_send where user_id = ? and read_flag = '0') LIMIT ?,? 
+2019-10-27 18:11:19.695 [http-nio-8080-exec-1] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==> Parameters: 2(String), e9ca23d68d884d4ebb19d07889727dae(String), 0(Long), 5(Long)
+2019-10-27 18:11:19.782 [http-nio-8080-exec-1] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - <==      Total: 1
+2019-10-27 18:13:34.069 [http-nio-8080-exec-7] INFO  org.jeecg.modules.message.websocket.WebSocket:46 - 【websocket消息】连接断开，总数为:0
+2019-10-27 18:13:35.950 [http-nio-8080-exec-10] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:13:36.218 [http-nio-8080-exec-10] INFO  o.j.m.system.controller.SysPermissionController:182 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:13:36.224 [http-nio-8080-exec-10] DEBUG o.j.m.s.mapper.SysPermissionMapper.queryByUser:143 - ==>  Preparing: SELECT p.* FROM sys_permission p WHERE exists( select a.id from sys_role_permission a join sys_role b on a.role_id = b.id join sys_user_role c on c.role_id = b.id join sys_user d on d.id = c.user_id where p.id = a.permission_id AND d.username = ? ) and p.del_flag = 0 order by p.sort_no ASC 
+2019-10-27 18:13:36.230 [http-nio-8080-exec-10] DEBUG o.j.m.s.mapper.SysPermissionMapper.queryByUser:143 - ==> Parameters: admin(String)
+2019-10-27 18:13:36.597 [http-nio-8080-exec-10] DEBUG o.j.m.s.mapper.SysPermissionMapper.queryByUser:143 - <==      Total: 99
+2019-10-27 18:13:36.612 [http-nio-8080-exec-10] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - ==>  Preparing: SELECT id,parent_id,name,perms,perms_type,icon,component,component_name,url,redirect,sort_no,menu_type,is_leaf AS leaf,is_route AS route,keep_alive,description,create_by,del_flag,rule_flag,hidden,create_time,update_by,update_time,status,always_show,internal_or_external FROM sys_permission WHERE del_flag = ? AND menu_type = ? 
+2019-10-27 18:13:36.613 [http-nio-8080-exec-10] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - ==> Parameters: 0(Integer), 2(Integer)
+2019-10-27 18:13:36.690 [http-nio-8080-exec-10] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - <==      Total: 3
+2019-10-27 18:13:37.339 [http-nio-8080-exec-6] INFO  org.jeecg.modules.message.websocket.WebSocket:37 - 【websocket消息】有新的连接，总数为:1
+2019-10-27 18:13:37.385 [http-nio-8080-exec-5] ERROR o.jeecg.common.system.controller.CommonController:119 - 预览图片失败D:/upFiles/user/20190119/logo-2_1547868176839.png (No such file or directory)
+2019-10-27 18:13:37.498 [http-nio-8080-exec-8] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:13:37.506 [http-nio-8080-exec-3] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:13:37.977 [http-nio-8080-exec-8] DEBUG o.j.modules.system.mapper.SysRoleMapper.selectPage:143 - ==>  Preparing: SELECT COUNT(1) FROM sys_role 
+2019-10-27 18:13:37.978 [http-nio-8080-exec-8] DEBUG o.j.modules.system.mapper.SysRoleMapper.selectPage:143 - ==> Parameters: 
+2019-10-27 18:13:38.038 [http-nio-8080-exec-8] DEBUG o.j.modules.system.mapper.SysRoleMapper.selectPage:143 - ==>  Preparing: SELECT id,role_name,role_code,description,create_by,create_time,update_by,update_time FROM sys_role ORDER BY create_time DESC LIMIT ?,? 
+2019-10-27 18:13:38.039 [http-nio-8080-exec-8] DEBUG o.j.modules.system.mapper.SysRoleMapper.selectPage:143 - ==> Parameters: 0(Long), 10(Long)
+2019-10-27 18:13:38.102 [http-nio-8080-exec-3] DEBUG o.j.m.s.m.SysAnnouncementSendMapper.queryByUserId:143 - ==>  Preparing: select sas.annt_id from sys_announcement_send sas where sas.user_id = ? 
+2019-10-27 18:13:38.103 [http-nio-8080-exec-3] DEBUG o.j.m.s.m.SysAnnouncementSendMapper.queryByUserId:143 - ==> Parameters: e9ca23d68d884d4ebb19d07889727dae(String)
+2019-10-27 18:13:38.108 [http-nio-8080-exec-8] DEBUG o.j.modules.system.mapper.SysRoleMapper.selectPage:143 - <==      Total: 3
+2019-10-27 18:13:38.170 [http-nio-8080-exec-3] DEBUG o.j.m.s.m.SysAnnouncementSendMapper.queryByUserId:143 - <==      Total: 1
+2019-10-27 18:13:38.175 [http-nio-8080-exec-3] DEBUG o.j.m.s.mapper.SysAnnouncementMapper.selectList:143 - ==>  Preparing: SELECT id,titile,msg_content,start_time,end_time,sender,priority,msg_category,msg_type,send_status,send_time,cancel_time,del_flag,create_by,create_time,update_by,update_time,user_ids FROM sys_announcement WHERE msg_type = ? AND del_flag = ? AND send_status = ? AND end_time >= ? AND id NOT IN (?) 
+2019-10-27 18:13:38.176 [http-nio-8080-exec-3] DEBUG o.j.m.s.mapper.SysAnnouncementMapper.selectList:143 - ==> Parameters: ALL(String), 0(String), 1(String), 2038-06-21 17:54:10.0(Timestamp), 93a9060a1c20e4bf98b3f768a02c2ff9(String)
+2019-10-27 18:13:38.272 [http-nio-8080-exec-3] DEBUG o.j.m.s.mapper.SysAnnouncementMapper.selectList:143 - <==      Total: 0
+2019-10-27 18:13:38.277 [http-nio-8080-exec-3] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==>  Preparing: SELECT COUNT(1) FROM sys_announcement WHERE send_status = '1' AND del_flag = '0' AND msg_category = ? AND id IN (SELECT annt_id FROM sys_announcement_send WHERE user_id = ? AND read_flag = '0') 
+2019-10-27 18:13:38.277 [http-nio-8080-exec-3] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==> Parameters: 1(String), e9ca23d68d884d4ebb19d07889727dae(String)
+2019-10-27 18:13:38.374 [http-nio-8080-exec-3] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==>  Preparing: SELECT COUNT(1) FROM sys_announcement WHERE send_status = '1' AND del_flag = '0' AND msg_category = ? AND id IN (SELECT annt_id FROM sys_announcement_send WHERE user_id = ? AND read_flag = '0') 
+2019-10-27 18:13:38.374 [http-nio-8080-exec-3] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==> Parameters: 2(String), e9ca23d68d884d4ebb19d07889727dae(String)
+2019-10-27 18:13:38.456 [http-nio-8080-exec-3] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==>  Preparing: select * from sys_announcement where send_status = '1' and del_flag = '0' and msg_category = ? and id IN ( select annt_id from sys_announcement_send where user_id = ? and read_flag = '0') LIMIT ?,? 
+2019-10-27 18:13:38.459 [http-nio-8080-exec-3] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==> Parameters: 2(String), e9ca23d68d884d4ebb19d07889727dae(String), 0(Long), 5(Long)
+2019-10-27 18:13:38.537 [http-nio-8080-exec-3] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - <==      Total: 1
+2019-10-27 18:13:41.491 [http-nio-8080-exec-1] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:14:12.602 [http-nio-8080-exec-2] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:14:15.257 [http-nio-8080-exec-7] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:14:34.384 [http-nio-8080-exec-5] INFO  org.jeecg.modules.message.websocket.WebSocket:46 - 【websocket消息】连接断开，总数为:0
+2019-10-27 18:14:37.711 [http-nio-8080-exec-3] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:14:37.979 [http-nio-8080-exec-3] INFO  o.j.m.system.controller.SysPermissionController:182 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:14:37.981 [http-nio-8080-exec-3] DEBUG o.j.m.s.mapper.SysPermissionMapper.queryByUser:143 - ==>  Preparing: SELECT p.* FROM sys_permission p WHERE exists( select a.id from sys_role_permission a join sys_role b on a.role_id = b.id join sys_user_role c on c.role_id = b.id join sys_user d on d.id = c.user_id where p.id = a.permission_id AND d.username = ? ) and p.del_flag = 0 order by p.sort_no ASC 
+2019-10-27 18:14:37.982 [http-nio-8080-exec-3] DEBUG o.j.m.s.mapper.SysPermissionMapper.queryByUser:143 - ==> Parameters: admin(String)
+2019-10-27 18:14:38.291 [http-nio-8080-exec-3] DEBUG o.j.m.s.mapper.SysPermissionMapper.queryByUser:143 - <==      Total: 99
+2019-10-27 18:14:38.309 [http-nio-8080-exec-3] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - ==>  Preparing: SELECT id,parent_id,name,perms,perms_type,icon,component,component_name,url,redirect,sort_no,menu_type,is_leaf AS leaf,is_route AS route,keep_alive,description,create_by,del_flag,rule_flag,hidden,create_time,update_by,update_time,status,always_show,internal_or_external FROM sys_permission WHERE del_flag = ? AND menu_type = ? 
+2019-10-27 18:14:38.310 [http-nio-8080-exec-3] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - ==> Parameters: 0(Integer), 2(Integer)
+2019-10-27 18:14:38.380 [http-nio-8080-exec-3] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - <==      Total: 3
+2019-10-27 18:14:39.282 [http-nio-8080-exec-1] INFO  org.jeecg.modules.message.websocket.WebSocket:37 - 【websocket消息】有新的连接，总数为:1
+2019-10-27 18:14:39.297 [http-nio-8080-exec-9] ERROR o.jeecg.common.system.controller.CommonController:119 - 预览图片失败D:/upFiles/user/20190119/logo-2_1547868176839.png (No such file or directory)
+2019-10-27 18:14:39.302 [http-nio-8080-exec-4] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:14:39.370 [http-nio-8080-exec-2] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:14:39.900 [http-nio-8080-exec-2] DEBUG o.j.m.s.m.SysAnnouncementSendMapper.queryByUserId:143 - ==>  Preparing: select sas.annt_id from sys_announcement_send sas where sas.user_id = ? 
+2019-10-27 18:14:39.900 [http-nio-8080-exec-2] DEBUG o.j.m.s.m.SysAnnouncementSendMapper.queryByUserId:143 - ==> Parameters: e9ca23d68d884d4ebb19d07889727dae(String)
+2019-10-27 18:14:39.960 [http-nio-8080-exec-2] DEBUG o.j.m.s.m.SysAnnouncementSendMapper.queryByUserId:143 - <==      Total: 1
+2019-10-27 18:14:39.964 [http-nio-8080-exec-2] DEBUG o.j.m.s.mapper.SysAnnouncementMapper.selectList:143 - ==>  Preparing: SELECT id,titile,msg_content,start_time,end_time,sender,priority,msg_category,msg_type,send_status,send_time,cancel_time,del_flag,create_by,create_time,update_by,update_time,user_ids FROM sys_announcement WHERE msg_type = ? AND del_flag = ? AND send_status = ? AND end_time >= ? AND id NOT IN (?) 
+2019-10-27 18:14:39.964 [http-nio-8080-exec-2] DEBUG o.j.m.s.mapper.SysAnnouncementMapper.selectList:143 - ==> Parameters: ALL(String), 0(String), 1(String), 2038-06-21 17:54:10.0(Timestamp), 93a9060a1c20e4bf98b3f768a02c2ff9(String)
+2019-10-27 18:14:40.036 [http-nio-8080-exec-2] DEBUG o.j.m.s.mapper.SysAnnouncementMapper.selectList:143 - <==      Total: 0
+2019-10-27 18:14:40.039 [http-nio-8080-exec-2] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==>  Preparing: SELECT COUNT(1) FROM sys_announcement WHERE send_status = '1' AND del_flag = '0' AND msg_category = ? AND id IN (SELECT annt_id FROM sys_announcement_send WHERE user_id = ? AND read_flag = '0') 
+2019-10-27 18:14:40.039 [http-nio-8080-exec-2] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==> Parameters: 1(String), e9ca23d68d884d4ebb19d07889727dae(String)
+2019-10-27 18:14:40.117 [http-nio-8080-exec-2] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==>  Preparing: SELECT COUNT(1) FROM sys_announcement WHERE send_status = '1' AND del_flag = '0' AND msg_category = ? AND id IN (SELECT annt_id FROM sys_announcement_send WHERE user_id = ? AND read_flag = '0') 
+2019-10-27 18:14:40.118 [http-nio-8080-exec-2] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==> Parameters: 2(String), e9ca23d68d884d4ebb19d07889727dae(String)
+2019-10-27 18:14:40.201 [http-nio-8080-exec-2] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==>  Preparing: select * from sys_announcement where send_status = '1' and del_flag = '0' and msg_category = ? and id IN ( select annt_id from sys_announcement_send where user_id = ? and read_flag = '0') LIMIT ?,? 
+2019-10-27 18:14:40.202 [http-nio-8080-exec-2] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==> Parameters: 2(String), e9ca23d68d884d4ebb19d07889727dae(String), 0(Long), 5(Long)
+2019-10-27 18:14:40.292 [http-nio-8080-exec-2] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - <==      Total: 1
+2019-10-27 18:14:58.604 [http-nio-8080-exec-7] ERROR o.jeecg.common.system.controller.CommonController:119 - 预览图片失败D:/upFiles/user/20190119/logo-2_1547868176839.png (No such file or directory)
+2019-10-27 18:17:14.556 [Thread-68] INFO  org.quartz.core.QuartzScheduler:585 - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2019-10-27 18:17:14.564 [Thread-68] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-27 18:17:14.570 [Thread-68] INFO  o.s.scheduling.quartz.SchedulerFactoryBean:844 - Shutting down Quartz Scheduler
+2019-10-27 18:17:14.571 [Thread-68] INFO  org.quartz.core.QuartzScheduler:666 - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2019-10-27 18:17:14.571 [Thread-68] INFO  org.quartz.core.QuartzScheduler:585 - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2019-10-27 18:17:14.572 [Thread-68] INFO  org.quartz.core.QuartzScheduler:740 - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2019-10-27 18:17:14.584 [Thread-68] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:182 - closing dynamicDatasource  ing....
+2019-10-27 18:17:14.589 [Thread-68] INFO  com.alibaba.druid.pool.DruidDataSource:1948 - {dataSource-1} closing ...
+2019-10-27 18:17:14.592 [Thread-68] INFO  com.alibaba.druid.pool.DruidDataSource:2020 - {dataSource-1} closed
+2019-10-27 18:17:24.766 [main] INFO  org.jeecg.JeecgApplication:50 - Starting JeecgApplication on DexSinisdeMacBook-Pro.local with PID 19622 (/Users/dexsinis/D/E/cbk/jeecg-boot/jeecg-boot/jeecg-boot-module-system/target/classes started by dexsinis in /Users/dexsinis/D/E/cbk/jeecg-boot/jeecg-boot)
+2019-10-27 18:17:24.771 [main] INFO  org.jeecg.JeecgApplication:679 - The following profiles are active: pre
+2019-10-27 18:17:26.594 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner:44 - No MyBatis mapper was found in '[org.jeecg.dao, org.jeecg.module.**.mapper]' package. Please check your configuration.
+2019-10-27 18:17:26.922 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:244 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-10-27 18:17:26.926 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-27 18:17:27.020 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:182 - Finished Spring Data repository scanning in 78ms. Found 0 repository interfaces.
+2019-10-27 18:17:27.528 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'shiroConfig' of type [org.jeecg.config.ShiroConfig$$EnhancerBySpringCGLIB$$7f17ffa8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-27 18:17:27.638 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'shiroRealm' of type [org.jeecg.modules.shiro.authc.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-27 18:17:27.776 [main] INFO  org.jeecg.config.ShiroConfig:188 - ===============(1)创建缓存管理器RedisCacheManager
+2019-10-27 18:17:27.778 [main] INFO  org.jeecg.config.ShiroConfig:206 - ===============(2)创建RedisManager,连接Redis..URL= 106.14.211.207:6379
+2019-10-27 18:17:27.780 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisManager' of type [org.crazycake.shiro.RedisManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-27 18:17:27.785 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-27 18:17:27.818 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-27 18:17:27.901 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5f129612] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-27 18:17:28.092 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-27 18:17:28.099 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$c8a106e3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-27 18:17:28.113 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-27 18:17:28.120 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-27 18:17:28.147 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-27 18:17:28.160 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$742c545c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-27 18:17:28.277 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-27 18:17:28.373 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-27 18:17:28.394 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisConfig' of type [org.jeecg.config.RedisConfig$$EnhancerBySpringCGLIB$$c9e686f2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-27 18:17:28.441 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$722b73c2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-27 18:17:28.450 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'eventBus' of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-27 18:17:28.949 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2019-10-27 18:17:28.966 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2019-10-27 18:17:28.978 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-10-27 18:17:28.978 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-10-27 18:17:28.985 [main] INFO  org.apache.catalina.core.AprLifecycleListener:173 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/dexsinis/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-10-27 18:17:29.137 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/jeecg-boot]:173 - Initializing Spring embedded WebApplicationContext
+2019-10-27 18:17:29.137 [main] INFO  org.springframework.web.context.ContextLoader:296 - Root WebApplicationContext: initialization completed in 4311 ms
+2019-10-27 18:17:29.724 [main] INFO  c.b.dynamic.datasource.DynamicDataSourceCreator:113 - 动态数据源-检测到druid存在,如配置中未指定type,druid会默认配置
+2019-10-27 18:17:35.804 [main] INFO  com.alibaba.druid.pool.DruidDataSource:1003 - {dataSource-1,master} inited
+2019-10-27 18:17:35.805 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:203 - 初始共加载 1 个数据源
+2019-10-27 18:17:35.806 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:142 - 动态数据源-加载 master 成功
+2019-10-27 18:17:35.807 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:212 - 当前的默认数据源是单数据源，数据源名为 master
+2019-10-27 18:17:36.714 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.baby.entity.TargetInfoItemInst.
+2019-10-27 18:17:36.746 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.baby.entity.TrRefOptional.
+2019-10-27 18:17:37.114 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.order.entity.PreConsulterOrder.
+2019-10-27 18:17:37.210 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.qasystem.entity.QaQuestionLabel.
+2019-10-27 18:17:37.299 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.qasystem.entity.QuestionIncmD.
+2019-10-27 18:17:37.673 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.statistics.entity.ChnlAttentionH.
+2019-10-27 18:17:37.695 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.statistics.entity.ChnlCustAttentionD.
+2019-10-27 18:17:37.715 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.statistics.entity.GratuityDtlD.
+2019-10-27 18:17:37.739 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.statistics.entity.OrderDtlD.
+2019-10-27 18:17:37.763 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.statistics.entity.OrderEvaluationD.
+2019-10-27 18:17:37.784 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.statistics.entity.OrderProfitD.
+2019-10-27 18:17:37.804 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.statistics.entity.OrderProfitM.
+2019-10-27 18:17:37.824 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.statistics.entity.OrderQuantityH.
+2019-10-27 18:17:37.844 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.statistics.entity.OrderRefundD.
+2019-10-27 18:17:37.867 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.statistics.entity.PersUserD.
+2019-10-27 18:17:37.891 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.statistics.entity.PersUserOrderD.
+2019-10-27 18:17:38.315 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.vip.entity.ConsulterPricingPackage.
+2019-10-27 18:17:38.334 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.vip.entity.ConsulterPricingPkgRes.
+2019-10-27 18:17:38.415 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.vip.entity.TpPricingPkgRes.
+2019-10-27 18:17:41.293 [main] INFO  org.quartz.impl.StdSchedulerFactory:1208 - Using default implementation for ThreadExecutor
+2019-10-27 18:17:41.307 [main] INFO  org.quartz.core.SchedulerSignalerImpl:61 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-10-27 18:17:41.307 [main] INFO  org.quartz.core.QuartzScheduler:229 - Quartz Scheduler v.2.3.0 created.
+2019-10-27 18:17:41.310 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:672 - Using db table-based data access locking (synchronization).
+2019-10-27 18:17:41.312 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:145 - JobStoreCMT initialized.
+2019-10-27 18:17:41.313 [main] INFO  org.quartz.core.QuartzScheduler:294 - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is not clustered.
+
+2019-10-27 18:17:41.313 [main] INFO  org.quartz.impl.StdSchedulerFactory:1362 - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2019-10-27 18:17:41.314 [main] INFO  org.quartz.impl.StdSchedulerFactory:1366 - Quartz scheduler version: 2.3.0
+2019-10-27 18:17:41.314 [main] INFO  org.quartz.core.QuartzScheduler:2287 - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@360d0c7a
+2019-10-27 18:17:49.546 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver:59 - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-10-27 18:17:49.857 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping:69 - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-10-27 18:17:50.310 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-27 18:17:51.651 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper:160 - Context refreshed
+2019-10-27 18:17:51.675 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper:163 - Found 1 custom documentation plugin(s)
+2019-10-27 18:17:51.797 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner:41 - Scanning for api listing references
+2019-10-27 18:17:52.150 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: loginUsingPOST_1
+2019-10-27 18:17:52.162 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: loginUsingPOST_2
+2019-10-27 18:17:52.165 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: loginOutUsingPOST_1
+2019-10-27 18:17:52.215 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_1
+2019-10-27 18:17:52.218 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: eidtUsingPOST_1
+2019-10-27 18:17:52.235 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_2
+2019-10-27 18:17:52.253 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: listUsingPOST_1
+2019-10-27 18:17:52.255 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: deleteUsingPOST_1
+2019-10-27 18:17:52.257 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: ossUploadFileUsingPOST_1
+2019-10-27 18:17:52.259 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: uploadUsingPOST_1
+2019-10-27 18:17:52.260 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: viewUsingGET_1
+2019-10-27 18:17:52.276 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_3
+2019-10-27 18:17:52.278 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: deleteUsingDELETE_1
+2019-10-27 18:17:52.279 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: deleteBatchUsingDELETE_1
+2019-10-27 18:17:52.281 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: editUsingPUT_1
+2019-10-27 18:17:52.282 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: queryByIdUsingGET_1
+2019-10-27 18:17:52.289 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_4
+2019-10-27 18:17:52.291 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: deleteUsingDELETE_2
+2019-10-27 18:17:52.292 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: deleteBatchUsingDELETE_2
+2019-10-27 18:17:52.293 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: editUsingPUT_2
+2019-10-27 18:17:52.295 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: queryByIdUsingGET_2
+2019-10-27 18:17:52.304 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: queryPageListUsingGET_1
+2019-10-27 18:17:52.308 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_5
+2019-10-27 18:17:52.309 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: deleteUsingDELETE_3
+2019-10-27 18:17:52.310 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: deleteBatchUsingDELETE_3
+2019-10-27 18:17:52.312 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: editUsingPUT_3
+2019-10-27 18:17:52.313 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: queryByIdUsingGET_3
+2019-10-27 18:17:52.321 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: queryPageListUsingGET_2
+2019-10-27 18:17:52.331 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_6
+2019-10-27 18:17:52.332 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: deleteUsingDELETE_4
+2019-10-27 18:17:52.334 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: deleteBatchUsingDELETE_4
+2019-10-27 18:17:52.335 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: editUsingPUT_4
+2019-10-27 18:17:52.337 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: queryByIdUsingGET_4
+2019-10-27 18:17:52.344 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: queryPageListUsingGET_3
+2019-10-27 18:17:52.360 [main] INFO  o.s.scheduling.quartz.SchedulerFactoryBean:726 - Starting Quartz Scheduler now
+2019-10-27 18:17:53.003 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:866 - Freed 0 triggers from 'acquired' / 'blocked' state.
+2019-10-27 18:17:53.225 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:876 - Recovering 0 jobs that were in-progress at the time of the last shut-down.
+2019-10-27 18:17:53.225 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:889 - Recovery complete.
+2019-10-27 18:17:53.307 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:896 - Removed 0 'complete' triggers.
+2019-10-27 18:17:53.410 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:901 - Removed 0 stale fired job entries.
+2019-10-27 18:17:53.558 [main] INFO  org.quartz.core.QuartzScheduler:547 - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2019-10-27 18:17:53.577 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2019-10-27 18:17:53.617 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path '/jeecg-boot'
+2019-10-27 18:17:53.621 [main] INFO  org.jeecg.JeecgApplication:59 - Started JeecgApplication in 29.881 seconds (JVM running for 30.796)
+2019-10-27 18:17:53.635 [main] INFO  org.jeecg.JeecgApplication:26 - 
+----------------------------------------------------------
+	Application Jeecg-Boot is running! Access URLs:
+	Local: 		http://localhost:8080/jeecg-boot/
+	External: 	http://172.20.10.7:8080/jeecg-boot/
+	swagger-ui: 	http://172.20.10.7:8080/jeecg-boot/swagger-ui.html
+	Doc: 		http://172.20.10.7:8080/jeecg-boot/doc.html
+----------------------------------------------------------
+2019-10-27 18:17:53.732 [RMI TCP Connection(2)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/jeecg-boot]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-27 18:17:53.733 [RMI TCP Connection(2)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2019-10-27 18:17:53.754 [RMI TCP Connection(2)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet:546 - Completed initialization in 21 ms
+2019-10-27 18:17:53.933 [RMI TCP Connection(4)-127.0.0.1] INFO  io.lettuce.core.EpollProvider:68 - Starting without optional epoll library
+2019-10-27 18:17:53.935 [RMI TCP Connection(4)-127.0.0.1] INFO  io.lettuce.core.KqueueProvider:70 - Starting without optional kqueue library
+2019-10-27 18:17:55.338 [http-nio-8080-exec-1] INFO  org.jeecg.modules.message.websocket.WebSocket:37 - 【websocket消息】有新的连接，总数为:1
+2019-10-27 18:17:59.014 [http-nio-8080-exec-2] INFO  org.jeecg.modules.message.websocket.WebSocket:46 - 【websocket消息】连接断开，总数为:0
+2019-10-27 18:18:01.971 [http-nio-8080-exec-3] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:18:02.483 [http-nio-8080-exec-3] INFO  o.j.m.system.controller.SysPermissionController:182 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:18:02.525 [http-nio-8080-exec-3] DEBUG o.j.m.s.mapper.SysPermissionMapper.queryByUser:143 - ==>  Preparing: SELECT p.* FROM sys_permission p WHERE exists( select a.id from sys_role_permission a join sys_role b on a.role_id = b.id join sys_user_role c on c.role_id = b.id join sys_user d on d.id = c.user_id where p.id = a.permission_id AND d.username = ? ) and p.del_flag = 0 order by p.sort_no ASC 
+2019-10-27 18:18:02.538 [http-nio-8080-exec-3] DEBUG o.j.m.s.mapper.SysPermissionMapper.queryByUser:143 - ==> Parameters: admin(String)
+2019-10-27 18:18:03.012 [http-nio-8080-exec-3] DEBUG o.j.m.s.mapper.SysPermissionMapper.queryByUser:143 - <==      Total: 99
+2019-10-27 18:18:03.078 [http-nio-8080-exec-3] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - ==>  Preparing: SELECT id,parent_id,name,perms,perms_type,icon,component,component_name,url,redirect,sort_no,menu_type,is_leaf AS leaf,is_route AS route,keep_alive,description,create_by,del_flag,rule_flag,hidden,create_time,update_by,update_time,status,always_show,internal_or_external FROM sys_permission WHERE del_flag = ? AND menu_type = ? 
+2019-10-27 18:18:03.081 [http-nio-8080-exec-3] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - ==> Parameters: 0(Integer), 2(Integer)
+2019-10-27 18:18:03.217 [http-nio-8080-exec-3] DEBUG o.j.m.system.mapper.SysPermissionMapper.selectList:143 - <==      Total: 3
+2019-10-27 18:18:04.266 [http-nio-8080-exec-4] INFO  org.jeecg.modules.message.websocket.WebSocket:37 - 【websocket消息】有新的连接，总数为:1
+2019-10-27 18:18:04.273 [http-nio-8080-exec-6] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:18:04.282 [http-nio-8080-exec-5] ERROR o.jeecg.common.system.controller.CommonController:119 - 预览图片失败D:/upFiles/user/20190119/logo-2_1547868176839.png (No such file or directory)
+2019-10-27 18:18:04.342 [http-nio-8080-exec-7] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:18:04.841 [http-nio-8080-exec-7] DEBUG o.j.m.s.m.SysAnnouncementSendMapper.queryByUserId:143 - ==>  Preparing: select sas.annt_id from sys_announcement_send sas where sas.user_id = ? 
+2019-10-27 18:18:04.842 [http-nio-8080-exec-7] DEBUG o.j.m.s.m.SysAnnouncementSendMapper.queryByUserId:143 - ==> Parameters: e9ca23d68d884d4ebb19d07889727dae(String)
+2019-10-27 18:18:04.930 [http-nio-8080-exec-7] DEBUG o.j.m.s.m.SysAnnouncementSendMapper.queryByUserId:143 - <==      Total: 1
+2019-10-27 18:18:04.938 [http-nio-8080-exec-6] ERROR druid.sql.Statement:149 - {conn-10004, pstmt-20011} execute error. SELECT COUNT(1) FROM sims_teacher
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'jeecg-boot.sims_teacher' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:944)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3978)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3914)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2683)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2495)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1903)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2011)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_executeQuery(FilterChainImpl.java:3188)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_executeQuery(FilterEventAdapter.java:465)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_executeQuery(FilterChainImpl.java:3185)
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_executeQuery(WallFilter.java:648)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_executeQuery(FilterChainImpl.java:3185)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_executeQuery(FilterEventAdapter.java:465)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_executeQuery(FilterChainImpl.java:3185)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.executeQuery(PreparedStatementProxyImpl.java:181)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.executeQuery(DruidPooledPreparedStatement.java:227)
+	at com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor.queryTotal(PaginationInterceptor.java:224)
+	at com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor.intercept(PaginationInterceptor.java:193)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy372.prepare(Unknown Source)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.prepareStatement(MybatisSimpleExecutor.java:94)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doQuery(MybatisSimpleExecutor.java:66)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy371.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy138.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForIPage(MybatisMapperMethod.java:115)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:86)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:62)
+	at com.sun.proxy.$Proxy141.selectPage(Unknown Source)
+	at com.baomidou.mybatisplus.extension.service.impl.ServiceImpl.page(ServiceImpl.java:276)
+	at com.baomidou.mybatisplus.extension.service.impl.ServiceImpl$$FastClassBySpringCGLIB$$76535273.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:684)
+	at org.jeecg.modules.sims.service.impl.SimsTeacherServiceImpl$$EnhancerBySpringCGLIB$$4490e832.page(<generated>)
+	at com.baomidou.mybatisplus.extension.service.impl.ServiceImpl$$FastClassBySpringCGLIB$$76535273.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:684)
+	at org.jeecg.modules.sims.service.impl.SimsTeacherServiceImpl$$EnhancerBySpringCGLIB$$46033bf2.page(<generated>)
+	at org.jeecg.modules.admin.controller.SimsTeacherController.queryPageList(SimsTeacherController.java:68)
+	at org.jeecg.modules.admin.controller.SimsTeacherController$$FastClassBySpringCGLIB$$8b9ab660.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at org.jeecg.modules.system.aspect.DictAspect.doAround(DictAspect.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at org.jeecg.modules.system.aspect.AutoLogAspect.around(AutoLogAspect.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at org.jeecg.modules.admin.controller.SimsTeacherController$$EnhancerBySpringCGLIB$$296c3562.queryPageList(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.github.xiaoymin.swaggerbootstrapui.filter.SecurityBasicAuthFilter.doFilter(SecurityBasicAuthFilter.java:84)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.github.xiaoymin.swaggerbootstrapui.filter.ProductionSecurityFilter.doFilter(ProductionSecurityFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:117)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-10-27 18:18:04.950 [http-nio-8080-exec-7] DEBUG o.j.m.s.mapper.SysAnnouncementMapper.selectList:143 - ==>  Preparing: SELECT id,titile,msg_content,start_time,end_time,sender,priority,msg_category,msg_type,send_status,send_time,cancel_time,del_flag,create_by,create_time,update_by,update_time,user_ids FROM sys_announcement WHERE msg_type = ? AND del_flag = ? AND send_status = ? AND end_time >= ? AND id NOT IN (?) 
+2019-10-27 18:18:04.950 [http-nio-8080-exec-6] ERROR o.jeecg.common.exception.JeecgBootExceptionHandler:57 - nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: com.baomidou.mybatisplus.core.exceptions.MybatisPlusException: Error: Method queryTotal execution error of sql : 
+ SELECT COUNT(1) FROM sims_teacher 
+
+### The error may exist in org/jeecg/modules/sims/mapper/SimsTeacherMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### Cause: com.baomidou.mybatisplus.core.exceptions.MybatisPlusException: Error: Method queryTotal execution error of sql : 
+ SELECT COUNT(1) FROM sims_teacher 
+
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: com.baomidou.mybatisplus.core.exceptions.MybatisPlusException: Error: Method queryTotal execution error of sql : 
+ SELECT COUNT(1) FROM sims_teacher 
+
+### The error may exist in org/jeecg/modules/sims/mapper/SimsTeacherMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### Cause: com.baomidou.mybatisplus.core.exceptions.MybatisPlusException: Error: Method queryTotal execution error of sql : 
+ SELECT COUNT(1) FROM sims_teacher 
+
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy138.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForIPage(MybatisMapperMethod.java:115)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:86)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:62)
+	at com.sun.proxy.$Proxy141.selectPage(Unknown Source)
+	at com.baomidou.mybatisplus.extension.service.impl.ServiceImpl.page(ServiceImpl.java:276)
+	at com.baomidou.mybatisplus.extension.service.impl.ServiceImpl$$FastClassBySpringCGLIB$$76535273.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:684)
+	at org.jeecg.modules.sims.service.impl.SimsTeacherServiceImpl$$EnhancerBySpringCGLIB$$4490e832.page(<generated>)
+	at com.baomidou.mybatisplus.extension.service.impl.ServiceImpl$$FastClassBySpringCGLIB$$76535273.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:684)
+	at org.jeecg.modules.sims.service.impl.SimsTeacherServiceImpl$$EnhancerBySpringCGLIB$$46033bf2.page(<generated>)
+	at org.jeecg.modules.admin.controller.SimsTeacherController.queryPageList(SimsTeacherController.java:68)
+	at org.jeecg.modules.admin.controller.SimsTeacherController$$FastClassBySpringCGLIB$$8b9ab660.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at org.jeecg.modules.system.aspect.DictAspect.doAround(DictAspect.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at org.jeecg.modules.system.aspect.AutoLogAspect.around(AutoLogAspect.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at org.jeecg.modules.admin.controller.SimsTeacherController$$EnhancerBySpringCGLIB$$296c3562.queryPageList(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.github.xiaoymin.swaggerbootstrapui.filter.SecurityBasicAuthFilter.doFilter(SecurityBasicAuthFilter.java:84)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.github.xiaoymin.swaggerbootstrapui.filter.ProductionSecurityFilter.doFilter(ProductionSecurityFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:117)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: com.baomidou.mybatisplus.core.exceptions.MybatisPlusException: Error: Method queryTotal execution error of sql : 
+ SELECT COUNT(1) FROM sims_teacher 
+
+### The error may exist in org/jeecg/modules/sims/mapper/SimsTeacherMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### Cause: com.baomidou.mybatisplus.core.exceptions.MybatisPlusException: Error: Method queryTotal execution error of sql : 
+ SELECT COUNT(1) FROM sims_teacher 
+
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:149)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 134 common frames omitted
+Caused by: com.baomidou.mybatisplus.core.exceptions.MybatisPlusException: Error: Method queryTotal execution error of sql : 
+ SELECT COUNT(1) FROM sims_teacher 
+
+	at com.baomidou.mybatisplus.core.toolkit.ExceptionUtils.mpe(ExceptionUtils.java:39)
+	at com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor.queryTotal(PaginationInterceptor.java:239)
+	at com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor.intercept(PaginationInterceptor.java:193)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy372.prepare(Unknown Source)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.prepareStatement(MybatisSimpleExecutor.java:94)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doQuery(MybatisSimpleExecutor.java:66)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy371.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	... 140 common frames omitted
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'jeecg-boot.sims_teacher' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:944)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3978)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3914)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2683)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2495)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1903)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2011)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_executeQuery(FilterChainImpl.java:3188)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_executeQuery(FilterEventAdapter.java:465)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_executeQuery(FilterChainImpl.java:3185)
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_executeQuery(WallFilter.java:648)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_executeQuery(FilterChainImpl.java:3185)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_executeQuery(FilterEventAdapter.java:465)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_executeQuery(FilterChainImpl.java:3185)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.executeQuery(PreparedStatementProxyImpl.java:181)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.executeQuery(DruidPooledPreparedStatement.java:227)
+	at com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor.queryTotal(PaginationInterceptor.java:224)
+	... 156 common frames omitted
+2019-10-27 18:18:04.954 [http-nio-8080-exec-7] DEBUG o.j.m.s.mapper.SysAnnouncementMapper.selectList:143 - ==> Parameters: ALL(String), 0(String), 1(String), 2038-06-21 17:54:10.0(Timestamp), 93a9060a1c20e4bf98b3f768a02c2ff9(String)
+2019-10-27 18:18:05.176 [http-nio-8080-exec-7] DEBUG o.j.m.s.mapper.SysAnnouncementMapper.selectList:143 - <==      Total: 0
+2019-10-27 18:18:05.200 [http-nio-8080-exec-7] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==>  Preparing: SELECT COUNT(1) FROM sys_announcement WHERE send_status = '1' AND del_flag = '0' AND msg_category = ? AND id IN (SELECT annt_id FROM sys_announcement_send WHERE user_id = ? AND read_flag = '0') 
+2019-10-27 18:18:05.206 [http-nio-8080-exec-7] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==> Parameters: 1(String), e9ca23d68d884d4ebb19d07889727dae(String)
+2019-10-27 18:18:05.283 [http-nio-8080-exec-7] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==>  Preparing: SELECT COUNT(1) FROM sys_announcement WHERE send_status = '1' AND del_flag = '0' AND msg_category = ? AND id IN (SELECT annt_id FROM sys_announcement_send WHERE user_id = ? AND read_flag = '0') 
+2019-10-27 18:18:05.284 [http-nio-8080-exec-7] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==> Parameters: 2(String), e9ca23d68d884d4ebb19d07889727dae(String)
+2019-10-27 18:18:05.353 [http-nio-8080-exec-7] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==>  Preparing: select * from sys_announcement where send_status = '1' and del_flag = '0' and msg_category = ? and id IN ( select annt_id from sys_announcement_send where user_id = ? and read_flag = '0') LIMIT ?,? 
+2019-10-27 18:18:05.357 [http-nio-8080-exec-7] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - ==> Parameters: 2(String), e9ca23d68d884d4ebb19d07889727dae(String), 0(Long), 5(Long)
+2019-10-27 18:18:05.453 [http-nio-8080-exec-7] DEBUG o.j.m.s.m.S.querySysCementListByUserId:143 - <==      Total: 1
+2019-10-27 18:18:13.193 [http-nio-8080-exec-8] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzIxNjEsInVzZXJuYW1lIjoiYWRtaW4ifQ.Or37TNWG5XoVW8TfuQFyML0SG07meF1K23_Kq0_qoNA
+2019-10-27 18:18:13.505 [http-nio-8080-exec-8] ERROR druid.sql.Statement:149 - {conn-10004, pstmt-20016} execute error. SELECT COUNT(1) FROM sims_teacher
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'jeecg-boot.sims_teacher' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:944)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3978)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3914)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2683)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2495)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1903)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2011)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_executeQuery(FilterChainImpl.java:3188)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_executeQuery(FilterEventAdapter.java:465)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_executeQuery(FilterChainImpl.java:3185)
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_executeQuery(WallFilter.java:648)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_executeQuery(FilterChainImpl.java:3185)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_executeQuery(FilterEventAdapter.java:465)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_executeQuery(FilterChainImpl.java:3185)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.executeQuery(PreparedStatementProxyImpl.java:181)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.executeQuery(DruidPooledPreparedStatement.java:227)
+	at com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor.queryTotal(PaginationInterceptor.java:224)
+	at com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor.intercept(PaginationInterceptor.java:193)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy372.prepare(Unknown Source)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.prepareStatement(MybatisSimpleExecutor.java:94)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doQuery(MybatisSimpleExecutor.java:66)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy371.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy138.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForIPage(MybatisMapperMethod.java:115)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:86)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:62)
+	at com.sun.proxy.$Proxy141.selectPage(Unknown Source)
+	at com.baomidou.mybatisplus.extension.service.impl.ServiceImpl.page(ServiceImpl.java:276)
+	at com.baomidou.mybatisplus.extension.service.impl.ServiceImpl$$FastClassBySpringCGLIB$$76535273.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:684)
+	at org.jeecg.modules.sims.service.impl.SimsTeacherServiceImpl$$EnhancerBySpringCGLIB$$4490e832.page(<generated>)
+	at com.baomidou.mybatisplus.extension.service.impl.ServiceImpl$$FastClassBySpringCGLIB$$76535273.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:684)
+	at org.jeecg.modules.sims.service.impl.SimsTeacherServiceImpl$$EnhancerBySpringCGLIB$$46033bf2.page(<generated>)
+	at org.jeecg.modules.admin.controller.SimsTeacherController.queryPageList(SimsTeacherController.java:68)
+	at org.jeecg.modules.admin.controller.SimsTeacherController$$FastClassBySpringCGLIB$$8b9ab660.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at org.jeecg.modules.system.aspect.DictAspect.doAround(DictAspect.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at org.jeecg.modules.system.aspect.AutoLogAspect.around(AutoLogAspect.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at org.jeecg.modules.admin.controller.SimsTeacherController$$EnhancerBySpringCGLIB$$296c3562.queryPageList(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.github.xiaoymin.swaggerbootstrapui.filter.SecurityBasicAuthFilter.doFilter(SecurityBasicAuthFilter.java:84)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.github.xiaoymin.swaggerbootstrapui.filter.ProductionSecurityFilter.doFilter(ProductionSecurityFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:117)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-10-27 18:18:13.513 [http-nio-8080-exec-8] ERROR o.jeecg.common.exception.JeecgBootExceptionHandler:57 - nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: com.baomidou.mybatisplus.core.exceptions.MybatisPlusException: Error: Method queryTotal execution error of sql : 
+ SELECT COUNT(1) FROM sims_teacher 
+
+### The error may exist in org/jeecg/modules/sims/mapper/SimsTeacherMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### Cause: com.baomidou.mybatisplus.core.exceptions.MybatisPlusException: Error: Method queryTotal execution error of sql : 
+ SELECT COUNT(1) FROM sims_teacher 
+
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: com.baomidou.mybatisplus.core.exceptions.MybatisPlusException: Error: Method queryTotal execution error of sql : 
+ SELECT COUNT(1) FROM sims_teacher 
+
+### The error may exist in org/jeecg/modules/sims/mapper/SimsTeacherMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### Cause: com.baomidou.mybatisplus.core.exceptions.MybatisPlusException: Error: Method queryTotal execution error of sql : 
+ SELECT COUNT(1) FROM sims_teacher 
+
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy138.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForIPage(MybatisMapperMethod.java:115)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:86)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:62)
+	at com.sun.proxy.$Proxy141.selectPage(Unknown Source)
+	at com.baomidou.mybatisplus.extension.service.impl.ServiceImpl.page(ServiceImpl.java:276)
+	at com.baomidou.mybatisplus.extension.service.impl.ServiceImpl$$FastClassBySpringCGLIB$$76535273.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:684)
+	at org.jeecg.modules.sims.service.impl.SimsTeacherServiceImpl$$EnhancerBySpringCGLIB$$4490e832.page(<generated>)
+	at com.baomidou.mybatisplus.extension.service.impl.ServiceImpl$$FastClassBySpringCGLIB$$76535273.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:684)
+	at org.jeecg.modules.sims.service.impl.SimsTeacherServiceImpl$$EnhancerBySpringCGLIB$$46033bf2.page(<generated>)
+	at org.jeecg.modules.admin.controller.SimsTeacherController.queryPageList(SimsTeacherController.java:68)
+	at org.jeecg.modules.admin.controller.SimsTeacherController$$FastClassBySpringCGLIB$$8b9ab660.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at org.jeecg.modules.system.aspect.DictAspect.doAround(DictAspect.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at org.jeecg.modules.system.aspect.AutoLogAspect.around(AutoLogAspect.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at org.jeecg.modules.admin.controller.SimsTeacherController$$EnhancerBySpringCGLIB$$296c3562.queryPageList(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.github.xiaoymin.swaggerbootstrapui.filter.SecurityBasicAuthFilter.doFilter(SecurityBasicAuthFilter.java:84)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.github.xiaoymin.swaggerbootstrapui.filter.ProductionSecurityFilter.doFilter(ProductionSecurityFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:117)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: com.baomidou.mybatisplus.core.exceptions.MybatisPlusException: Error: Method queryTotal execution error of sql : 
+ SELECT COUNT(1) FROM sims_teacher 
+
+### The error may exist in org/jeecg/modules/sims/mapper/SimsTeacherMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### Cause: com.baomidou.mybatisplus.core.exceptions.MybatisPlusException: Error: Method queryTotal execution error of sql : 
+ SELECT COUNT(1) FROM sims_teacher 
+
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:149)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 134 common frames omitted
+Caused by: com.baomidou.mybatisplus.core.exceptions.MybatisPlusException: Error: Method queryTotal execution error of sql : 
+ SELECT COUNT(1) FROM sims_teacher 
+
+	at com.baomidou.mybatisplus.core.toolkit.ExceptionUtils.mpe(ExceptionUtils.java:39)
+	at com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor.queryTotal(PaginationInterceptor.java:239)
+	at com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor.intercept(PaginationInterceptor.java:193)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy372.prepare(Unknown Source)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.prepareStatement(MybatisSimpleExecutor.java:94)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doQuery(MybatisSimpleExecutor.java:66)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy371.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	... 140 common frames omitted
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'jeecg-boot.sims_teacher' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:944)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3978)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3914)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2683)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2495)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1903)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2011)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_executeQuery(FilterChainImpl.java:3188)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_executeQuery(FilterEventAdapter.java:465)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_executeQuery(FilterChainImpl.java:3185)
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_executeQuery(WallFilter.java:648)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_executeQuery(FilterChainImpl.java:3185)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_executeQuery(FilterEventAdapter.java:465)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_executeQuery(FilterChainImpl.java:3185)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.executeQuery(PreparedStatementProxyImpl.java:181)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.executeQuery(DruidPooledPreparedStatement.java:227)
+	at com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor.queryTotal(PaginationInterceptor.java:224)
+	... 156 common frames omitted
