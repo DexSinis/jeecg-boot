@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df54323c-fc00-4ad7-960d-72d448df49b7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/views/modules/sims/SimsLessonList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/views/modules/sims/SimsStudentList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/views/modules/sims/SimsTeacherList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/views/modules/sims/modules/SimsLessonModal.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/views/modules/sims/modules/SimsLessonModal__Style#Drawer.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/views/modules/sims/modules/SimsStudentModal.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/views/modules/sims/modules/SimsStudentModal__Style#Drawer.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/views/modules/sims/modules/SimsTeacherModal.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/views/modules/sims/modules/SimsTeacherModal__Style#Drawer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/config/InterceptorConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-system/src/main/resources/application-pre.yml" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-system/src/main/resources/application-pre.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../logs/error-log.html" beforeDir="false" afterPath="$PROJECT_DIR$/../logs/error-log.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../logs/jeecgboot.2019-10-27.html" beforeDir="false" afterPath="$PROJECT_DIR$/../logs/jeecgboot.2019-10-27.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../logs/jeecgboot.2019-10-27.log" beforeDir="false" afterPath="$PROJECT_DIR$/../logs/jeecgboot.2019-10-27.log" afterDir="false" />
@@ -32,79 +25,97 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jeecg-boot-mybatis/src/main/java/org/jeecg/modules/system/mapper/SysPermissionMapper.java">
+        <entry file="file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/system/controller/SysDepartController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+            <state relative-caret-position="254">
+              <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jeecg-boot-mybatis/src/main/resources/mapper/system/SysPermissionMapper.xml">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.1.5.RELEASE/spring-aop-5.1.5.RELEASE-sources.jar!/org/springframework/aop/framework/CglibAopProxy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+            <state relative-caret-position="79">
+              <caret line="690" selection-start-line="690" selection-end-line="690" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jeecg-boot-service/src/main/java/org/jeecg/modules/vip/service/impl/ConsulterVipServiceImpl.java">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.1.5.RELEASE/spring-aop-5.1.5.RELEASE-sources.jar!/org/springframework/aop/target/SingletonTargetSource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2220">
-              <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+            <state relative-caret-position="133">
+              <caret line="64" selection-start-line="64" selection-end-line="64" />
+              <folding>
+                <element signature="e#2098#2099#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/sims/controller/PrSimsScoreController.java">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.1.5.RELEASE/spring-aop-5.1.5.RELEASE-sources.jar!/org/springframework/aop/framework/AdvisedSupport.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+            <state relative-caret-position="133">
+              <caret line="138" selection-start-line="138" selection-end-line="138" />
+              <folding>
+                <element signature="e#4575#4576#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/config/ShiroConfig.java">
+        <entry file="file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/system/service/ISysDepartService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-401">
-              <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+            <state relative-caret-position="142">
+              <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/controller/SimsLessonController.java">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/jeecg-boot-mybatis/src/main/java/org/jeecg/modules/system/model/SysDepartTreeModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2590">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/controller/SimsTeacherController.java">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/system/service/impl/SysDepartServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="193">
+              <caret line="57" column="46" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="46" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/controller/SimsStudentController.java">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jeecg-boot-common/src/main/java/org/jeecg/common/util/FileTypeUtils.java">
+        <entry file="file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/resources/application-pre.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+            <state relative-caret-position="308">
+              <caret line="133" column="57" selection-start-line="133" selection-start-column="57" selection-end-line="133" selection-end-column="57" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jeecg-boot-common/src/main/java/org/jeecg/common/util/DateAndLocalDateUtil.java">
+        <entry file="file://$PROJECT_DIR$/jeecg-boot-mybatis/src/main/java/org/jeecg/modules/system/entity/SysDepart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="-1239">
+              <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jeecg-boot-base-common/src/main/java/org/jeecg/common/constant/CommonConstant.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -122,6 +133,12 @@
       <find>2.2.2</find>
       <find>generateThumbnail2Directory</find>
       <find>mapper</find>
+      <find>{&quot;success&quot;:true,&quot;message&quot;:&quot;操作成功！&quot;,&quot;code&quot;:0,&quot;result&quot;:[{&quot;key&quot;:&quot;6d35e179cd814e3299bd588ea7daed3f&quot;,&quot;value&quot;:&quot;6d35e179cd814e3299bd588ea7daed3f&quot;,&quot;title&quot;:&quot;卓尔互动公司&quot;,&quot;isLeaf&quot;:false,&quot;id&quot;:&quot;6d35e179cd814e3299bd588ea7daed3f&quot;,&quot;parentId&quot;:&quot;&quot;,&quot;departName&quot;:&quot;卓尔互动公司&quot;,&quot;departNameEn&quot;:null,&quot;departNameAbbr&quot;:null,&quot;departOrder&quot;:0,&quot;description&quot;:null,&quot;orgCategory&quot;:&quot;1&quot;,&quot;orgType&quot;:&quot;1&quot;,&quot;orgCode&quot;:&quot;A02&quot;,&quot;mobile&quot;:null,&quot;fax&quot;:null,&quot;address&quot;:null,&quot;memo&quot;:null,&quot;status&quot;:null,&quot;delFlag&quot;:&quot;0&quot;,&quot;createBy&quot;:&quot;admin&quot;,&quot;createTime&quot;:&quot;2019-02-26 16:36:39&quot;,&quot;updateBy&quot;:&quot;admin&quot;,&quot;updateTime&quot;:&quot;2019-03-22 16:47:25&quot;,&quot;children&quot;:[{&quot;key&quot;:&quot;5159cde220114246b045e574adceafe9&quot;,&quot;value&quot;:&quot;5159cde220114246b045e574adceafe9&quot;,&quot;title&quot;:&quot;研发部&quot;,&quot;isLeaf&quot;:true,&quot;id&quot;:&quot;5159cde220114246b045e574adceafe9&quot;,&quot;parentId&quot;:&quot;6d35e179cd814e3299bd588ea7daed3f&quot;,&quot;departName&quot;:&quot;研发部&quot;,&quot;departNameEn&quot;:null,&quot;departNameAbbr&quot;:null,&quot;departOrder&quot;:0,&quot;description&quot;:null,&quot;orgCategory&quot;:&quot;1&quot;,&quot;orgType&quot;:&quot;2&quot;,&quot;orgCode&quot;:&quot;A02A02&quot;,&quot;mobile&quot;:null,&quot;fax&quot;:null,&quot;address&quot;:null,&quot;memo&quot;:null,&quot;status&quot;:null,&quot;delFlag&quot;:&quot;0&quot;,&quot;createBy&quot;:&quot;admin&quot;,&quot;createTime&quot;:&quot;2019-02-26 16:44:38&quot;,&quot;updateBy&quot;:&quot;admin&quot;,&quot;updateTime&quot;:&quot;2019-03-07 09:36:53&quot;,&quot;children&quot;:null},{&quot;key&quot;:&quot;a7d7e77e06c84325a40932163adcdaa6&quot;,&quot;value&quot;:&quot;a7d7e77e06c84325a40932163adcdaa6&quot;,&quot;title&quot;:&quot;财务部&quot;,&quot;isLeaf&quot;:true,&quot;id&quot;:&quot;a7d7e77e06c84325a40932163adcdaa6&quot;,&quot;parentId&quot;:&quot;6d35e179cd814e3299bd588ea7daed3f&quot;,&quot;departName&quot;:&quot;财务部&quot;,&quot;departNameEn&quot;:null,&quot;departNameAbbr&quot;:null,&quot;departOrder&quot;:0,&quot;description&quot;:null,&quot;orgCategory&quot;:&quot;1&quot;,&quot;orgType&quot;:&quot;2&quot;,&quot;orgCode&quot;:&quot;A02A01&quot;,&quot;mobile&quot;:null,&quot;fax&quot;:null,&quot;address&quot;:null,&quot;memo&quot;:null,&quot;status&quot;:null,&quot;delFlag&quot;:&quot;0&quot;,&quot;createBy&quot;:&quot;admin&quot;,&quot;createTime&quot;:&quot;2019-02-26 16:36:47&quot;,&quot;updateBy&quot;:&quot;admin&quot;,&quot;updateTime&quot;:&quot;2019-02-26 16:37:25&quot;,&quot;children&quot;:null}]},{&quot;key&quot;:&quot;c6d7cb4deeac411cb3384b1b31278596&quot;,&quot;value&quot;:&quot;c6d7cb4deeac411cb3384b1b31278596&quot;,&quot;title&quot;:&quot;北京国炬公司&quot;,&quot;isLeaf&quot;:false,&quot;id&quot;:&quot;c6d7cb4deeac411cb3384b1b31278596&quot;,&quot;parentId&quot;:&quot;&quot;,&quot;departName&quot;:&quot;北京国炬公司&quot;,&quot;departNameEn&quot;:null,&quot;departNameAbbr&quot;:null,&quot;departOrder&quot;:0,&quot;description&quot;:null,&quot;orgCategory&quot;:&quot;1&quot;,&quot;orgType&quot;:&quot;1&quot;,&quot;orgCode&quot;:&quot;A01&quot;,&quot;mobile&quot;:null,&quot;fax&quot;:null,&quot;address&quot;:null,&quot;memo&quot;:null,&quot;status&quot;:null,&quot;delFlag&quot;:&quot;0&quot;,&quot;createBy&quot;:&quot;admin&quot;,&quot;createTime&quot;:&quot;2019-02-11 14:21:51&quot;,&quot;updateBy&quot;:&quot;admin&quot;,&quot;updateTime&quot;:&quot;2019-03-22 16:47:19&quot;,&quot;children&quot;:[{&quot;key&quot;:&quot;4f1765520d6346f9bd9c79e2479e5b12&quot;,&quot;value&quot;:&quot;4f1765520d6346f9bd9c79e2479e5b12&quot;,&quot;title&quot;:&quot;市场部&quot;,&quot;isLeaf&quot;:true,&quot;id&quot;:&quot;4f1765520d6346f9bd9c79e2479e5b12&quot;,&quot;parentId&quot;:&quot;c6d7cb4deeac411cb3384b1b31278596&quot;,&quot;departName&quot;:&quot;市场部&quot;,&quot;departNameEn&quot;:null,&quot;departNameAbbr&quot;:null,&quot;departOrder&quot;:0,&quot;description&quot;:null,&quot;orgCategory&quot;:&quot;1&quot;,&quot;orgType&quot;:&quot;2&quot;,&quot;orgCode&quot;:&quot;A01A03&quot;,&quot;mobile&quot;:null,&quot;fax&quot;:null,&quot;address&quot;:null,&quot;memo&quot;:null,&quot;status&quot;:null,&quot;delFlag&quot;:&quot;0&quot;,&quot;createBy&quot;:&quot;admin&quot;,&quot;createTime&quot;:&quot;2019-02-20 17:15:34&quot;,&quot;updateBy&quot;:&quot;admin&quot;,&quot;updateTime&quot;:&quot;2019-02-26 16:36:18&quot;,&quot;children&quot;:null},{&quot;key&quot;:&quot;57197590443c44f083d42ae24ef26a2c&quot;,&quot;value&quot;:&quot;57197590443c44f083d42ae24ef26a2c&quot;,&quot;title&quot;:&quot;研发部&quot;,&quot;isLeaf&quot;:true,&quot;id&quot;:&quot;57197590443c44f083d42ae24ef26a2c&quot;,&quot;parentId&quot;:&quot;c6d7cb4deeac411cb3384b1b31278596&quot;,&quot;departName&quot;:&quot;研发部&quot;,&quot;departNameEn&quot;:null,&quot;departNameAbbr&quot;:null,&quot;departOrder&quot;:0,&quot;description&quot;:null,&quot;orgCategory&quot;:&quot;1&quot;,&quot;orgType&quot;:&quot;2&quot;,&quot;orgCode&quot;:&quot;A01A05&quot;,&quot;mobile&quot;:null,&quot;fax&quot;:null,&quot;address&quot;:null,&quot;memo&quot;:null,&quot;status&quot;:null,&quot;delFlag&quot;:&quot;0&quot;,&quot;createBy&quot;:&quot;admin&quot;,&quot;createTime&quot;:&quot;2019-02-21 16:14:41&quot;,&quot;updateBy&quot;:&quot;admin&quot;,&quot;updateTime&quot;:&quot;2019-03-27 19:05:49&quot;,&quot;children&quot;:null},{&quot;key&quot;:&quot;67fc001af12a4f9b8458005d3f19934a&quot;,&quot;value&quot;:&quot;67fc001af12a4f9b8458005d3f19934a&quot;,&quot;title&quot;:&quot;财务部&quot;,&quot;isLeaf&quot;:true,&quot;id&quot;:&quot;67fc001af12a4f9b8458005d3f19934a&quot;,&quot;parentId&quot;:&quot;c6d7cb4deeac411cb3384b1b31278596&quot;,&quot;departName&quot;:&quot;财务部&quot;,&quot;departNameEn&quot;:null,&quot;departNameAbbr&quot;:null,&quot;departOrder&quot;:0,&quot;description&quot;:null,&quot;orgCategory&quot;:&quot;1&quot;,&quot;orgType&quot;:&quot;2&quot;,&quot;orgCode&quot;:&quot;A01A04&quot;,&quot;mobile&quot;:null,&quot;fax&quot;:null,&quot;address&quot;:null,&quot;memo&quot;:null,&quot;status&quot;:null,&quot;delFlag&quot;:&quot;0&quot;,&quot;createBy&quot;:&quot;admin&quot;,&quot;createTime&quot;:&quot;2019-02-21 16:14:35&quot;,&quot;updateBy&quot;:&quot;admin&quot;,&quot;updateTime&quot;:&quot;2019-02-25 12:49:41&quot;,&quot;children&quot;:null}]}],&quot;timestamp&quot;:1572173415313}</find>
+      <find>`petrus`.</find>
+      <find>/queryTreeList</find>
+      <find>queryIdTree</find>
+      <find>queryDepartIdTreeList</find>
+      <find>mybatis-plus</find>
     </findStrings>
     <replaceStrings>
       <replace>jeecg-boot-parent</replace>
@@ -158,6 +175,10 @@
         <option value="$PROJECT_DIR$/jeecg-boot-common/src/main/java/org/jeecg/common/FileTypeUtils.java" />
         <option value="$PROJECT_DIR$/jeecg-boot-common/src/main/java/org/jeecg/common/util/FileTypeUtils.java" />
         <option value="$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/controller/SimsStudentController.java" />
+        <option value="$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/admin/controller/SimsStudentController.java" />
+        <option value="$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/config/InterceptorConfig.java" />
+        <option value="$PROJECT_DIR$/db/petrus/b_dev_2.1.0.sql" />
+        <option value="$PROJECT_DIR$/jeecg-boot-module-system/src/main/resources/application-pre.yml" />
       </list>
     </option>
   </component>
@@ -185,7 +206,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="44" />
+    <option name="x" value="64" />
     <option name="y" value="31" />
     <option name="width" value="1489" />
     <option name="height" value="831" />
@@ -208,25 +229,41 @@
             <path>
               <item name="jeecg-boot-parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="jeecg-boot" type="462c0819:PsiDirectoryNode" />
-              <item name="jeecg-boot-module-system" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jeecg-boot-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jeecg-boot" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+              <item name="petrus" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jeecg-boot-parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="jeecg-boot" type="462c0819:PsiDirectoryNode" />
               <item name="jeecg-boot-module-system" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jeecg-boot-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jeecg-boot" type="462c0819:PsiDirectoryNode" />
+              <item name="jeecg-boot-service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jeecg-boot-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jeecg-boot" type="462c0819:PsiDirectoryNode" />
+              <item name="jeecg-boot-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jeecg-boot-parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="jeecg-boot" type="462c0819:PsiDirectoryNode" />
-              <item name="jeecg-boot-module-system" type="462c0819:PsiDirectoryNode" />
+              <item name="jeecg-boot-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jeecg-boot-parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="jeecg-boot" type="462c0819:PsiDirectoryNode" />
-              <item name="jeecg-boot-module-system" type="462c0819:PsiDirectoryNode" />
+              <item name="jeecg-boot-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -234,32 +271,11 @@
             <path>
               <item name="jeecg-boot-parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="jeecg-boot" type="462c0819:PsiDirectoryNode" />
-              <item name="jeecg-boot-module-system" type="462c0819:PsiDirectoryNode" />
+              <item name="jeecg-boot-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jeecg" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jeecg-boot-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jeecg-boot" type="462c0819:PsiDirectoryNode" />
-              <item name="jeecg-boot-module-system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jeecg" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jeecg-boot-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jeecg-boot" type="462c0819:PsiDirectoryNode" />
-              <item name="jeecg-boot-module-system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jeecg" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -275,7 +291,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572171463796" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572174979434" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -284,10 +300,14 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/db/petrus" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.jeecg" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.jeecg.config" />
       <recent name="org.jeecg.common" />
       <recent name="org.jeecg.common.util" />
       <recent name="org.jeecg.constants" />
@@ -377,15 +397,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1572160927075</updated>
-      <workItem from="1572160929885" duration="6585000" />
+      <workItem from="1572160929885" duration="9311000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6585000" />
+    <option name="totallyTimeSpent" value="9311000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="44" y="31" width="1489" height="831" extended-state="0" />
+    <frame x="64" y="31" width="1489" height="831" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" />
       <window_info id="Image Layers" />
@@ -393,7 +414,7 @@
       <window_info id="UI Designer" />
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Web" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27612457" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30449826" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Spring" />
       <window_info anchor="bottom" id="Terminal" weight="0.4607046" />
@@ -405,8 +426,8 @@
       <window_info anchor="bottom" id="Version Control" weight="0.3292683" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.5501355" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.2682927" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.48644987" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.1598916" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -425,83 +446,85 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/system/service/impl/SysDepartServiceImpl.java</url>
+          <line>43</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/system/service/impl/SysDepartServiceImpl.java</url>
+          <line>42</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/system/controller/SysDepartController.java</url>
+          <line>67</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/system/service/impl/SysDepartServiceImpl.java</url>
+          <line>44</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/system/service/impl/SysDepartServiceImpl.java</url>
+          <line>45</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/system/service/impl/SysDepartServiceImpl.java</url>
+          <line>47</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/system/util/FindsDepartsChildrenUtil.java</url>
+          <line>37</line>
+          <properties />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/system/service/impl/SysDepartServiceImpl.java</url>
+          <line>54</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/system/service/impl/SysDepartServiceImpl.java</url>
+          <line>55</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/system/controller/SysDepartController.java</url>
+          <line>208</line>
+          <properties />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/system/controller/SysDepartController.java</url>
+          <line>210</line>
+          <properties />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/system/controller/SysDepartController.java</url>
+          <line>75</line>
+          <properties />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/jeecg-boot-common/src/main/java/org/jeecg/common/constant/CacheConstant.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jeecg-boot-common/src/main/java/org/jeecg/common/constant/CommonConstant.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jeecg-boot-common/src/main/java/org/jeecg/common/constant/CommonSendStatus.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jeecg-boot-common/src/main/java/org/jeecg/common/constant/PetrusConstant.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jeecg-boot-common/src/main/java/org/jeecg/constants/PetrusConstant.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jeecg-boot-common/src/main/java/org/jeecg/common/util/jwt/SimsJWTResult.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jeecg-boot-common/src/main/java/org/jeecg/common/util/jwt/SimsJWTUtil.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jeecg-boot-common/src/main/java/org/jeecg/common/util/upload/FileUtils.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jeecg-boot-common/src/main/java/org/jeecg/common/util/upload/FileNameUtils.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jeecg-boot-common/src/main/java/org/jeecg/common/util/upload/UUIDUtils.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/sims/controller/PrSimsAuthTeacherController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="82" column="11" selection-start-line="82" selection-start-column="11" selection-end-line="82" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2757#2770#0" expanded="true" />
-            <element signature="e#5615#5628#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jeecg-boot-base-common/src/main/java/org/jeecg/common/api/vo/Result.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/sims/controller/PrSimsAuthStudentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="124" selection-start-line="124" selection-end-line="124" />
-          <folding>
-            <element signature="e#2757#2770#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jeecg-boot-common/src/main/java/org/jeecg/util/response/ServiceResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jeecg-boot-common/src/main/java/org/jeecg/util/file/ImageUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="43" column="7" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jeecg-boot-common/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
@@ -543,16 +566,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/aop/AuthenticationInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -723,14 +736,135 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/controller/SimsLessonController.java">
+    <entry file="file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/admin/controller/SimsTeacherController.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/controller/SimsTeacherController.java">
+    <entry file="file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/admin/controller/SimsStudentController.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/controller/SimsStudentController.java">
+    <entry file="file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/admin/controller/SimsLessonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/aop/AuthenticationInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="19" column="38" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/petrus/b_dev_2.1.0">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/config/InterceptorConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="20" column="69" selection-start-line="20" selection-start-column="69" selection-end-line="20" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/petrus/b_dev_2.1.0.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="8" column="52" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/system/controller/SysRoleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="379" column="40" lean-forward="true" selection-start-line="379" selection-start-column="40" selection-end-line="379" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/system/util/FindsDepartsChildrenUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="34" column="43" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeecg-boot-mybatis/src/main/java/org/jeecg/modules/system/model/SysDepartTreeModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2590">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.1.5.RELEASE/spring-aop-5.1.5.RELEASE-sources.jar!/org/springframework/aop/framework/AdvisedSupport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="138" selection-start-line="138" selection-end-line="138" />
+          <folding>
+            <element signature="e#4575#4576#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.1.5.RELEASE/spring-aop-5.1.5.RELEASE-sources.jar!/org/springframework/aop/target/SingletonTargetSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+          <folding>
+            <element signature="e#2098#2099#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.1.5.RELEASE/spring-aop-5.1.5.RELEASE-sources.jar!/org/springframework/aop/framework/CglibAopProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="690" selection-start-line="690" selection-end-line="690" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/system/service/ISysDepartService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeecg-boot-base-common/src/main/java/org/jeecg/common/constant/CommonConstant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeecg-boot-mybatis/src/main/java/org/jeecg/modules/system/entity/SysDepart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1239">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/system/service/impl/SysDepartServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="57" column="46" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/system/controller/SysDepartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeecg-boot-module-system/src/main/resources/application-pre.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="133" column="57" selection-start-line="133" selection-start-column="57" selection-end-line="133" selection-end-column="57" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
