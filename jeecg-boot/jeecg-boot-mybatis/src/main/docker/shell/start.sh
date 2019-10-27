@@ -1,0 +1,1 @@
+nohup java -jar yewyw-interface.jar --spring.profiles.active=dev &

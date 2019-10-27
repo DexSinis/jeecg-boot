@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.sims.mapper.SimsRescourceMapper">
+
+    <select id="querySimsRescourceByParams" resultType="org.jeecg.modules.sims.entity.SimsRescource">
+
+        select * from sims_rescource rescource
+        where 1=1
+        <if test="simsRescource.id != null and simsRescource.id != ''">
+            and rescource.ID = #{simsRescource.id}
+        </if>
+        <if test="simsRescource.source != null and simsRescource.source != ''">
+            and rescource.SOURCE = #{simsRescource.source}
+        </if>
+    </select>
+</mapper>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.vip.mapper.ConsulterVipMapper">
+    <select id="queryConsulterVipBenefit" resultType="org.jeecg.modules.vip.vo.ConsulterVIPBenefitVo">
+        <![CDATA[
+            SELECT
+                a.vip_id,
+                a.busi_trade_no,
+                a.pkg_inst_id,
+                a.pricing_pkg_id,
+                a.create_time,
+                a.eff_time,
+                a.exp_time,
+                b.service_id,
+                (b.free_times-b.used_times) as free_times,
+                b.discount_rate,
+                b.discount_limit_times,
+                ifnull( b.used_times,0) AS used_times,
+                e.discount_desc,
+                b.is_limit
+            FROM
+                consulter_vip c
+                left join  consulter_pricing_package a on c.vip_id=a.vip_id
+                left join  consulter_pricing_pkg_res b on a.pkg_inst_id = b.pkg_inst_id
+                left join  consulter d on c.vip_phone = d.phone
+                left join  tp_pricing_pkg_res e on e.pricing_pkg_id = b.pricing_pkg_id and e.service_id= b.service_id
+            WHERE
+                d.id=#{consulterId}
+                AND a.eff_time <= now() and a.exp_time > now() order by e.sort_no desc,a.exp_time asc;
+      ]]>
+    </select>
+    <select id="queryConsulterVipBenefitByPhone" resultType="org.jeecg.modules.vip.vo.ConsulterVIPBenefitVo">
+        <![CDATA[
+            SELECT
+                a.vip_id,
+                a.busi_trade_no,
+                a.pkg_inst_id,
+                a.pricing_pkg_id,
+                a.create_time,
+                a.eff_time,
+                a.exp_time,
+                b.service_id,
+                 (b.free_times-b.used_times) as free_times,
+                b.discount_rate,
+                b.discount_limit_times,
+                ifnull( b.used_times,0) AS used_times,
+                e.discount_desc,
+                b.is_limit
+            FROM
+                consulter_vip c
+                left join  consulter_pricing_package a on c.vip_id=a.vip_id
+                left join  consulter_pricing_pkg_res b on a.pkg_inst_id = b.pkg_inst_id
+                left join  tp_pricing_pkg_res e on e.pricing_pkg_id = b.pricing_pkg_id and e.service_id= b.service_id
+            WHERE
+                c.vip_phone=#{mobilePhone}
+                 AND a.eff_time <= now() and a.exp_time > now() order by e.sort_no desc;
+         ]]>
+    </select>
+
+    <select id="queryVip" resultType="java.util.Map">
+        <![CDATA[
+        SELECT  cv.* FROM  consulter AS c
+        INNER JOIN consulter_vip AS cv ON c.phone =cv.vip_phone and cv.exp_time >now() and cv.eff_time<=now() and status=1
+        where c.id =#{consulterId} limit 1
+            ]]>
+    </select>
+
+    <select id="queryVipInfo" resultType="org.jeecg.modules.vip.vo.UserVipInfo">
+        <![CDATA[
+     SELECT
+     tpp.pricing_pkg_id,
+    tpp.pricing_pkg_name,tpp.pricing_desc, c.nickname AS nick_name,
+	c.headurl AS  head_url,
+	(select baby_url from baby where  consulterid=c.id  and birthstatus != 3
+	and status=1 order by create_time desc   limit 1
+        ) AS baby_head_url,
+	cv.eff_time AS vip_eff_date,
+	DATE_FORMAT(cv.exp_time, '%Y-%m-%d') AS vip_exp_date, -- vip过期时间
+	DATE_FORMAT(ppay.exp_time, '%Y-%m-%d') AS exp_date -- 具体包的过期时间
+   FROM
+	consulter AS c
+   INNER JOIN consulter_vip AS cv ON c.phone = cv.vip_phone
+ AND cv.exp_time > now()
+  AND STATUS = 1
+  INNER JOIN consulter_pricing_package AS ppay ON ppay.vip_id = cv.vip_id
+ INNER JOIN tp_pricing_package AS tpp ON tpp.PRICING_PKG_ID = ppay.pricing_pkg_id
+  WHERE
+	c.id =#{consulterId}
+        AND ppay.eff_time <= now() and ppay.exp_time > now()
+  ORDER BY
+	ppay.exp_time asc
+	      ]]>
+
+    </select>
+</mapper>

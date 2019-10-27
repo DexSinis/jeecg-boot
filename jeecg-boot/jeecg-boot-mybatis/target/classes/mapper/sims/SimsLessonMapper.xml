@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.sims.mapper.SimsLessonMapper">
+
+
+
+    <select id="querySimsLessonByParamsAdmin" resultType="org.jeecg.modules.sims.vo.SimsLessonVo">
+        select student.ID as STUDENT_ID,student.AVATAR as STUDENT_AVATAR,student.name as STUDENT_NAME,
+        teacher.ID as TEACHER_ID,teacher.AVATAR as TEACHER_AVATAR,teacher.name as TEACHER_NAME, lesson.* from sims_lesson lesson
+        left join sims_student student on lesson.STUDENT_ID = student.id
+        left join sims_teacher teacher on lesson.TEACHER_ID = teacher.id
+        where 1=1
+        <if test="simsLesson.id != null and simsLesson.id != ''">
+            and lesson.ID = #{simsLesson.id}
+        </if>
+        <if test="simsLesson.studentId != null and simsLesson.studentId != ''">
+            and lesson.STUDENT_ID = #{simsLesson.studentId}
+        </if>
+        <if test="simsLesson.teacherId != null and simsLesson.teacherId != ''">
+            and lesson.TEACHER_ID = #{simsLesson.teacherId}
+        </if>
+        <if test="simsLesson.name != null and simsLesson.name != ''">
+            and lesson.name = #{simsLesson.name}
+        </if>
+        order by lesson.LESSON_STATUS asc
+    </select>
+
+    <select id="querySimsLessonByParams" resultType="org.jeecg.modules.sims.vo.SimsLessonVo">
+    select student.ID as STUDENT_ID,student.AVATAR as STUDENT_AVATAR,student.name as STUDENT_NAME,
+    teacher.ID as TEACHER_ID,teacher.AVATAR as TEACHER_AVATAR,teacher.name as TEACHER_NAME, lesson.* from sims_lesson lesson
+    left join sims_student student on lesson.STUDENT_ID = student.id
+    left join sims_teacher teacher on lesson.TEACHER_ID = teacher.id
+    where 1=1
+    and (
+        ( lesson.LESSON_STATUS  in (0,1,2) and lesson.LESSON_END &gt; now())
+        or
+        ( lesson.LESSON_STATUS  in (3))
+        )
+
+    <if test="simsLesson.reserve != null and simsLesson.reserve ==0 ">
+        and lesson.RESERVE = #{simsLesson.reserve} and lesson.LESSON_START &gt; now()
+    </if>
+
+    <if test="simsLesson.reserve != null and simsLesson.reserve ==1 ">
+        and lesson.RESERVE = #{simsLesson.reserve}
+    </if>
+
+    <if test="simsLesson.id != null and simsLesson.id != ''">
+		and lesson.ID = #{simsLesson.id}
+	</if>
+    <if test="simsLesson.studentId != null and simsLesson.studentId != ''">
+        and lesson.STUDENT_ID = #{simsLesson.studentId}
+    </if>
+    <if test="simsLesson.teacherId != null and simsLesson.teacherId != ''">
+        and lesson.TEACHER_ID = #{simsLesson.teacherId}
+    </if>
+
+    order by lesson.LESSON_STATUS asc,lesson.LESSON_START asc
+    </select>
+</mapper>

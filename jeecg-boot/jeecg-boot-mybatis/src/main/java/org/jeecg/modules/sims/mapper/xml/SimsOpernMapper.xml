@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.sims.mapper.SimsOpernMapper">
+
+    <select id="simsRescourceOpernStudentList" resultType="org.jeecg.modules.sims.vo.SimsOpernVo">
+        select * from sims_opern opern
+        left join sims_student student on opern.student_id=student.id
+        where opern.student_id = #{simsStudent.id}
+
+    </select>
+    <select id="simsRescourceOpernLessonList" resultType="org.jeecg.modules.sims.vo.SimsOpernVo">
+        select opern.* from sims_lesson lesson
+        left join sims_rescource_opern_lesson rol on lesson.room_id=rol.room_id
+        left join sims_opern opern  on rol.opern_id = opern.id
+        where opern.id is not null and lesson.id = #{simsLesson.id}
+    </select>
+    <select id="simsRescourceOpern" resultType="org.jeecg.modules.sims.vo.SimsOpernVo">
+        select * from sims_opern opern
+        where opern.id = #{simsOpern.id}
+    </select>
+</mapper>

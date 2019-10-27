@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.statistics.mapper.OrderDtlDMapper">
+    <!--  orderType  类型 -->
+    <!--public static final Integer FREE_ORDER = 0 ; //0 免费咨询工单-->
+    <!--public static final Integer STAR_ORDER = 1 ; //1 明星医生工单-->
+    <!--public static final Integer NUTRITION_GUIDANCE_ORDER = 2 ; //2 营养师工单-->
+    <!--public static final Integer PSYCHOLOGICAL_COUNSELING_ORDER = 3 ; //3 家庭指导咨询工单-->
+    <!--public static final Integer QUICK_ORDER = 4 ; //0 快速咨询工单-->
+    <!--public static final Integer NUTRITION_QUICK_ORDER = 5; //2 营养师快速工单-->
+    <!--public static final Integer PSYCHOLOGICAL_QUCIK_ORDER = 6 ; //3 家庭指导咨询快速工单-->
+
+    <select id="orderDtlDAnalysis" resultType="java.util.Map">
+
+
+        SELECT
+        o.id,-- 工单编号
+        o.create_time, -- 工单创建时间
+        o.ask_time, -- 工单回复时间
+        o.ack_time, -- 接单时间
+        (case when rel.CUS_ATTR_FEE is null
+        then 0.00
+        else rel.CUS_ATTR_FEE end) AS fee,
+        (case o.is_scan
+        when 0 then 0
+        when 1 then 1
+        when 2 then 2
+        when 4 then 3
+        when 5 then 2
+        else -1 end)
+        as order_gen_type, -- 工单生成类型
+        (case when o.channel_type=1 then 1
+        when o.channel_type = 2 then 2
+        when (o.channel_type =4 or o.channel_type is null) then 4
+         else -1 end) as chnl_type, -- 提问渠道
+        (case when rel.channel_type = 'refund'  and  (rel.refund_type = 0  or rel.refund_type is null) then 4
+        when rel.channel_type = 'refund'  and  rel.refund_type = 1 then 5
+        when o.server_status=1 then 3
+        else o.status end) as order_status,-- 工单状态
+        o.question_topic_code, -- 工单问题类型，即问题主题
+        o.order_type, -- 工单问题类型，即问题主题
+        o.evaluation_id,
+        rel.fee AS realfee, -- 实收费用
+        case
+        when rel.channel_type='refund' OR rel.fee is null or rel.fee=0 then 0
+        when o.ORDER_TYPE=4 then if(
+            (rel.fee  -  IFNULL((select tbp.SUPPLY_PRICE from tp_business_pricing tbp where
+            tbp.b_mark=o.b_mark and service_id=4),0))&lt;0,
+            0,
+            (rel.fee  -  IFNULL((select tbp.SUPPLY_PRICE from tp_business_pricing tbp where
+            tbp.b_mark=o.b_mark and service_id=4),0)))
+        when o.ORDER_TYPE=1 then (rel.fee * IFNULL((select cfg.profit_share_rate/100 from BUSINESS_PROFIT_CFG cfg
+        where cfg.b_mark=o.b_mark and service_id=1),0))
+        when o.ORDER_TYPE=2 then (rel.fee * IFNULL((select cfg.profit_share_rate/100 from BUSINESS_PROFIT_CFG cfg
+        where cfg.b_mark=o.b_mark and service_id=2),0))
+        when o.ORDER_TYPE=3 then (rel.fee * IFNULL((select cfg.profit_share_rate/100 from BUSINESS_PROFIT_CFG cfg
+        where cfg.b_mark=o.b_mark and service_id=3),0))
+        when o.ORDER_TYPE=5 then if(
+            (rel.fee  -  IFNULL((select tbp.SUPPLY_PRICE from tp_business_pricing tbp where
+            tbp.b_mark=o.b_mark and service_id=5),0))&lt;0,
+            0,
+            (rel.fee  -  IFNULL((select tbp.SUPPLY_PRICE from tp_business_pricing tbp where
+            tbp.b_mark=o.b_mark and service_id=5),0)))
+        when o.ORDER_TYPE=6 then if(
+            (rel.fee  -  IFNULL((select tbp.SUPPLY_PRICE from tp_business_pricing tbp where
+            tbp.b_mark=o.b_mark and service_id=6),0))&lt;0,
+            0,
+            (rel.fee  -  IFNULL((select tbp.SUPPLY_PRICE from tp_business_pricing tbp where
+            tbp.b_mark=o.b_mark and service_id=6),0)))
+        else 0
+        end AS ORDER_PROFIT , -- 分成费用
+
+        rel.DISCOUNT_CHARGE, -- 优惠费用，即优惠券
+        (case when o.b_mark is null then '-1' else o.b_mark end) as b_mark,
+        con.id AS consulter_id, -- 用户标识
+        con.nickname AS consulter_nickname, -- 用户昵称
+        con.phone AS consulter_phone, -- 用户手机号
+        (select cus.id from customer cus where id=o.customer_id) as accept_cust_id,-- 接单人标识
+        (select cus.nickname from customer cus where id=o.customer_id) as accept_cust_name, -- 接单人昵称
+        (select cus.phone from customer cus where id=o.customer_id) as accept_cust_phone, -- 接单人手机
+
+
+         (case when  o.push_users is not null and  locate( ',',o.push_users) = 0  and first_distribute_type=0
+          then (select cus.id from customer cus where cus.username=o.push_users)
+          else null end) point_cust_id,
+
+        (select cus.nickname from customer cus where id=rel.customer_id) as point_cust_name, -- 指定咨询人昵称
+        rel.channel_type AS rel_channel_type, -- 是否已经退款
+        rel.refund_type,-- 退款类型
+        rel.RESOURCE_INST_ID, --  优惠券实例编码
+        rel.DISCOUNT_CHARGE, --  优惠券面值
+        (case when o.id in (select order_id from cancel_record cancel where cancel.create_time &gt;= #{startTime}
+        and cancel.create_time &lt;= (#{endTime} + 12*3600*1000)) then 0 else null end) as cr_type, -- 退单类型
+        IFNULL(attr.is_vip_ask,0) as is_vip_ask, -- 是否VIP咨询
+        IFNULL(attr.is_used_vip_benifit,0) as is_used_vip_benifit -- 是否使用了VIP权益
+        FROM
+        consulter_order o
+        LEFT JOIN consulter con ON con.id = o.consulter_id
+        LEFT JOIN pay_order_rela rel ON o.id = rel.order_id
+        LEFT JOIN consulter_order_attr attr on o.id=attr.order_id
+
+        where 1=1
+        AND o.create_time &gt;= #{startTime} AND o.create_time &lt;= #{endTime}
+        ORDER BY o.create_time DESC;
+
+
+    </select>
+
+
+
+    <select id="bMarkOrderDtlDAnalysis" resultType="java.util.Map">
+
+
+        SELECT
+        o.id,-- 工单编号
+        o.create_time, -- 工单创建时间
+        o.ask_time, -- 工单回复时间
+        o.ack_time, -- 接单时间
+        (case when rel.CUS_ATTR_FEE is null then 0.00 else rel.CUS_ATTR_FEE end) AS fee,
+        (case o.is_scan when 0 then 0 when 1 then 1 when 2 then 2 when 4 then 3 when 5 then 2  else -1 end) as order_gen_type, -- 工单生成类型
+        (case when o.channel_type=1 then 1 when o.channel_type = 2 then 2 when (o.channel_type =4 or o.channel_type is null) then 4 else -1 end) as chnl_type, -- 提问渠道
+        (case when rel.channel_type = 'refund'  and  (rel.refund_type = 0  or rel.refund_type is null) then 4
+        when rel.channel_type = 'refund'  and  rel.refund_type = 1 then 5
+        when o.server_status=1 then 3 else o.status end) as order_status,-- 工单状态
+        o.question_topic_code, -- 工单问题类型，即问题主题
+        o.order_type, -- 工单问题类型，即问题主题
+        o.evaluation_id,
+        rel.fee AS realfee, -- 实收费用
+        case
+        when rel.channel_type='refund' OR rel.fee is null or rel.fee=0 then 0
+        when o.ORDER_TYPE=4 then if(
+            (rel.fee  -  IFNULL((select tbp.SUPPLY_PRICE from tp_business_pricing tbp where tbp.b_mark=o.b_mark and service_id=4),0))&lt;0,
+            0,
+            (rel.fee  -  IFNULL((select tbp.SUPPLY_PRICE from tp_business_pricing tbp where tbp.b_mark=o.b_mark and service_id=4),0)))
+        when o.ORDER_TYPE=1 then (rel.fee * IFNULL((select cfg.profit_share_rate/100 from BUSINESS_PROFIT_CFG cfg where cfg.b_mark=o.b_mark and service_id=1),0))
+        when o.ORDER_TYPE=2 then (rel.fee * IFNULL((select cfg.profit_share_rate/100 from BUSINESS_PROFIT_CFG cfg where cfg.b_mark=o.b_mark and service_id=2),0))
+        when o.ORDER_TYPE=3 then (rel.fee * IFNULL((select cfg.profit_share_rate/100 from BUSINESS_PROFIT_CFG cfg where cfg.b_mark=o.b_mark and service_id=3),0))
+        when o.ORDER_TYPE=5 then if(
+            (rel.fee  -  IFNULL((select tbp.SUPPLY_PRICE from tp_business_pricing tbp where tbp.b_mark=o.b_mark and service_id=5),0))&lt;0,
+            0,
+            (rel.fee  -  IFNULL((select tbp.SUPPLY_PRICE from tp_business_pricing tbp where tbp.b_mark=o.b_mark and service_id=5),0)))
+        when o.ORDER_TYPE=6 then if(
+            (rel.fee  -  IFNULL((select tbp.SUPPLY_PRICE from tp_business_pricing tbp where tbp.b_mark=o.b_mark and service_id=6),0))&lt;0,
+            0,
+            (rel.fee  -  IFNULL((select tbp.SUPPLY_PRICE from tp_business_pricing tbp where tbp.b_mark=o.b_mark and service_id=6),0)))
+        else 0
+        end AS ORDER_PROFIT , -- 分成费用
+
+        rel.DISCOUNT_CHARGE, -- 优惠费用，即优惠券
+        (case when o.b_mark is null then '-1' else o.b_mark end) as b_mark,
+        con.id AS consulter_id, -- 用户标识
+        con.nickname AS consulter_nickname, -- 用户昵称
+        con.phone AS consulter_phone, -- 用户手机号
+        (select cus.id from customer cus where id=o.customer_id) as accept_cust_id,-- 接单人标识
+        (select cus.nickname from customer cus where id=o.customer_id) as accept_cust_name, -- 接单人昵称
+        (select cus.phone from customer cus where id=o.customer_id) as accept_cust_phone, -- 接单人手机
+
+
+        (case when  o.push_users is not null and  locate( ',',o.push_users) = 0  and first_distribute_type=0
+        then (select cus.id from customer cus where cus.username=o.push_users)
+        else null end) point_cust_id,
+
+        (select cus.nickname from customer cus where id=rel.customer_id) as point_cust_name, -- 指定咨询人昵称
+        rel.channel_type AS rel_channel_type, -- 是否已经退款
+        rel.refund_type,-- 退款类型
+        rel.RESOURCE_INST_ID, --  优惠券实例编码
+        rel.DISCOUNT_CHARGE, --  优惠券面值
+        (case when o.id in (select order_id from cancel_record cancel where cancel.create_time &gt;= #{startTime}
+        and cancel.create_time &lt;= (#{endTime} + 12*3600*1000)) then 0 else null end) as cr_type, -- 退单类型
+        IFNULL(attr.is_vip_ask,0) as is_vip_ask, -- 是否VIP咨询
+        IFNULL(attr.is_used_vip_benifit,0) as is_used_vip_benifit -- 是否使用了VIP权益
+        FROM
+        consulter_order o
+        LEFT JOIN consulter con ON con.id = o.consulter_id
+        LEFT JOIN pay_order_rela rel ON o.id = rel.order_id
+        LEFT JOIN consulter_order_attr attr on o.id = attr.order_id
+        where 1=1
+        AND o.create_time &gt;= #{startTime} AND o.create_time &lt;= #{endTime}
+        AND o.b_mark = #{bMark}
+        ORDER BY o.create_time DESC;
+
+
+    </select>
+    <select id="orderOrderDtlDAnalysis" resultType="java.util.Map">
+        SELECT
+        o.id,-- 工单编号
+        o.create_time, -- 工单创建时间
+        o.ask_time, -- 工单回复时间
+        o.ack_time, -- 接单时间
+        (case when rel.CUS_ATTR_FEE is null then 0.00 else rel.CUS_ATTR_FEE end) AS fee,
+        (case o.is_scan when 0 then 0 when 1 then 1 when 2 then 2 when 4 then 3 when 5 then 2  else -1 end) as order_gen_type, -- 工单生成类型
+        (case when o.channel_type=1 then 1 when o.channel_type = 2 then 2 when (o.channel_type =4 or o.channel_type is null) then 4 else -1 end) as chnl_type, -- 提问渠道
+        (case when rel.channel_type = 'refund'  and  (rel.refund_type = 0  or rel.refund_type is null) then 4
+        when rel.channel_type = 'refund'  and  rel.refund_type = 1 then 5
+        when o.server_status=1 then 3 else o.status end) as order_status,-- 工单状态
+        o.question_topic_code, -- 工单问题类型，即问题主题
+        o.order_type, -- 工单问题类型，即问题主题
+        o.evaluation_id,
+        rel.fee AS realfee, -- 实收费用
+        case
+        when rel.channel_type='refund' OR rel.fee is null or rel.fee=0 then 0
+        when o.ORDER_TYPE=4 then if(
+            (rel.fee  -  IFNULL((select tbp.SUPPLY_PRICE from tp_business_pricing tbp where tbp.b_mark=o.b_mark and service_id=4),0))&lt;0,
+            0,
+            (rel.fee  -  IFNULL((select tbp.SUPPLY_PRICE from tp_business_pricing tbp where tbp.b_mark=o.b_mark and service_id=4),0)))
+        when o.ORDER_TYPE=1 then (rel.fee * IFNULL((select cfg.profit_share_rate/100 from BUSINESS_PROFIT_CFG cfg where cfg.b_mark=o.b_mark and service_id=1),0))
+        when o.ORDER_TYPE=2 then (rel.fee * IFNULL((select cfg.profit_share_rate/100 from BUSINESS_PROFIT_CFG cfg where cfg.b_mark=o.b_mark and service_id=2),0))
+        when o.ORDER_TYPE=3 then (rel.fee * IFNULL((select cfg.profit_share_rate/100 from BUSINESS_PROFIT_CFG cfg where cfg.b_mark=o.b_mark and service_id=3),0))
+        when o.ORDER_TYPE=5 then if(
+            (rel.fee  -  IFNULL((select tbp.SUPPLY_PRICE from tp_business_pricing tbp where tbp.b_mark=o.b_mark and service_id=5),0))&lt;0,
+            0,
+            (rel.fee  -  IFNULL((select tbp.SUPPLY_PRICE from tp_business_pricing tbp where tbp.b_mark=o.b_mark and service_id=5),0)))
+        when o.ORDER_TYPE=6 then if(
+            (rel.fee  -  IFNULL((select tbp.SUPPLY_PRICE from tp_business_pricing tbp where tbp.b_mark=o.b_mark and service_id=6),0))&lt;0,
+            0,
+            (rel.fee  -  IFNULL((select tbp.SUPPLY_PRICE from tp_business_pricing tbp where tbp.b_mark=o.b_mark and service_id=6),0)))
+        else 0
+        end AS ORDER_PROFIT , -- 分成费用
+
+        rel.DISCOUNT_CHARGE, -- 优惠费用，即优惠券
+        (case when o.b_mark is null then '-1' else o.b_mark end) as b_mark,
+        con.id AS consulter_id, -- 用户标识
+        con.nickname AS consulter_nickname, -- 用户昵称
+        con.phone AS consulter_phone, -- 用户手机号
+        (select cus.id from customer cus where id=o.customer_id) as accept_cust_id,-- 接单人标识
+        (select cus.nickname from customer cus where id=o.customer_id) as accept_cust_name, -- 接单人昵称
+        (select cus.phone from customer cus where id=o.customer_id) as accept_cust_phone, -- 接单人手机
+
+
+        (case when  o.push_users is not null and  locate( ',',o.push_users) = 0  and first_distribute_type=0
+        then (select cus.id from customer cus where cus.username=o.push_users)
+        else null end) point_cust_id,
+
+        (select cus.nickname from customer cus where id=rel.customer_id) as point_cust_name, -- 指定咨询人昵称
+        rel.channel_type AS rel_channel_type, -- 是否已经退款
+        rel.refund_type,-- 退款类型
+        rel.RESOURCE_INST_ID, --  优惠券实例编码
+        rel.DISCOUNT_CHARGE, --  优惠券面值
+        (case when o.id in (select order_id from cancel_record cancel where cancel.order_id = #{orderId}  ) then 0 else null end) as cr_type, -- 退单类型
+        IFNULL(attr.is_vip_ask,0) as is_vip_ask, -- 是否VIP咨询
+        IFNULL(attr.is_used_vip_benifit,0) as is_used_vip_benifit -- 是否使用了VIP权益
+        FROM
+        consulter_order o
+        LEFT JOIN consulter con ON con.id = o.consulter_id
+        LEFT JOIN pay_order_rela rel ON o.id = rel.order_id
+        LEFT JOIN consulter_order_attr attr on o.id = attr.order_id
+        where 1=1
+        AND o.id = #{orderId}
+        ORDER BY o.create_time DESC;
+
+    </select>
+</mapper>

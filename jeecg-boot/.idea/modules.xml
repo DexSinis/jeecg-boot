@@ -3,8 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/jeecg-boot-base-common/jeecg-boot-base-common.iml" filepath="$PROJECT_DIR$/jeecg-boot-base-common/jeecg-boot-base-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jeecg-boot-common/jeecg-boot-common.iml" filepath="$PROJECT_DIR$/jeecg-boot-common/jeecg-boot-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/jeecg-boot-module-system/jeecg-boot-module-system.iml" filepath="$PROJECT_DIR$/jeecg-boot-module-system/jeecg-boot-module-system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jeecg-boot-mybatis/jeecg-boot-mybatis.iml" filepath="$PROJECT_DIR$/jeecg-boot-mybatis/jeecg-boot-mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/jeecg-boot-parent.iml" filepath="$PROJECT_DIR$/jeecg-boot-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jeecg-boot-service/jeecg-boot-service.iml" filepath="$PROJECT_DIR$/jeecg-boot-service/jeecg-boot-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jeecg-boot-mybatis/yewyw-mybatis.iml" filepath="$PROJECT_DIR$/jeecg-boot-mybatis/yewyw-mybatis.iml" />
     </modules>
   </component>
 </project>

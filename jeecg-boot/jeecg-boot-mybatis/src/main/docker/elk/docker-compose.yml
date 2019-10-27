@@ -1,0 +1,77 @@
+version: '2'
+services:
+
+# web:
+#  image: yewyw-interface
+#  ports:
+#   - "9001:9001"
+#  links:
+#   - logstash
+#  networks:
+#   - front-tier
+
+ elasticsearch:
+  image: docker.elastic.co/elasticsearch/elasticsearch:6.3.0
+  container_name: elasticsearch
+  environment:
+    - xpack.security.enabled=false
+    - cluster.name=docker-cluster
+    - bootstrap.memory_lock=true
+    - "ES_JAVA_OPTS=-Xms128m -Xmx128m"
+  ulimits:
+    memlock:
+      soft: -1
+      hard: -1
+    nofile:
+      soft: 65536
+      hard: 65536
+  mem_limit: 2g
+  cap_add:
+    - IPC_LOCK
+  volumes:
+    - esdata1:/usr/share/elasticsearch/data
+  ports:
+    - "9200:9200"
+    - "9300:9300"
+  networks:
+    - back-tier
+
+ logstash:
+  image: docker.elastic.co/logstash/logstash:6.3.0
+  container_name: logstash
+  environment:
+    - xpack.security.enabled=false
+    - vm.overcommit_memory = 1
+  command: logstash -f /etc/logstash/conf.d/logstash.conf
+  volumes:
+   - ./src/main/logstash/config:/etc/logstash/conf.d
+  ports:
+   - "5000:5000"
+  links:
+   - elasticsearch
+  networks:
+   - front-tier
+   - back-tier
+
+ kibana:
+  image: docker.elastic.co/kibana/kibana:6.3.0
+  container_name: kibana
+  environment:
+   - ELASTICSEARCH_URL=http://elasticsearch:9200
+   - xpack.security.enabled=false
+  ports:
+   - "5601:5601"
+  links:
+   - elasticsearch
+  networks:
+   - back-tier
+
+
+volumes:
+  esdata1:
+    driver: local
+
+networks:
+  front-tier:
+  back-tier:
+   driver: bridge

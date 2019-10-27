@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.statistics.mapper.WeixinFansRecordMapper">
+
+    <select id="findWeixinRecordByCreateTime" resultType="map">
+        SELECT from_unixtime(wf.create_time/1000,&apos;%Y%m%d&apos;) as STAT_DT
+        ,count(wf.status=1 or null) `ATTEN_ADD_CNT`
+        ,count(wf.status &gt; 0 or null) `ATTEN_TOTAL_CNT`
+        ,(count(wf.status &gt; 0 or null)-count(wf.status=0 or null)) `ATTEN_INCRE_CNT`
+        ,count(wf.status=2 or null) `ATTEN_OLD_CNT`
+        ,count(wf.status=0 or null) `ATTEN_LOST_CNT`
+        ,(case when wf.sceneid is null then '-1' else wf.sceneid end) AS `SCENE_ID`
+        FROM
+        WEIXIN_FANS_RECORD wf
+        left join `medium` m on m.scene_id= wf.sceneid
+        WHERE wf.create_time &gt;= #{start}
+        AND wf.create_time &lt; #{end} GROUP BY STAT_DT,wf.sceneid;
+    </select>
+</mapper>

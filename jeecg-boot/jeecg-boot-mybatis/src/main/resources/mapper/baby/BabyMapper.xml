@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.baby.mapper.BabyMapper">
+
+
+    <select id="queryConsulterBabyMessage" resultType="java.util.Map">
+        SELECT * FROM baby WHERE status=1 AND consulterid=#{consulterId}
+        <if test='type=="1"'>
+            and birthstatus=3
+        </if>
+        <if test='type=="0"'>
+            and birthstatus!=3
+        </if>
+        order by create_time desc limit 5
+    </select>
+
+
+    <select id="queryDefaultMessage" resultType="java.util.Map">
+        SELECT ttii.*,tro.REF_OPTIONAL_ID AS ROID,tro.REF_ID,tro.REF_VALUE,tro.SORT_NO,
+        tiii.item_id  AS USER_ANSWER_ID,tiii.item_value AS USER_ANSWER_VALUE,ba.id AS BABYID
+        FROM tr_target_info_item AS ttii
+        LEFT JOIN tr_ref_optional AS tro ON tro.REF_OPTIONAL_ID=ttii.REF_OPTIONAL_ID
+        LEFT JOIN target_info_item_inst AS tiii ON tiii.item_id=ttii.item_id AND tiii.IS_COMPLETED=1
+        AND tiii.CONSULTER_ID=#{consulterId} and tiii.TMP_ORDER_ID=#{tempOrderId}
+        left join baby as ba on ba.consulterid=tiii.consulter_id and ba.id=#{babyId} and consulterid=#{consulterId}
+        WHERE TARGET_TYPE=#{type} order by ttii.ITEM_ID,tro.SORT_NO desc
+    </select>
+
+    <update id="updateChildBirth">
+        update  baby set childbirth = null where id=#{babyId}
+</update>
+
+
+
+</mapper>

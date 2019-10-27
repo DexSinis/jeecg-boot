@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.statistics.mapper.PersUserOrderDMapper">
+
+    <delete id="deletePersUserOrderDByLastTime"  parameterType="string">
+        delete FROM  tw_pers_user_order_d where CONSULTER_ID in (
+        SELECT id FROM consulter c WHERE c.create_time &gt;=#{before} and c.create_time &lt;=#{after}
+        );
+    </delete>
+
+    <delete id="deleteAllPersUserOrderD">
+        delete FROM tw_pers_user_order_d ;
+    </delete>
+
+    <delete id="deleteOnePersUserOrderD" parameterType="string">
+        delete FROM tw_pers_user_order_d where consulter_id=${consulterId} ;
+    </delete>
+
+    <insert id="insertPersUserOrderD" parameterType="string">
+        insert into tw_pers_user_order_d (stat_dt,consulter_id,order_payed_cnt,order_total_cnt)
+        select date_format(now(),&apos;%Y%m%d&apos;) as stat_dt,consulter_id
+        ,sum(case when order_price &gt; 0 then 1 else 0 end) as payed_cnt
+        ,count(order_id) from to_e_order_dtl_d where consulter_id &gt;${beforeConsulterId} and consulter_id &lt;=${afterConsulterId} GROUP BY consulter_id;
+    </insert>
+</mapper>

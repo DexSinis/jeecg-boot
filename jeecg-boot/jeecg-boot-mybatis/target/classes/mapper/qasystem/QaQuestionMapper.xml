@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.qasystem.mapper.QaQuestionMapper">
+
+
+    <select id="queryQuestionByParams" resultType="java.util.Map">
+              select que.*,asw.*,quelab.*,lab.*,c.id customerId,c.headurl,c.title,c.nickname from TB_QA_QUESTION que
+                left join TB_QA_ANSWER asw on asw.QUESTION_ID = que.QUESTION_ID
+                left join TB_QA_QUESTION_LABEL quelab on quelab.QUESTION_ID = que.QUESTION_ID
+                left join TB_QA_LABEL lab on quelab.LABEL_ID = lab.LABEL_ID
+                left join customer c on asw.ANSWERER_ID = c.id
+                order by  que.SORT_NO desc
+    </select>
+    <select id="queryQuestionMapByParams" resultType="java.util.Map">
+
+         select que.*,asw.*,quelab.*,lab.*,c.id customerId,c.headurl,c.title,c.nickname,que.CREATE_TIME as QUE_CREATE_TIME,asw.CREATE_TIME as ASW_CREATE_TIME from TB_QA_QUESTION que
+                left join TB_QA_ANSWER asw on asw.QUESTION_ID = que.QUESTION_ID
+                left join TB_QA_QUESTION_LABEL quelab on quelab.QUESTION_ID = que.QUESTION_ID
+                left join TB_QA_LABEL lab on quelab.LABEL_ID = lab.LABEL_ID
+                left join customer c on asw.ANSWERER_ID = c.id where que.QUESTION_ID = #{params.questionId}
+
+    </select>
+    <select id="queryQuestionByConsulterId" resultType="java.util.Map">
+
+          select que.*,asw.*,quelab.*,lab.*,c.id customerId,c.headurl,c.title,c.nickname,ul.CONSULTER_ID from TB_QA_QUESTION que
+            left join TB_QA_ANSWER asw on asw.QUESTION_ID = que.QUESTION_ID
+            left join TB_QA_QUESTION_LABEL quelab on quelab.QUESTION_ID = que.QUESTION_ID
+            left join TB_QA_LABEL lab on quelab.LABEL_ID = lab.LABEL_ID
+            left join customer c on asw.ANSWERER_ID = c.id
+            left join ts_e_qa_useful_log ul on ul.QUESTION_ID = que.QUESTION_ID
+            where ul.CONSULTER_ID = #{params.consulterId} and ul.IS_USEFUL = 1
+            order by  ul.CREATE_TIME desc
+
+    </select>
+</mapper>

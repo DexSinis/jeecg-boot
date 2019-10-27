@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.jeecg.common.constant.CommonConstant;
 import lombok.Data;
+import org.jeecg.common.constant.PetrusConstant;
 
 /**
  *   接口返回数据格式
@@ -108,4 +109,32 @@ public class Result<T> implements Serializable {
 	public static Result<Object> noauth(String msg) {
 		return error(CommonConstant.SC_JEECG_NO_AUTHZ, msg);
 	}
+
+	public  Result<T> errorInterface(String message,T data) {
+		this.message = message;
+		this.code = PetrusConstant.CODE_TYPE.ERROR;
+		this.success = true;
+		this.result =  data;
+		return this;
+
+	}
+
+	public  Result<T> errorInterface(String message,T data,Integer code) {
+		this.message = message;
+		this.code = code;
+		this.success = true;
+		this.result =  data;
+		return this;
+
+	}
+
+
+	public  Result<T> successInterface(String message,T data) {
+		this.message = message;
+		this.code = PetrusConstant.CODE_TYPE.SUCCESS;
+		this.result =  data;
+		this.success = true;
+		return this;
+	}
+
 }

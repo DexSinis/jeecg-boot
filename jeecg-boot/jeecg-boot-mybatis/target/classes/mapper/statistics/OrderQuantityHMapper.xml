@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.statistics.mapper.OrderQuantityHMapper">
+
+    <select id="orderQuantityHAnalysis" resultType="java.util.Map">
+
+        SELECT B_MARK,STAT_DT,HOUR(FROM_UNIXTIME(CREATE_TIME/1000)) STAT_HOUR,COUNT(ORDER_ID) ORDER_CNT
+        FROM TO_E_ORDER_DTL_D WHERE  STAT_DT=#{statDt}
+        GROUP BY B_MARK,STAT_DT,HOUR(FROM_UNIXTIME(CREATE_TIME/1000))
+    </select>
+</mapper>

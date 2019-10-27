@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.statistics.mapper.OrderProfitDMapper">
+
+    <select id="orderProfitDAnalysis" resultType="java.util.Map">
+
+        SELECT STAT_DT,B_MARK,ORDER_TYPE,COUNT(ORDER_ID) AS ORDER_CNT,
+        SUM(ORDER_PROFIT) AS ORDER_PROFIT,
+        SUM(CASE WHEN REFUND_FLAG='REFUND' THEN ORDER_CHARGE ELSE 0 END) AS REFUND_AMOUNT
+        FROM TO_E_ORDER_DTL_D WHERE STAT_DT=#{statDt}
+        GROUP BY STAT_DT,B_MARK,ORDER_TYPE;
+
+    </select>
+    <select id="orderOrderProfitDAnalysis" resultType="java.util.Map">
+
+        SELECT STAT_DT,B_MARK,ORDER_TYPE,COUNT(ORDER_ID) AS ORDER_CNT,
+        SUM(ORDER_PROFIT) AS ORDER_PROFIT,
+        SUM(CASE WHEN REFUND_FLAG='REFUND' THEN ORDER_CHARGE ELSE 0 END) AS REFUND_AMOUNT
+        FROM TO_E_ORDER_DTL_D WHERE STAT_DT=#{statDtRemove} AND ORDER_TYPE = #{orderType} AND B_MARK = #{bMark}
+        GROUP BY STAT_DT,B_MARK,ORDER_TYPE;
+
+    </select>
+</mapper>

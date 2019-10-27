@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.notice.mapper.ServiceDynamicInfoMapper">
+
+    <select id="serviceDynamicInfoList" resultType="java.util.Map">
+        select * from service_dynamic_info order by CREATE_TIME desc
+    </select>
+    <select id="serviceDynamicInfoAnalysis" resultType="java.util.Map">
+
+    select * from (
+    (select cus.nickname as CUST_NAME,con.nickname as CONT_NAME,cus.id as CUSTOMER_ID,o.id as ORDER_ID,
+    eval.create_time as CREATE_TIME,0 as MSG_TYPE,IFNULL(eval.content,"---") as CONTENT
+    from evaluation eval
+    left join consulter_order o on eval.order_id = o.id
+    left join customer cus on o.customer_id = cus.id
+    left join consulter con on o.consulter_id = con.id
+    where eval.type = 4
+    order by eval.id desc limit 50 )
+    union all
+    (select cus.nickname as CUST_NAME,con.nickname as CONT_NAME,cus.id as CUSTOMER_ID,o.id as ORDER_ID,
+    o.create_time as CREATE_TIME,1 as MSG_TYPE,"---" as CONTENT
+    from consulter_order o
+    left join customer cus on o.customer_id = cus.id
+    left join consulter con on o.consulter_id = con.id
+    where o.customer_id is not null
+    order by o.id desc limit  50  ) ) a order by a.create_time desc;
+
+    </select>
+</mapper>

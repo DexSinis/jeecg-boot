@@ -1,9 +1,12 @@
 spring:
   profiles:
-    active: dev
+    active: pre
 swagger:
   production: false
   basic:
     enable: false
     username: jeecg
     password: jeecg1314
+tencent :
+  SDKAppid: 1400240163
+  SDKAppName: Petrus

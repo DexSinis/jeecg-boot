@@ -16,7 +16,10 @@
 	<modules>
 		<module>jeecg-boot-base-common</module>
 		<module>jeecg-boot-module-system</module>
-	</modules> 
+		<module>jeecg-boot-mybatis</module>
+		<module>jeecg-boot-service</module>
+		<module>jeecg-boot-common</module>
+	</modules>
 	
 	<distributionManagement>
 	  	<repository>
@@ -328,6 +331,13 @@
 			<groupId>com.qcloud</groupId>
 			<artifactId>cos_api</artifactId>
 			<version>${qc.cos.version}</version>
+		</dependency>
+
+		<!-- 腾讯音视频 -->
+		<dependency>
+			<groupId>com.github.tencentyun</groupId>
+			<artifactId>tls-sig-api</artifactId>
+			<version>1.2</version>
 		</dependency>
 
 	</dependencies>

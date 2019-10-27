@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.statistics.mapper.GratuityDtlDMapper">
+
+    <select id="findGratuityDtlDByTime" resultType="map">
+        SELECT
+        ptr.id GRATUITY_ID,
+        CASE WHEN (ptr.order_id is null OR ptr.order_id=0) THEN
+        null
+        ELSE
+        ptr.order_id
+        END ORDER_ID,
+        c.b_mark B_MARK,
+        c.id CONSULTER_ID,
+        ptr.customer_id CUSTOMER_ID,
+        CASE WHEN ptr.fee is null THEN
+        &apos;0.00&apos;
+        ELSE
+        ROUND(ptr.fee,2)
+        END FEE,
+        CASE
+        WHEN (ptr.fee_type &lt; 7 AND ptr.fee_type &gt; 0) THEN
+        ptr.fee_type
+        ELSE
+        -1
+        END GRATUITY_TYPE,
+        CASE WHEN po.pay_trade_no is null THEN
+        0
+        ELSE
+        1
+        END IS_GIVE_SUCCESS,
+        ptr.create_time CREATE_TIME
+        FROM
+        pay_tips_rec ptr
+        LEFT JOIN consulter c ON c.id = ptr.consulter_id
+        LEFT JOIN customer cus ON cus.id = ptr.customer_id
+        INNER JOIN pay_orders po ON po.busi_trade_no = ptr.busi_trade_no
+        WHERE
+        1 = 1
+        AND ptr.create_time &gt;= #{before}
+        <if test="#{after} != null">
+        AND ptr.create_time &lt;= #{after}
+        </if>
+        ORDER BY
+        ptr.create_time DESC;
+    </select>
+</mapper>

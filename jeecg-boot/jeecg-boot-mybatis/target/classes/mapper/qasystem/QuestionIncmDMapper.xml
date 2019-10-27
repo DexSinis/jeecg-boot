@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.qasystem.mapper.QuestionIncmDMapper">
+
+
+    <select id="qaReadLogAnalysisPv" resultType="java.util.Map">
+       select question_id,count(*) as qa_pv  from ts_e_qa_read_log
+        where create_time &gt;= FROM_UNIXTIME(#{startTime}/1000) and create_time  &lt;= FROM_UNIXTIME(#{endTime}/1000)
+        group by question_id
+    </select>
+
+    <select id="qaReadLogAnalysisUv" resultType="java.util.Map">
+        select question_id,count(*) as qa_uv from (
+        select * from (
+            select question_id,consulter_id,count(*) from ts_e_qa_read_log
+            where create_time &gt;= FROM_UNIXTIME(#{startTime}/1000) and create_time  &lt;= FROM_UNIXTIME(#{endTime}/1000)
+        ) a group by a.consulter_id,a.question_id
+        ) evlc
+        group by question_id
+    </select>
+
+</mapper>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.consulter.mapper.ConsulterOrderMapper">
+    <select id="getOrderStatusById" resultType="org.jeecg.modules.consulter.entity.ConsulterOrder">
+            SELECT co.id,co.status,co.server_status
+        FROM consulter_order co
+        WHERE co.id=#{args0}
+  </select>
+
+
+
+    <select id="queryConsulterList" resultType="org.jeecg.modules.consulter.entity.ConsulterOrder">
+        SELECT
+         *
+        FROM
+         consulter_order cmmmtm
+        WHERE
+         cmmmtm.b_mark IS NULL
+        AND cmmmtm.customer_id IS NULL
+        AND cmmmtm.server_status = 0
+        AND cmmmtm.`status` = 0 and ((unix_timestamp(now())*1000-cmmmtm.create_time)/1000/60)>1 
+    </select>
+</mapper>

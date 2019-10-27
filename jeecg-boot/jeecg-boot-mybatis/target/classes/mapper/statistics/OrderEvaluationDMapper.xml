@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.statistics.mapper.OrderEvaluationDMapper">
+
+
+    <select id="orderEvaluationDAnalysis" resultType="java.util.Map">
+
+
+SELECT
+o.b_mark AS aev_b_mark ,
+o.id AS aev_order_id ,
+rel.CUS_ATTR_FEE AS aev_cus_attr_fee ,
+con.id AS aev_con_id ,
+con.nickname AS aev_con_nickname ,
+ cus.id AS aev_cus_id ,
+ cus.nickname AS aev_cus_nickname ,
+ ev.create_time AS aev_create_time ,
+ev.type as  aev_type ,
+ev.id as  aev_id ,
+ ev.content AS aev_content ,
+ ev.is_show AS aev_is_show ,
+ rel.fee as aev_order_charge,
+ rel.discount_charge as aev_order_discount
+FROM
+	evaluation ev
+LEFT JOIN consulter_order o ON ev.order_id = o.id
+LEFT JOIN pay_order_rela rel ON rel.order_id = o.id
+LEFT JOIN consulter con ON o.consulter_id = con.id
+LEFT JOIN customer cus ON o.customer_id = cus.id
+WHERE
+	1 = 1
+AND ev.create_time &gt;= #{startTime} AND ev.create_time &lt;= #{endTime}
+ORDER BY
+	ev.id DESC;
+    </select>
+</mapper>

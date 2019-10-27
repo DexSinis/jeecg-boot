@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.statistics.mapper.OrderRefundDMapper">
+
+    <select id="orderRefundDAnalysis" resultType="java.util.Map">
+
+        SELECT
+    o.id AS afund_order_id,
+    rel.refund_time as afund_refund_time,
+    o.create_time as afund_create_time,
+    rel.req_status AS afund_req_status ,
+    con.id as afund_con_id,
+    con.nickname as afund_con_nickname,
+    con.phone as afund_con_phone,
+    cus.id as afund_cus_id,
+    cus.nickname as afund_cus_nickname,
+    cus.phone as afund_cus_phone,
+    rel.fee as afund_fee,
+    rel.refund_type AS afund_refund_type ,
+    o.status AS afund_status ,
+    rel.DISCOUNT_CHARGE as afund_discount_change,
+    rel.fee as afund_cus_attr_fee,
+    rel.fee as afund_order_charge,
+    rel.discount_charge as afund_order_discount,
+    (case when rel.CUS_ATTR_FEE is null then 0.00 else rel.CUS_ATTR_FEE end) AS fee,
+    (select cus.id from customer cus where id=rel.customer_id) as point_cust_id, -- 指定咨询人标识
+    (select cus.nickname from customer cus where id=rel.customer_id) as point_cust_name -- 指定咨询人昵称
+
+    FROM
+    consulter_order o
+    LEFT JOIN pay_order_rela rel ON o.id = rel.order_id
+    LEFT JOIN customer cus ON cus.id = o.customer_id
+    LEFT JOIN consulter con ON con.id = rel.consulter_id
+    WHERE
+    rel.channel_type = 'refund' and rel.refund_time &gt;= FROM_UNIXTIME(#{startTime}/1000,'%Y-%m-%d %T') AND rel.refund_time &lt;= FROM_UNIXTIME(#{endTime}/1000,'%Y-%m-%d %T')
+    ORDER BY
+    o.create_time asc
+   </select>
+    <select id="orderOrderRefundDAnalysis" resultType="java.util.Map">
+
+
+    SELECT
+    o.id AS afund_order_id,
+    rel.refund_time as afund_refund_time,
+    o.create_time as afund_create_time,
+    rel.req_status AS afund_req_status ,
+    con.id as afund_con_id,
+    con.nickname as afund_con_nickname,
+    con.phone as afund_con_phone,
+    cus.id as afund_cus_id,
+    cus.nickname as afund_cus_nickname,
+    cus.phone as afund_cus_phone,
+    rel.fee as afund_fee,
+    rel.refund_type AS afund_refund_type ,
+    o.status AS afund_status ,
+    rel.DISCOUNT_CHARGE as afund_discount_change,
+    rel.fee as afund_cus_attr_fee,
+    rel.fee as afund_order_charge,
+    rel.discount_charge as afund_order_discount,
+    (case when rel.CUS_ATTR_FEE is null then 0.00 else rel.CUS_ATTR_FEE end) AS fee,
+    (select cus.id from customer cus where id=rel.customer_id) as point_cust_id, -- 指定咨询人标识
+    (select cus.nickname from customer cus where id=rel.customer_id) as point_cust_name -- 指定咨询人昵称
+
+    FROM
+    consulter_order o
+    LEFT JOIN pay_order_rela rel ON o.id = rel.order_id
+    LEFT JOIN customer cus ON cus.id = o.customer_id
+    LEFT JOIN consulter con ON con.id = rel.consulter_id
+    WHERE
+    rel.channel_type = 'refund' and o.id = #{orderId}
+    ORDER BY
+    o.create_time asc
+
+    </select>
+
+
+</mapper>

@@ -4,8 +4,16 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>jeecg-boot-base-common</artifactId>
 	<version>2.1.1</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.jeecgframework.boot</groupId>
+            <artifactId>jeecg-boot-common</artifactId>
+            <version>2.1.1</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 
-	<parent>
+    <parent>
 		<groupId>org.jeecgframework.boot</groupId>
 		<artifactId>jeecg-boot-parent</artifactId>
 		<version>2.1.1</version>

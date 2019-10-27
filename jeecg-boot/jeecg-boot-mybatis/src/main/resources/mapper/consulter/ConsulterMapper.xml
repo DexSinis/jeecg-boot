@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.consulter.mapper.ConsulterMapper">
+    <select id="getByOpenIdAndBmark" resultType="org.jeecg.modules.consulter.entity.Consulter">
+    SELECT * FROM consulter c WHERE c.openid=#{openid} AND c.b_mark=#{bmark}
+  </select>
+
+    <select id="getThreeMonthOrdersByPage" resultType="map">
+            SELECT c.headurl,c.department,co.id,co.create_time,c.title,co.status,por.fee,co.is_payed
+        FROM consulter_order co
+        JOIN customer c ON c.id=co.customer_id
+        JOIN pay_order_rela por ON co.id=por.order_id
+        WHERE co.create_time &gt;#{time} AND  co.consulter_id=#{consulterId}  AND co.customer_id=#{customerId}  AND co.server_status=&apos;1&apos; ORDER BY co.create_time DESC
+  </select>
+
+    <select id="getConsulterIdsByLoginTime" resultType="map">
+        SELECT GROUP_CONCAT(palt.consulter_id) consulter_ids
+        from (
+          SELECT pal.consulter_id,max(pal.create_time) create_time
+          FROM  TS_E_PAGE_ACCESS_LOG pal
+          WHERE 1=1 AND (UNIX_TIMESTAMP(now())-#{args0}) &lt;= UNIX_TIMESTAMP(pal.create_time)
+          GROUP BY pal.consulter_id
+        ) palt
+  </select>
+
+
+    <select id="getMaxConsulterId" resultType="map">
+        SELECT id from consulter order by id desc limit 1;
+  </select>
+
+    <select id="getPersUserDList" resultType="map">
+        SELECT
+        cons.id CONSULTER_ID,
+        (cons.location div 10000*10000) PROVINCE_ID,
+        (cons.location div 100*100) CITY_ID,
+        cons.location AREA_ID,
+        cons.nickname NICK_NAME,
+        FROM_UNIXTIME(cons.create_time/1000,&apos;%Y-%m-%d %h:%m:%s&apos;) REG_TIME,
+        cons.sex SEX,
+        cons.birthdate BIRTHDAY,
+        cons.address ADDRESS,
+        cons.phone PHONE,
+        cons.isfrozen IS_FROZEN,
+        (case when cons.birth_status is null then 4 else  cons.birth_status end ) PREGNANT_STATE,
+        CASE
+        WHEN (cons.cus_ids is null OR cons.cus_ids=&apos;&apos;) THEN
+        NULL
+        ELSE
+        cons.cus_ids
+        END EXCLUSIVE_CUSTOMER_ID
+        ,cons.b_mark B_MARK
+        ,m.remark QRCODE
+        ,cons.iscomplaint IS_COMPLAINTED
+        FROM
+        (
+        SELECT
+        concat_ws( &apos;,&apos;, group_concat( cust.id ), cus.id ) cus_ids,c.sceneid,c.birthdate,c.address,
+        c.id,c.location,c.sex,c.b_mark,c.create_time,c.iscomplaint,c.nickname,c.birth_status,
+        c.phone,c.isfrozen
+        FROM consulter c
+        LEFT JOIN customer_user_scan_rela cusr ON c.id = cusr.consulter_id
+        LEFT JOIN customer cus ON c.customerid = cus.id
+        LEFT JOIN customer cust ON cusr.customer_id = cust.id AND cusr.`status` = 1
+        WHERE
+        1 = 1
+        AND c.id in(SELECT id FROM consulter c WHERE c.create_time &gt;=#{before} and c.create_time &lt;=#{after})
+        GROUP BY
+        c.id
+        ORDER BY
+        c.id ASC
+        ) cons
+        LEFT JOIN MEDIUM m ON m.scene_id = cons.sceneid
+        ;
+    </select>
+
+    <select id="getPersUserDListByConsulterId" resultType="map">
+        SELECT
+        cons.id CONSULTER_ID,
+        (cons.location div 10000*10000) PROVINCE_ID,
+        (cons.location div 100*100) CITY_ID,
+        cons.location AREA_ID,
+        cons.nickname NICK_NAME,
+        FROM_UNIXTIME(cons.create_time/1000,&apos;%Y-%m-%d %h:%m:%s&apos;) REG_TIME,
+        cons.sex SEX,
+        cons.birthdate BIRTHDAY,
+        cons.address ADDRESS,
+        cons.phone PHONE,
+        cons.isfrozen IS_FROZEN,
+        (case when cons.birth_status is null then 4 else  cons.birth_status end ) PREGNANT_STATE,
+        CASE
+        WHEN (cons.cus_ids is null OR cons.cus_ids=&apos;&apos;) THEN
+        NULL
+        ELSE
+        cons.cus_ids
+        END EXCLUSIVE_CUSTOMER_ID
+        ,cons.b_mark B_MARK
+        ,m.remark QRCODE
+        ,cons.iscomplaint IS_COMPLAINTED
+        FROM
+        (
+        SELECT
+        concat_ws( &apos;,&apos;, group_concat( cust.id ), cus.id ) cus_ids,c.sceneid,c.birthdate,c.address,
+        c.id,c.location,c.sex,c.b_mark,c.create_time,c.iscomplaint,c.nickname,c.birth_status,
+        c.phone,c.isfrozen
+        FROM consulter c
+        LEFT JOIN customer_user_scan_rela cusr ON c.id = cusr.consulter_id
+        LEFT JOIN customer cus ON c.customerid = cus.id
+        LEFT JOIN customer cust ON cusr.customer_id = cust.id AND cusr.`status` = 1
+        WHERE
+        1 = 1
+        AND c.phone is not null
+        AND c.id &gt;${beforeConsulterId} AND c.id &lt;=${afterConsulterId}
+        GROUP BY
+        c.id
+        ORDER BY
+        c.id ASC
+        ) cons
+        LEFT JOIN MEDIUM m ON m.scene_id = cons.sceneid
+        ;
+    </select>
+
+    <select id="getOrderCountList" resultType="map">
+        SELECT
+        co.CONSULTER_ID AS CONSULTER_ID,
+        sum( CASE WHEN co.ORDER_PRICE = 0 THEN 0 ELSE 1 END ) AS ORDER_PAYED_CNT,
+        count( co.CONSULTER_ID ) AS ORDER_TOTAL_CNT
+        from to_e_order_dtl_d co
+	    where co.consulter_id in(
+        SELECT id FROM consulter c WHERE c.create_time &gt;=#{before} AND c.create_time &lt;=#{after}
+	    )
+	    group by co.consulter_id;
+    </select>
+
+    <select id="getOrderCountListByConsulterId" resultType="map">
+        SELECT
+        co.CONSULTER_ID AS CONSULTER_ID,
+        sum( CASE WHEN co.ORDER_PRICE = 0 THEN 0 ELSE 1 END ) AS ORDER_PAYED_CNT,
+        count( co.CONSULTER_ID ) AS ORDER_TOTAL_CNT
+        from to_e_order_dtl_d co
+	    where co.consulter_id in(
+        SELECT id FROM consulter c WHERE c.id &gt;${beforeConsulterId} AND c.id &lt;=${afterConsulterId}
+	    )
+	    group by co.consulter_id;
+    </select>
+</mapper>

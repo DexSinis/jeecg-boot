@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.statistics.mapper.PersUserDMapper">
+    <delete id="deletePersUserDByLastTime" parameterType="string">
+        delete FROM  TW_PERS_USER_D where CONSULTER_ID in (
+        SELECT id FROM consulter c WHERE c.create_time &gt;=#{before} AND c.create_time &lt;=#{after}
+        );
+    </delete>
+
+    <delete id="deleteAllPersUserD">
+        delete FROM  TW_PERS_USER_D;
+    </delete>
+
+    <delete id="deleteOnePersUserD" parameterType="string">
+        delete FROM  TW_PERS_USER_D where consulter_id=${consulterId};
+    </delete>
+
+    <insert id="insertPersUserD" parameterType="string">
+        INSERT INTO `tw_pers_user_d`
+        (`STAT_DT`,
+        `CONSULTER_ID`,
+        `NICK_NAME`,
+        `PROVINCE_ID`,
+        `CITY_ID`,
+        `AREA_ID`,
+        `ADDRESS`,
+        `PHONE`,
+        `IS_FROZEN`,
+        `REG_TIME`,
+        `SEX`,
+        `BIRTHDAY`,
+        `PREGNANT_STATE`,
+        `EXCLUSIVE_CUSTOMER_ID`,
+        `B_MARK`,
+        `QRCODE`,
+        `IS_COMPLAINTED`
+        )
+        SELECT
+        date_format(now(),&apos;%Y%m%d&apos;) as stat_dt,
+        cons.id CONSULTER_ID,
+        cons.nickname NICK_NAME,
+        (case when (cons.location is null OR cons.location=&apos;&apos;) then -1 else (cons.location div 10000*10000) end ) PROVINCE_ID,
+        (case when (cons.location is null OR cons.location=&apos;&apos;) then -1 else (cons.location div 100*100) end) CITY_ID,
+        (case when (cons.location is null OR cons.location=&apos;&apos;) then -1 else cons.location end)  AREA_ID,
+        cons.address ADDRESS,
+        cons.phone PHONE,
+        (case when cons.isfrozen is null then 0 else cons.isfrozen end) IS_FROZEN,
+        FROM_UNIXTIME(cons.create_time/1000,&apos;%Y-%m-%d %H:%i:%s&apos;) REG_TIME,
+        (case when (cons.sex &gt;=0) then cons.sex else 2 end)  SEX,
+        cons.birthdate BIRTHDAY,
+        (case when cons.birth_status is null then 4 else  cons.birth_status end ) PREGNANT_STATE,
+        CASE
+        WHEN (cons.cus_ids is null OR cons.cus_ids=&apos;&apos;) THEN
+        NULL
+        ELSE
+        cons.cus_ids
+        END EXCLUSIVE_CUSTOMER_ID
+        ,cons.b_mark B_MARK
+        ,m.remark QRCODE
+        ,(case when cons.iscomplaint is null then 0 else cons.iscomplaint end) IS_COMPLAINTED
+        FROM
+        (
+        SELECT
+        concat_ws( &apos;,&apos;, group_concat( cust.id ), cus.id ) cus_ids,c.sceneid,c.birthdate,c.address,c.id,c.location,c.sex,c.b_mark,c.create_time,c.iscomplaint,c.nickname,c.birth_status,c.phone,c.isfrozen
+        FROM consulter c
+        LEFT JOIN customer_user_scan_rela cusr ON c.id = cusr.consulter_id
+        LEFT JOIN customer cus ON c.customerid = cus.id
+        LEFT JOIN customer cust ON cusr.customer_id = cust.id AND cusr.`status` = 1
+        WHERE
+        c.phone is not null
+        AND c.id &gt;${beforeConsulterId} AND c.id &lt;=${afterConsulterId}
+        GROUP BY
+        c.id
+        ORDER BY
+        c.id ASC
+        ) cons
+        LEFT JOIN MEDIUM m ON m.scene_id = cons.sceneid ;
+    </insert>
+
+</mapper>
