@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.jeecg.common.api.vo.Result;
@@ -40,7 +41,7 @@ import java.util.Map;
 * @Version: V1.0
 */
 @Slf4j
-//@Api(tags="学生后台管理")
+@Api(tags="Server-学生管理")
 @RestController
 @RequestMapping("/sims/simsStudent")
 public class SimsStudentController {

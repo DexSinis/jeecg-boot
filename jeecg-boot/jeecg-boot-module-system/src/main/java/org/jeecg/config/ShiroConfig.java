@@ -66,6 +66,22 @@ public class ShiroConfig {
 				filterChainDefinitionMap.put(url,"anon");
 			}
 		}
+
+
+
+		filterChainDefinitionMap.put("/simsTeacher/**", "anon");
+		filterChainDefinitionMap.put("/simsLesson/**", "anon");
+		filterChainDefinitionMap.put("/simsStudent/**", "anon");
+		filterChainDefinitionMap.put("/simsAuthStudent/**", "anon");
+		filterChainDefinitionMap.put("/simsAuthTeacher/**", "anon");
+		filterChainDefinitionMap.put("/simsScore/**", "anon");
+		filterChainDefinitionMap.put("/simsFile/**", "anon");
+		filterChainDefinitionMap.put("/simsRescource/**", "anon");
+		filterChainDefinitionMap.put("/simsOpern/**", "anon");
+		filterChainDefinitionMap.put("/simsRescourceOpernLesson/**", "anon");
+		filterChainDefinitionMap.put("/simsRescourceOpernStudent/**", "anon");
+		filterChainDefinitionMap.put("/csrf", "anon");
+
 		//cas验证登录
 		filterChainDefinitionMap.put("/cas/client/validateLogin", "anon");
 		// 配置不会被拦截的链接 顺序判断

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import com.google.common.base.Predicates;
 import org.jeecg.modules.shiro.vo.DefContants;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrapUI;
 
 import io.swagger.annotations.ApiOperation;
+import springfox.documentation.RequestHandler;
 import springfox.documentation.service.ApiKey;
 import springfox.documentation.service.Parameter;
 import lombok.extern.slf4j.Slf4j;
@@ -56,11 +58,15 @@ public class Swagger2Config implements WebMvcConfigurer {
 	 */
 	@Bean
 	public Docket createRestApi() {
+		com.google.common.base.Predicate<RequestHandler> selector1 = RequestHandlerSelectors.basePackage("org.jeecg.modules.sims");
+		com.google.common.base.Predicate<RequestHandler> selector2 = RequestHandlerSelectors.basePackage("org.jeecg.modules.admin");
+
+
 		return new Docket(DocumentationType.SWAGGER_2)
 				.apiInfo(apiInfo())
 				.select()
 				//此包路径下的类，才生成接口文档
-				.apis(RequestHandlerSelectors.basePackage("org.jeecg.modules"))
+				.apis(Predicates.or(selector1,selector2))
 				//加了ApiOperation注解的类，才生成接口文档
 	            .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
 				.paths(PathSelectors.any())

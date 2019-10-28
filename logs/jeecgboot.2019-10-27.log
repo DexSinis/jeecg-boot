@@ -4602,3 +4602,13 @@ Caused by: java.io.IOException: Broken pipe
 2019-10-27 19:18:02.923 [http-nio-8080-exec-8] INFO  org.jeecg.modules.message.websocket.WebSocket:37 - 【websocket消息】有新的连接，总数为:1
 2019-10-27 19:18:06.028 [http-nio-8080-exec-7] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzY4NzQsInVzZXJuYW1lIjoiMTM1MTAyOTEwMjMifQ.X9yR3U81uEtIcTIDOC3G2BNpVX_zK5XGrZ_JQxhUsJM
 2019-10-27 19:18:07.673 [http-nio-8080-exec-6] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIxNzY4NzQsInVzZXJuYW1lIjoiMTM1MTAyOTEwMjMifQ.X9yR3U81uEtIcTIDOC3G2BNpVX_zK5XGrZ_JQxhUsJM
+2019-10-27 19:19:22.814 [http-nio-8080-exec-7] INFO  org.jeecg.modules.message.websocket.WebSocket:46 - 【websocket消息】连接断开，总数为:0
+2019-10-27 19:19:39.743 [Thread-57] INFO  org.quartz.core.QuartzScheduler:585 - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2019-10-27 19:19:39.745 [Thread-57] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-27 19:19:39.749 [Thread-57] INFO  o.s.scheduling.quartz.SchedulerFactoryBean:844 - Shutting down Quartz Scheduler
+2019-10-27 19:19:39.749 [Thread-57] INFO  org.quartz.core.QuartzScheduler:666 - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2019-10-27 19:19:39.750 [Thread-57] INFO  org.quartz.core.QuartzScheduler:585 - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2019-10-27 19:19:39.750 [Thread-57] INFO  org.quartz.core.QuartzScheduler:740 - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2019-10-27 19:19:39.759 [Thread-57] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:182 - closing dynamicDatasource  ing....
+2019-10-27 19:19:39.762 [Thread-57] INFO  com.alibaba.druid.pool.DruidDataSource:1948 - {dataSource-1} closing ...
+2019-10-27 19:19:39.767 [Thread-57] INFO  com.alibaba.druid.pool.DruidDataSource:2020 - {dataSource-1} closed
