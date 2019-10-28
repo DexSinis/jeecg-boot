@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/jeecg-boot-base-common/jeecg-boot-base-common.iml" filepath="$PROJECT_DIR$/jeecg-boot-base-common/jeecg-boot-base-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/jeecg-boot-common/jeecg-boot-common.iml" filepath="$PROJECT_DIR$/jeecg-boot-common/jeecg-boot-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jeecg-boot-module-static/jeecg-boot-module-static.iml" filepath="$PROJECT_DIR$/jeecg-boot-module-static/jeecg-boot-module-static.iml" />
       <module fileurl="file://$PROJECT_DIR$/jeecg-boot-module-system/jeecg-boot-module-system.iml" filepath="$PROJECT_DIR$/jeecg-boot-module-system/jeecg-boot-module-system.iml" />
       <module fileurl="file://$PROJECT_DIR$/jeecg-boot-mybatis/jeecg-boot-mybatis.iml" filepath="$PROJECT_DIR$/jeecg-boot-mybatis/jeecg-boot-mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/jeecg-boot-parent.iml" filepath="$PROJECT_DIR$/jeecg-boot-parent.iml" />

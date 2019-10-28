@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="jeecg-boot-base-common" />
         <module name="jeecg-boot-common" />
+        <module name="jeecg-boot-module-static" />
         <module name="jeecg-boot-module-system" />
         <module name="jeecg-boot-mybatis" />
         <module name="jeecg-boot-service" />
@@ -17,6 +18,7 @@
     <bytecodeTargetLevel>
       <module name="jeecg-boot-base-common" target="1.8" />
       <module name="jeecg-boot-common" target="1.8" />
+      <module name="jeecg-boot-module-static" target="1.8" />
       <module name="jeecg-boot-module-system" target="1.8" />
       <module name="jeecg-boot-mybatis" target="1.8" />
       <module name="jeecg-boot-parent" target="1.8" />
@@ -28,6 +30,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="jeecg-boot-base-common" options="-parameters" />
       <module name="jeecg-boot-common" options="-parameters" />
+      <module name="jeecg-boot-module-static" options="-parameters" />
       <module name="jeecg-boot-module-system" options="-parameters" />
       <module name="jeecg-boot-mybatis" options="-parameters" />
       <module name="jeecg-boot-service" options="-parameters" />
