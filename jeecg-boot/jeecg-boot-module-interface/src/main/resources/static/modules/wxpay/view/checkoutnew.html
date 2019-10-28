@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="KeyboardDisplayRequiresUserAction" value="false" />
+	<title>收银台</title>
+	<script th:src="@{/globle/layer/js/layer.js}"></script>
+	<script th:src="@{/globle/jquery/js/jquery-1.8.4.min.js}"></script>
+	<script type="text/javascript" src="https://cdn.bootcss.com/vConsole/3.3.0/vconsole.min.js"></script>
+
+	<script>
+		// 初始化
+		var vConsole = new VConsole();
+		console.log('Hello world');
+	</script>
+  <style>
+     *{margin:0;padding:0;}
+     body{background:#f5f5f5;}
+     .wrapper{width:100%;overflow:hidden;float:left;}
+     .paytop{width:7.5rem;padding:.3rem;background:#fff;color:#222;font-size:.32rem;box-sizing:border-box;float:left;}
+     .paytop>span{float:right;color:#ff9b23;}
+     .margin30{margin:.3rem 0 0;}
+     .payType{border-top:1px solid #f5f5f5;}
+     .payType>.weixin{width:.85rem;float:left;margin-right:.25rem;}
+     .payType-cont{width:4.6rem;float:left;}
+     .payType-cont>h2{width:100%;float:left;margin:0;padding:0;font-size:.32rem;}
+     .payType-cont>p{width:100%;float:left;margin:.18rem 0 0;padding:0;font-size:.28rem;color:#999}
+     .payType>.check{width:.4rem;float:right;margin-top:.22rem;}
+     .btnChatEvaluate{width:6.9rem;margin:.4rem .3rem;background:#3ad276;color:#fff;border-radius:.4rem;letter-spacing:.05rem;float:left;border:none;padding:.3rem 0;line-height:1;font-size:.32rem}
+     .paytop>p{float:left;}
+		 .paytop>.fr{float:right;color:#ff9b23;}
+		/*重写layer-moible样式 需要用到的地方加上以下样式即可*/
+     .layui-m-layer0 .layui-m-layerchild{width:85%;border-radius:.2rem;}
+    .layui-m-layerbtn{height:40px;line-height:40px;background-color:#fff;}
+     .layui-m-layerbtn span{font-size:.28rem;height:auto}
+     .layui-m-layerbtn span[yes]{color:#3ad276;}
+     .layui-m-layercont{padding: 10px 20px 15px;font-size:.28rem;color:#666;min-height:36px;}
+     .layui-m-layerchild h3{color:#222;font-size:.32rem;height:auto;line-height:2;padding-top:.45rem;font-weight:700}
+     .layui-m-layerbtn span[no]{border-radius:0 0 0 .2rem;}
+     .layui-m-layerbtn, .layui-m-layerbtn span{border-radius:0 0 .2rem .2rem}
+		 /*支付选择*/
+		 /*radio美化*/
+		 .RadioList{position:relative}input[type="radio"],input[type="checkbox"]{width:20px;height:20px;opacity:0}.radioLabel{position:absolute;left:5px;top:-1px;width:20px;height:20px;border-radius:50%;border:1px solid #e2e2e2;}input:checked+label{background-color:#3ad276;border:1px solid #3ad276}input[disabled]+label{border:1px dashed #c2c2c2;background:#f5f5f5}input:checked+label::after{position:absolute;content:"";width:5px;height:10px;top:3px;left:6px;border:2px solid #fff;border-top:0;border-left:none;transform:rotate(45deg)}
+		 .payType{width:100%;float:left;}
+		 .payType>h2{width:100%;float:left;color:#999;font-size:.3rem;padding:.3rem;box-sizing:border-box;font-weight:normal;}
+		 .payType_li{width:100%;float:left;background:#fff;box-sizing:border-box;padding:.3rem;position:relative;}
+		 .payType_li:after{position:absolute;bottom:0;content:"";height:1px;background:#f1f1f1;right:0;width:88%;z-index:2;}
+		 .payType_li .payType_li_right{float:right;width:1.6rem;}
+		 .payType_li .payType_li_right>span{width:1rem;text-align:right;}
+		 .payType_li .payType_li_right>.newPrice{color:#ea0000;width:100%;float:left;font-size:.3rem;}
+		 .payType_li .payType_li_right>.oldPrice{color:#999;width:100%;float:left;font-size:.26rem;text-decoration:line-through;margin-top:.2rem}
+		 .payType_li .payType_li_left{float:left;width:5.3rem}
+		 .payType_li .payType_li_left .payType_li_title{font-size:.3rem;float:left;font-weight:bold;}
+		 .payType_li .payType_li_left .RadioList{float:left;margin-right:.3rem;height:.5rem}
+		 .RadioList_right{float:left;width:4.5rem}
+		 .payType_li_p{width:100%;float:left;color:#999;font-size:.26rem;box-sizing:border-box;margin-top:.1rem}
+		 .payType_li .payType_li_left .payType_li_title>img{width:1.4rem;margin:0rem 0 0 .1rem;float:left;}
+		 .payType_li_p>span{color:#ff9b23;}
+  </style>
+</head>
+<body>
+<div class="wrapper">
+ <!--<div class="paytop margin30">-->
+	   <!--<p>测试包</p>-->
+		 <!--<p class="fr">¥2</p>-->
+	<!--</div>-->
+	<div class="payType">
+		<h2>选择类型</h2>
+		<div class="payType_li">
+			<div class="payType_li_left">
+				<div class="RadioList">
+				  <input id="item1" type="radio"   name="item" checked=""  th:onclick="channelChange('CONSULT',[[${payParams.payTempOrder.id}]])">
+					<label class="radioLabel" for="item1"></label>
+				</div>
+				<span class="payType_li_title">单次咨询</span>
+			</div>
+			<div class="payType_li_right">
+				<span class="newPrice">¥<label th:text="${payParams.payTempOrder.fee}"></label></span>
+			</div>
+		</div>
+		<div class="payType_li" th:each="tpPricingPackage,pkg:${payParams.tpPricingPackages}">
+			<div class="payType_li_left">
+				<div class="RadioList">
+				  <input th:id="${tpPricingPackage.pricingPkgId}"  type="radio"   name="item" th:onclick="channelChange('VIP',[[${tpPricingPackage.pricingPkgId}]]);">
+					<label class="radioLabel" th:for="${tpPricingPackage.pricingPkgId}"></label>
+				</div>
+				<div class="RadioList_right">
+					<span class="payType_li_title" th:text="${tpPricingPackage.pricingPkgName}"></span>
+					<div class="payType_li_p" th:text="${tpPricingPackage.pricingDescS}"></div>
+					<div class="payType_li_p" th:text="${tpPricingPackage.pricingDescE}"></div>
+				</div>
+			</div>
+			<div class="payType_li_right">
+				<span class="newPrice" ><label th:text="${tpPricingPackage.salePrice}"></label>/年</span>
+				<span class="oldPrice" >价值<label th:text="${tpPricingPackage.markedPrice}"></label></span>
+			</div>
+		</div>
+		<!--<div class="payType_li">-->
+			<!--<div class="payType_li_left">-->
+				<!--<div class="RadioList">-->
+				  <!--<input id="item3" type="radio" name="item"   @click="selectPreference">-->
+					<!--<label class="radioLabel" for="item3"></label>-->
+				<!--</div>-->
+				<!--<div class="RadioList_right">-->
+					<!--<span class="payType_li_title"><span style="float:left">健康年卡·畅享版</span><img class="weixin" th:src="@{/modules/wxpay/images/hot.png}"></span>-->
+					<!--<div class="payType_li_p">极速问医生*<span>不限次数</span>、明星医生*<span>10次</span></div>-->
+					<!--<div class="payType_li_p">心理咨询*8折、营养咨询*9折</div>-->
+				<!--</div>-->
+			<!--</div>-->
+			<!--<div class="payType_li_right">-->
+				<!--<span class="newPrice">¥99/年</span>-->
+				<!--<span class="oldPrice">价值¥748</span>-->
+			<!--</div>-->
+		<!--</div>-->
+	</div>
+ 	<div class="payType">
+  	<h2>选择支付方式</h2>
+	</div>
+  <div class="paytop payType">
+	<img class="weixin" th:src="@{/modules/wxpay/images/weixin.png}">
+    <div class="payType-cont">
+      <h2>微信支付</h2>
+      <p>亿万用户的选择，更快更安全</p>
+    </div>
+    <img class="check"  th:src="@{/modules/wxpay/images/check.png}">
+  </div>
+	<button class="btn btnChatEvaluate"  onclick="checkoutPay()" >去支付¥<span id="composePrice" th:text="${payParams.payTempOrder.fee}"></span></button>
+</div>
+</body>
+
+<script>
+  //设置1rem=100px
+  document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+  window.onresize = function(){
+    document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+  }
+
+
+  var ctx = "[[@{/}]]";
+  var callStatus = false;
+  console.log("[[${payParams}]]")
+  var json  = escape2Html("[[${payParams}]]");
+  console.log("json---sss---"+json);
+
+  //调用微信JS api 支付
+  function checkoutPay() {
+	  if(callStatus==true){
+		  return;
+	  }else {
+		  callStatus = true;
+	  }
+
+	  $.ajax({
+		  url: ctx+"/wxcheckout/getWeChatPreOrder",
+		  dataType: "json",
+		  data: {
+			  payParam:json
+		  },
+		  success: function (data) {
+			  callStatus=false;
+			  data.package = data.packageValue;
+			  alert(JSON.stringify(data));
+			  if (data && !data.code) {
+				  WeixinJSBridge.invoke(
+						  'getBrandWCPayRequest',
+						  data,
+						  function (res) {
+							  if (res.err_msg == "get_brand_wcpay_request:ok") {
+								  //支付成功
+								  var preOrderStr = data.package;
+								  var jsonObject = JSON.parse(json);
+								  var url = jsonObject.rightUrl;
+								  window.location.href = url;
+							  }
+						  }
+				  );
+			  }
+		  },
+		  error: function (jqXHR, textStatus, errorThrown) {
+
+		  }
+	  });
+  }
+
+
+  var onLoad =false
+  function channelChange(payType,channelId){
+
+	  if(onLoad==true){
+		  return;
+	  }else {
+		  onLoad = true;
+	  }
+
+	  alert(payType+"----"+channelId);
+
+	  var jsonObject = JSON.parse(json);
+	  jsonObject.payType = payType
+	  if(payType=="VIP"){
+	  	jsonObject.pricingPkgId = channelId
+	  }else{
+		jsonObject.payTempOrderId = channelId
+	  }
+      json = JSON.stringify(jsonObject);
+	  console.log(json);
+
+	  $.ajax({
+		  type: "POST", //用POST方式传输
+		  dataType: "json", //数据格式:JSON
+		  url: ctx+"/wxcheckout/channelChange",
+		  data: {
+			  payParam:json
+		  },
+		  error: function (XMLHttpRequest, textStatus, errorThrown) {
+			  onLoad=false;
+		  },
+		  success: function (data) {
+			  console.log(JSON.stringify(data));
+			  json = JSON.stringify(data.data);
+			  console.log("json---return---"+json);
+			  if(data.data.payType=="VIP"){
+				  var tpPricingPackage = data.data.tpPricingPackage;
+				  $('#composePrice').html(tpPricingPackage.composePrice);
+			  }else{
+				 var payTempOrder = data.data.payTempOrder;
+				  $('#composePrice').html(payTempOrder.fee);
+			  }
+			  onLoad=false;
+		  }
+	  });
+  }
+
+
+
+
+
+  function escape2Html(str) {
+	  var arrEntities={'lt':'<','gt':'>','nbsp':' ','amp':'&','quot':'"'};
+	  return str.replace(/&(lt|gt|nbsp|amp|quot);/ig,function(all,t){return arrEntities[t];});
+  }
+
+
+</script>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="KeyboardDisplayRequiresUserAction" value="false" />
+    <title>收银台</title>
+    <script th:src="@{/globle/layer/js/layer.js}"></script>
+    <script th:src="@{/globle/jquery/js/jquery-1.8.4.min.js}"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/vConsole/3.3.0/vconsole.min.js"></script>
+
+    <script>
+        // 初始化
+        var vConsole = new VConsole();
+        console.log('Hello world');
+    </script>
+
+    <style>
+        *{margin:0;padding:0;}
+        body{background:#f5f5f5;}
+        .wrapper{width:100%;overflow:hidden;float:left;}
+        .paytop{width:7.5rem;padding:.3rem;background:#fff;color:#222;font-size:.32rem;box-sizing:border-box;float:left;}
+        .paytop>span{float:right;color:#ff9b23;}
+        .margin30{margin:.3rem 0;}
+        .payType{border-top:1px solid #f5f5f5;}
+        .payType>.weixin{width:.85rem;float:left;margin-right:.25rem;}
+        .payType-cont{width:4.6rem;float:left;}
+        .payType-cont>h2{width:100%;float:left;margin:0;padding:0;font-size:.32rem;}
+        .payType-cont>p{width:100%;float:left;margin:.18rem 0 0;padding:0;font-size:.28rem;color:#999}
+        .payType>.check{width:.4rem;float:right;margin-top:.22rem;}
+        .btnChatEvaluate{width:6.9rem;margin:.4rem .3rem;background:#3ad276;color:#fff;border-radius:.4rem;letter-spacing:.05rem;float:left;border:none;padding:.3rem 0;line-height:1;font-size:.32rem}
+        /*重写layer-moible样式 需要用到的地方加上以下样式即可*/
+        .layui-m-layer0 .layui-m-layerchild{width:85%;border-radius:.2rem;}
+        .layui-m-layerbtn{height:40px;line-height:40px;background-color:#fff;}
+        .layui-m-layerbtn span{font-size:.28rem;height:auto}
+        .layui-m-layerbtn span[yes]{color:#3ad276;}
+        .layui-m-layercont{padding: 10px 20px 15px;font-size:.28rem;color:#666;min-height:36px;}
+        .layui-m-layerchild h3{color:#222;font-size:.32rem;height:auto;line-height:2;padding-top:.45rem;font-weight:700}
+        .layui-m-layerbtn span[no]{border-radius:0 0 0 .2rem;}
+        .layui-m-layerbtn, .layui-m-layerbtn span{border-radius:0 0 .2rem .2rem}
+        .paytop>p{float:left;}
+        .paytop>.fr{float:right;color:#ff9b23;}
+    </style>
+</head>
+<body>
+
+
+
+<div class="wrapper">
+    <div class="paytop margin30" >
+        <p th:text="${payParams.tpPricingPackage.pricingPkgName}"></p>
+        <p class="fr" th:text="${payParams.tpPricingPackage.salePrice}"></p>
+    </div>
+    <div class="paytop">选择支付方式</div>
+    <div class="paytop payType">
+        <img class="weixin" th:src="@{/modules/wxpay/images/weixin.png}">
+        <div class="payType-cont">
+            <h2>微信支付</h2>
+            <p>亿万用户的选择，更快更安全</p>
+        </div>
+        <img class="check"  th:src="@{/modules/wxpay/images/check.png}">
+    </div>
+    <button class="btn btnChatEvaluate" onclick="checkoutPay()">去支付</button>
+
+</div>
+</body>
+<script>
+    var ctx = "[[@{/}]]";
+
+        //设置1rem=100px
+    document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+    window.onresize = function(){
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+    }
+
+
+    var callStatus = false;
+    //调用微信JS api 支付
+    function checkoutPay() {
+        if(callStatus==true){
+            return;
+        }else {
+            callStatus = true;
+        }
+
+        console.log("[[${payParams}]]")
+        var json = escape2Html("[[${payParams}]]");
+        var jsonObject = JSON.parse(json);
+        console.log(jsonObject)
+
+
+        $.ajax({
+            url: ctx+"/wxcheckout/getWeChatPreOrder",
+            dataType: "json",
+            data: {
+                payParam:json
+            },
+            success: function (data) {
+                callStatus=false;
+                data.package = data.packageValue;
+                // alert(JSON.stringify(data));
+                if (data && !data.code) {
+                        WeixinJSBridge.invoke(
+                            'getBrandWCPayRequest',
+                            data,
+                            function (res) {
+                                if (res.err_msg == "get_brand_wcpay_request:ok") {
+                                    //支付成功
+                                    var preOrderStr = data.package;
+                                    var url = encodeURI("[[${payParams.rightUrl}]]");
+                                    window.location.href = url;
+                                }
+                            }
+                        );
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+
+            }
+        });
+
+
+    }
+
+
+    function escape2Html(str) {
+        var arrEntities={'lt':'<','gt':'>','nbsp':' ','amp':'&','quot':'"'};
+        return str.replace(/&(lt|gt|nbsp|amp|quot);/ig,function(all,t){return arrEntities[t];});
+    }
+
+</script>
+</html>

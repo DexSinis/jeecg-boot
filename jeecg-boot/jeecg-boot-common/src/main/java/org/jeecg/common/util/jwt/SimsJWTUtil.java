@@ -50,12 +50,12 @@ public class SimsJWTUtil {
      * 颁发token
      * @param id
      * @param mobilePhone
-     * @param version
+     * @param tokenVersion
      * @param simsPassword
      * @param validTime
      * @return
      */
-    public static SimsJWTResult createToken(String id, String mobilePhone, String version, String simsPassword, long validTime) {
+    public static SimsJWTResult createToken(String id, String mobilePhone, String tokenVersion, String simsPassword,String deviceVersion,String deviceType,String serverNode,String serverVersion, long validTime) {
         long startTime = new Date().getTime();
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("alg", "HS256");
@@ -66,12 +66,16 @@ public class SimsJWTUtil {
                 .withHeader(map)//header
                 .withClaim("id", id)
                 .withClaim("mobilePhone", mobilePhone)  //String
-                .withClaim("version", version) // int
+                .withClaim("version", tokenVersion) // int
                 .withClaim("simsPassword", simsPassword) // dyh,fwh
                 .withClaim("startTime", startTime)
                 .withClaim("endTime", endTime)
+                .withClaim("deviceVersion", deviceVersion)
+                .withClaim("deviceType", deviceType)
+                .withClaim("serverNode", serverNode)
+                .withClaim("serverVersion", serverVersion)
                 .sign(Algorithm.HMAC256(SECRET));//加密
-        return SimsJWTResult.buildSuccess(id,mobilePhone,version,simsPassword, startTime, endTime, token);
+        return SimsJWTResult.buildSuccess(id,mobilePhone,tokenVersion,simsPassword, deviceVersion, deviceType, serverNode, serverVersion, startTime, endTime, token);
     }
 
 
@@ -170,6 +174,10 @@ public class SimsJWTUtil {
         String mobilePhone = claims.get("mobilePhone").asString();
         String version = claims.get("version").asString();
         String simsPassword = claims.get("simsPassword").asString();
+        String deviceVersion = claims.get("deviceVersion").asString();
+        String deviceType = claims.get("deviceType").asString();
+        String serverNode = claims.get("serverNode").asString();
+        String serverVersion = claims.get("serverVersion").asString();
         Long startTime = claims.get("startTime").asLong();
         Long endTime = claims.get("endTime").asLong();
         if (id == null || mobilePhone == null || version == null || simsPassword == null || startTime == null || endTime == null) {
@@ -186,7 +194,7 @@ public class SimsJWTUtil {
             return SimsJWTResult.buildError("token过期", token);
         }
 
-        return SimsJWTResult.buildSuccess(id,mobilePhone,version,simsPassword, startTime, endTime, token);
+        return SimsJWTResult.buildSuccess(id,mobilePhone,version,simsPassword,deviceVersion, deviceType, serverNode, serverVersion, startTime, endTime, token);
 
     }
 
@@ -213,8 +221,15 @@ public class SimsJWTUtil {
         String mobilePhone = jwtResult.getMobilePhone();
         String version = jwtResult.getVersion();
         String simsPassword = jwtResult.getSimsPassword();
+        String deviceVersion = jwtResult.getDeviceVersion();
+        String deviceType = jwtResult.getDeviceType();
+        String serverNode = jwtResult.getServerNode();
+        String serverVersion = jwtResult.getServerVersion();
+
+
         long endTime= jwtResult.getEndTime() + addValidTime;
         long startTime= jwtResult.getStartTime();
+
 
         String neWtoken = JWT.create()
                 .withHeader(map)//header
@@ -224,8 +239,12 @@ public class SimsJWTUtil {
                 .withClaim("simsPassword", simsPassword)//保留原来结束时间
                 .withClaim("startTime",startTime)//保留原来创建时间
                 .withClaim("endTime", endTime)//结束时间延长
+                .withClaim("deviceVersion", deviceVersion)//结束时间延长
+                .withClaim("deviceType", deviceType)//结束时间延长
+                .withClaim("serverNode", serverNode)//结束时间延长
+                .withClaim("serverVersion", serverVersion)//结束时间延长
                 .sign(Algorithm.HMAC256(SECRET));//加密
-        return SimsJWTResult.buildSuccess(id,mobilePhone,version,simsPassword, startTime, endTime, neWtoken);
+        return SimsJWTResult.buildSuccess(id,mobilePhone,version,simsPassword,deviceVersion, deviceType, serverNode, serverVersion, startTime, endTime, neWtoken);
 
     }
 

@@ -109,7 +109,7 @@ public class PrSimsAuthTeacherController {
 
             simsTokenVersionService.saveOrUpdate(simsTokenVersionRecord);
 
-            String token = SimsJWTUtil.createToken(simsTeacherResult.getId(), simsTeacherResult.getMobilePhone(), version+"", simsTeacherResult.getSimsPassword(), Integer.MAX_VALUE).getToken();
+            String token = SimsJWTUtil.createToken(simsTeacherResult.getId(), simsTeacherResult.getMobilePhone(), version+"", simsTeacherResult.getSimsPassword(),"deviceVersion", "deviceType", "serverNode", "serverVersion", Integer.MAX_VALUE).getToken();
             simsTeacherResult.setToken(token);
             simsTeacherResult.setOnline(PetrusConstant.ONLINE.ON);
             queryFlag = simsTeacherService.updateById(simsTeacherResult);
