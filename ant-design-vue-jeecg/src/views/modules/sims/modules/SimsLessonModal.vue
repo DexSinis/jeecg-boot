@@ -23,6 +23,12 @@
           label="教师ID">
           <a-input placeholder="请输入教师ID" v-decorator="['teacherId', {}]" />
         </a-form-item>
+
+          <a-form-item label="选择教师">
+            <j-select-multi-sims-teacher v-model="multiTeacher"></j-select-multi-sims-teacher>
+          </a-form-item>
+
+
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
@@ -69,9 +75,13 @@
   import { httpAction } from '@/api/manage'
   import pick from 'lodash.pick'
   import moment from "moment"
+  import JSelectMultiSimsTeacher from '../../../../components/jeecgbiz/JSelectMultiSimsTeacher'
 
   export default {
     name: "SimsLessonModal",
+    components: {
+      JSelectMultiSimsTeacher,
+    },
     data () {
       return {
         title:"操作",

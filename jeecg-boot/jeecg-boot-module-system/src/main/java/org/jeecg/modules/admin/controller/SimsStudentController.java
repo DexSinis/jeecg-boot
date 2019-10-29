@@ -13,6 +13,7 @@ import org.jeecg.common.system.query.QueryGenerator;
 import org.jeecg.common.util.oConvertUtils;
 import org.jeecg.modules.sims.entity.SimsStudent;
 import org.jeecg.modules.sims.service.ISimsStudentService;
+import org.jeecg.modules.system.entity.SysUser;
 import org.jeecgframework.poi.excel.ExcelImportUtil;
 import org.jeecgframework.poi.excel.def.NormalExcelConstants;
 import org.jeecgframework.poi.excel.entity.ExportParams;
@@ -71,6 +72,10 @@ public class SimsStudentController {
        result.setResult(pageList);
        return result;
    }
+
+
+
+
 
    /**
      *   添加
