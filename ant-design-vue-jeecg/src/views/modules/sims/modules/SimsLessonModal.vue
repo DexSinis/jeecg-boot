@@ -25,8 +25,9 @@
         </a-form-item>
 
           <a-form-item label="选择教师">
-            <j-select-multi-sims-teacher v-model="multiTeacher"></j-select-multi-sims-teacher>
+            <j-select-multi-sims-teacher v-model="singleTeacher"></j-select-multi-sims-teacher>
           </a-form-item>
+
 
 
         <a-form-item
@@ -35,6 +36,13 @@
           label="学生ID">
           <a-input placeholder="请输入学生ID" v-decorator="['studentId', {}]" />
         </a-form-item>
+
+
+        <a-form-item label="选择学生">
+          <j-select-multi-sims-student v-model="singleStudent"></j-select-multi-sims-student>
+        </a-form-item>
+
+
         <!--<a-form-item-->
           <!--:labelCol="labelCol"-->
           <!--:wrapperCol="wrapperCol"-->
@@ -76,14 +84,18 @@
   import pick from 'lodash.pick'
   import moment from "moment"
   import JSelectMultiSimsTeacher from '../../../../components/jeecgbiz/JSelectMultiSimsTeacher'
+  import JSelectMultiSimsStudent from '../../../../components/jeecgbiz/JSelectMultiSimsStudent'
 
   export default {
     name: "SimsLessonModal",
     components: {
       JSelectMultiSimsTeacher,
+      JSelectMultiSimsStudent,
     },
     data () {
       return {
+        singleTeacher:{},
+        singleStudent:{},
         title:"操作",
         visible: false,
         model: {},

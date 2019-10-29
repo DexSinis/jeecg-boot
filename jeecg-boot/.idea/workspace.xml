@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df54323c-fc00-4ad7-960d-72d448df49b7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/components/jeecgbiz/JSelectMultiSimsTeacher.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/components/jeecgbiz/JSelectMultiUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/components/jeecgbiz/JSelectMultiUser.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/views/jeecg/SelectDemo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/views/jeecg/SelectDemo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/views/modules/sims/modules/SimsLessonModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../ant-design-vue-jeecg/src/views/modules/sims/modules/SimsLessonModal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/admin/controller/SimsStudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/jeecg-boot-module-system/src/main/java/org/jeecg/modules/admin/controller/SimsStudentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../logs/error-log.html" beforeDir="false" afterPath="$PROJECT_DIR$/../logs/error-log.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../logs/jeecgboot.2019-10-29.html" beforeDir="false" afterPath="$PROJECT_DIR$/../logs/jeecgboot.2019-10-29.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../logs/jeecgboot.2019-10-29.log" beforeDir="false" afterPath="$PROJECT_DIR$/../logs/jeecgboot.2019-10-29.log" afterDir="false" />
@@ -339,7 +333,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572342997867" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572344490000" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -471,6 +465,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="831" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2944126" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
