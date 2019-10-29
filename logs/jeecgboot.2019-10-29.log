@@ -1811,3 +1811,126 @@ Caused by: java.net.SocketException: Operation timed out (Read failed)
 	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:3011)
 	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3472)
 	... 22 common frames omitted
+2019-10-29 14:53:34.907 [main] INFO  org.jeecg.JeecgApplication:50 - Starting JeecgApplication on DexSinisdeMacBook-Pro.local with PID 10828 (/Users/dexsinis/D/E/cbk/jeecg-boot/jeecg-boot/jeecg-boot-module-system/target/classes started by dexsinis in /Users/dexsinis/D/E/cbk/jeecg-boot/jeecg-boot)
+2019-10-29 14:53:34.911 [main] INFO  org.jeecg.JeecgApplication:679 - The following profiles are active: pre
+2019-10-29 14:53:36.646 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner:44 - No MyBatis mapper was found in '[org.jeecg.dao, org.jeecg.module.**.mapper]' package. Please check your configuration.
+2019-10-29 14:53:36.987 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:244 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-10-29 14:53:36.991 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-29 14:53:37.110 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:182 - Finished Spring Data repository scanning in 104ms. Found 0 repository interfaces.
+2019-10-29 14:53:37.645 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'shiroConfig' of type [org.jeecg.config.ShiroConfig$$EnhancerBySpringCGLIB$$24d2ff69] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-29 14:53:37.752 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'shiroRealm' of type [org.jeecg.modules.shiro.authc.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-29 14:53:37.891 [main] INFO  org.jeecg.config.ShiroConfig:204 - ===============(1)创建缓存管理器RedisCacheManager
+2019-10-29 14:53:37.893 [main] INFO  org.jeecg.config.ShiroConfig:222 - ===============(2)创建RedisManager,连接Redis..URL= 106.14.211.207:6379
+2019-10-29 14:53:37.897 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisManager' of type [org.crazycake.shiro.RedisManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-29 14:53:37.904 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-29 14:53:37.937 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-29 14:53:38.023 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4cd95d3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-29 14:53:38.233 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-29 14:53:38.245 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$6e5c06a4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-29 14:53:38.264 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-29 14:53:38.274 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-29 14:53:38.320 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-29 14:53:38.336 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$19e7541d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-29 14:53:38.559 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-29 14:53:38.708 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-29 14:53:38.747 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisConfig' of type [org.jeecg.config.RedisConfig$$EnhancerBySpringCGLIB$$6fa186b3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-29 14:53:38.828 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$17e67383] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-29 14:53:38.845 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'eventBus' of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-29 14:53:39.403 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2019-10-29 14:53:39.426 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2019-10-29 14:53:39.439 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-10-29 14:53:39.440 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-10-29 14:53:39.448 [main] INFO  org.apache.catalina.core.AprLifecycleListener:173 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/dexsinis/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-10-29 14:53:39.706 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/jeecg-boot]:173 - Initializing Spring embedded WebApplicationContext
+2019-10-29 14:53:39.707 [main] INFO  org.springframework.web.context.ContextLoader:296 - Root WebApplicationContext: initialization completed in 4748 ms
+2019-10-29 14:53:40.453 [main] INFO  c.b.dynamic.datasource.DynamicDataSourceCreator:113 - 动态数据源-检测到druid存在,如配置中未指定type,druid会默认配置
+2019-10-29 14:53:43.706 [main] INFO  com.alibaba.druid.pool.DruidDataSource:1003 - {dataSource-1,master} inited
+2019-10-29 14:53:43.707 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:203 - 初始共加载 1 个数据源
+2019-10-29 14:53:43.707 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:142 - 动态数据源-加载 master 成功
+2019-10-29 14:53:43.708 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:212 - 当前的默认数据源是单数据源，数据源名为 master
+2019-10-29 14:53:44.655 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.baby.entity.TargetInfoItemInst.
+2019-10-29 14:53:44.690 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.baby.entity.TrRefOptional.
+2019-10-29 14:53:45.079 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.order.entity.PreConsulterOrder.
+2019-10-29 14:53:45.179 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.qasystem.entity.QaQuestionLabel.
+2019-10-29 14:53:45.266 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.qasystem.entity.QuestionIncmD.
+2019-10-29 14:53:45.629 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.statistics.entity.ChnlAttentionH.
+2019-10-29 14:53:45.649 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.statistics.entity.ChnlCustAttentionD.
+2019-10-29 14:53:45.668 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.statistics.entity.GratuityDtlD.
+2019-10-29 14:53:45.689 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.statistics.entity.OrderDtlD.
+2019-10-29 14:53:45.709 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.statistics.entity.OrderEvaluationD.
+2019-10-29 14:53:45.729 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.statistics.entity.OrderProfitD.
+2019-10-29 14:53:45.748 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.statistics.entity.OrderProfitM.
+2019-10-29 14:53:45.767 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.statistics.entity.OrderQuantityH.
+2019-10-29 14:53:45.787 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.statistics.entity.OrderRefundD.
+2019-10-29 14:53:45.809 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.statistics.entity.PersUserD.
+2019-10-29 14:53:45.831 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.statistics.entity.PersUserOrderD.
+2019-10-29 14:53:46.234 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.vip.entity.ConsulterPricingPackage.
+2019-10-29 14:53:46.253 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.vip.entity.ConsulterPricingPkgRes.
+2019-10-29 14:53:46.327 [main] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper:285 - Warn: Could not find @TableId in Class: org.jeecg.modules.vip.entity.TpPricingPkgRes.
+2019-10-29 14:53:49.466 [main] INFO  org.quartz.impl.StdSchedulerFactory:1208 - Using default implementation for ThreadExecutor
+2019-10-29 14:53:49.478 [main] INFO  org.quartz.core.SchedulerSignalerImpl:61 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-10-29 14:53:49.478 [main] INFO  org.quartz.core.QuartzScheduler:229 - Quartz Scheduler v.2.3.0 created.
+2019-10-29 14:53:49.482 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:672 - Using db table-based data access locking (synchronization).
+2019-10-29 14:53:49.484 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:145 - JobStoreCMT initialized.
+2019-10-29 14:53:49.485 [main] INFO  org.quartz.core.QuartzScheduler:294 - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is not clustered.
+
+2019-10-29 14:53:49.486 [main] INFO  org.quartz.impl.StdSchedulerFactory:1362 - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2019-10-29 14:53:49.486 [main] INFO  org.quartz.impl.StdSchedulerFactory:1366 - Quartz scheduler version: 2.3.0
+2019-10-29 14:53:49.486 [main] INFO  org.quartz.core.QuartzScheduler:2287 - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@171b0d3
+2019-10-29 14:53:57.050 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver:59 - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-10-29 14:53:57.349 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping:69 - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-10-29 14:53:57.792 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-29 14:53:59.116 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper:160 - Context refreshed
+2019-10-29 14:53:59.138 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper:163 - Found 1 custom documentation plugin(s)
+2019-10-29 14:53:59.204 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner:41 - Scanning for api listing references
+2019-10-29 14:53:59.409 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: loginUsingPOST_1
+2019-10-29 14:53:59.411 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: loginOutUsingPOST_1
+2019-10-29 14:53:59.479 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: eidtUsingPOST_1
+2019-10-29 14:53:59.500 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_1
+2019-10-29 14:53:59.509 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: listUsingPOST_1
+2019-10-29 14:53:59.512 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: deleteUsingPOST_1
+2019-10-29 14:53:59.513 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: ossUploadFileUsingPOST_1
+2019-10-29 14:53:59.516 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: uploadUsingPOST_1
+2019-10-29 14:53:59.518 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: viewUsingGET_1
+2019-10-29 14:53:59.529 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_2
+2019-10-29 14:53:59.556 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_3
+2019-10-29 14:53:59.558 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: deleteUsingDELETE_1
+2019-10-29 14:53:59.560 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: deleteBatchUsingDELETE_1
+2019-10-29 14:53:59.561 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: editUsingPUT_1
+2019-10-29 14:53:59.563 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: queryByIdUsingGET_1
+2019-10-29 14:53:59.573 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: queryPageListUsingGET_1
+2019-10-29 14:53:59.576 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_4
+2019-10-29 14:53:59.577 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: deleteUsingDELETE_2
+2019-10-29 14:53:59.579 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: deleteBatchUsingDELETE_2
+2019-10-29 14:53:59.580 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: editUsingPUT_2
+2019-10-29 14:53:59.581 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: queryByIdUsingGET_2
+2019-10-29 14:53:59.590 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: queryPageListUsingGET_2
+2019-10-29 14:53:59.601 [main] INFO  o.s.scheduling.quartz.SchedulerFactoryBean:726 - Starting Quartz Scheduler now
+2019-10-29 14:54:00.912 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:866 - Freed 0 triggers from 'acquired' / 'blocked' state.
+2019-10-29 14:54:00.992 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:876 - Recovering 0 jobs that were in-progress at the time of the last shut-down.
+2019-10-29 14:54:00.992 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:889 - Recovery complete.
+2019-10-29 14:54:01.030 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:896 - Removed 0 'complete' triggers.
+2019-10-29 14:54:01.555 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:901 - Removed 0 stale fired job entries.
+2019-10-29 14:54:02.784 [main] INFO  org.quartz.core.QuartzScheduler:547 - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2019-10-29 14:54:02.804 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2019-10-29 14:54:02.844 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path '/jeecg-boot'
+2019-10-29 14:54:02.848 [main] INFO  org.jeecg.JeecgApplication:59 - Started JeecgApplication in 28.908 seconds (JVM running for 29.775)
+2019-10-29 14:54:02.864 [main] INFO  org.jeecg.JeecgApplication:26 - 
+----------------------------------------------------------
+	Application Jeecg-Boot is running! Access URLs:
+	Local: 		http://localhost:8080/jeecg-boot/
+	External: 	http://192.168.1.25:8080/jeecg-boot/
+	swagger-ui: 	http://192.168.1.25:8080/jeecg-boot/swagger-ui.html
+	Doc: 		http://192.168.1.25:8080/jeecg-boot/doc.html
+----------------------------------------------------------
+2019-10-29 14:54:03.267 [RMI TCP Connection(2)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/jeecg-boot]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-29 14:54:03.267 [RMI TCP Connection(2)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2019-10-29 14:54:03.286 [RMI TCP Connection(2)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet:546 - Completed initialization in 19 ms
+2019-10-29 14:54:03.424 [RMI TCP Connection(3)-127.0.0.1] INFO  io.lettuce.core.EpollProvider:68 - Starting without optional epoll library
+2019-10-29 14:54:03.427 [RMI TCP Connection(3)-127.0.0.1] INFO  io.lettuce.core.KqueueProvider:70 - Starting without optional kqueue library

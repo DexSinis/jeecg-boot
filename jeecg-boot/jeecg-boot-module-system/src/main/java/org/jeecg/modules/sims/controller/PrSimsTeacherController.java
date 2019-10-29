@@ -86,10 +86,10 @@ public class PrSimsTeacherController {
      * @return
      */
     @ApiOperation(value = "获取教师信息接口", notes = "通过电话号码获取当前教师信息接口")
-    @PostMapping(value = "/teacherInfo")
-    @PermissionData(pageComponent="jeecg/teacherInfo")
+    @PostMapping(value = "/teacherInformation")
+    @PermissionData(pageComponent="jeecg/teacherInformation")
     @Transactional
-    public Result<SimsTeacher> teacherInfo(@RequestBody SimsTeacher simsTeacher ,
+    public Result<SimsTeacher> teacherInformation(@RequestBody SimsTeacher simsTeacher ,
                                            HttpServletRequest req) {
         boolean queryFlag = false;
         Map map = new HashMap<>();
