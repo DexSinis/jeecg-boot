@@ -77,21 +77,6 @@ public class SimsLessonController {
                                                     @RequestParam(name="pageNo", defaultValue="1") Integer pageNo,
                                                     @RequestParam(name="pageSize", defaultValue="10") Integer pageSize,
                                                     HttpServletRequest req) {
-//       Result<IPage<SimsLesson>> result = new Result<IPage<SimsLesson>>();
-//       String teacherName = req.getParameter("teacherName");
-//
-//       QueryWrapper<SimsTeacher> queryWrapperSimsTeacher = new QueryWrapper<SimsTeacher>();
-//       queryWrapperSimsTeacher.eq("Name",teacherName);
-//       SimsTeacher simsTeacher = simsTeacherService.getOne(queryWrapperSimsTeacher);
-//       if(simsTeacher!=null){
-//           simsLesson.setTeacherId(simsTeacher.getId());
-//       }
-//       QueryWrapper<SimsLesson> queryWrapper = QueryGenerator.initQueryWrapper(simsLesson, req.getParameterMap());
-//       Page<SimsLesson> page = new Page<SimsLesson>(pageNo, pageSize);
-//       IPage<SimsLesson> pageList = simsLessonService.page(page, queryWrapper);
-//       result.setSuccess(true);
-//       result.setResult(pageList);
-//       return result;
 
 
        String teacherName = req.getParameter("teacherName");

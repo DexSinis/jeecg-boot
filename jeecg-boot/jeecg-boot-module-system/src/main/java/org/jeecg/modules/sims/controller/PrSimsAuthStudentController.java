@@ -22,6 +22,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -65,7 +66,7 @@ public class PrSimsAuthStudentController {
      * @param req
      * @return
      */
-    @ApiOperation(value = "学生登录接口", notes = "通过账号密码登录账号，返回用户信息")
+    @ApiOperation(value = "学生登录接口(2.1.0)", notes = "通过账号密码登录账号，返回用户信息")
     @PostMapping(value = "/login")
     @PermissionData(pageComponent="jeecg/login")
     @ApiImplicitParams({
@@ -130,14 +131,87 @@ public class PrSimsAuthStudentController {
     }
 
 
+
     /**
      * 登录接口
+     *
+     //     * @param mobilePhone
+     //     * @param password
+     * @param req
+     * @return
+     */
+    @ApiOperation(value = "学生登录接口", notes = "通过账号密码登录账号，返回用户信息")
+    @PostMapping(value = "/loginStudent")
+    @PermissionData(pageComponent="jeecg/loginStudent")
+    @Transactional
+    public Result<SimsStudent> loginStudent(
+            @RequestBody SimsStudent simsStudent ,
+            HttpServletRequest req) {
+        boolean queryFlag = false;
+        Map map = new HashMap<>();
+//        map.put("mobilePhone",mobilePhone);
+//        map.put("password",password);
+//        SimsStudent simsStudent =  new SimsStudent(map);
+        Result<SimsStudent> result = new Result<SimsStudent>();
+        QueryWrapper<SimsStudent> queryWrapper = QueryGenerator.initQueryWrapper(simsStudent, req.getParameterMap());
+        SimsStudent simsStudentResult  = simsStudentService.getOne(queryWrapper);
+        if(simsStudentResult!=null){
+            queryFlag = true;
+            if(StringUtils.isBlank(simsStudentResult.getSimsPassword())){
+                String simsid = UUIDUtils.getUUID();
+                tls_sigature.GenTLSSignatureResult signatureResult = tls_sigature.genSig(SDKAppid, simsid, PetrusConstant.PRIVATE_KEY);
+                log.error(signatureResult.urlSig);
+                simsStudentResult.setSimsid(simsid);
+                simsStudentResult.setSimsPassword(signatureResult.urlSig);
+            }
+
+            int version = 0;
+            String id = simsStudentResult.getId();
+            SimsTokenVersion simsTokenVersionQuery = new SimsTokenVersion();
+            simsTokenVersionQuery.setId(id);
+            SimsTokenVersion simsTokenVersionRecord = simsTokenVersionService.getOne(new QueryWrapper<SimsTokenVersion>(simsTokenVersionQuery));
+            if(simsTokenVersionRecord!=null){
+                version = simsTokenVersionRecord.getVersion()+1;
+                simsTokenVersionRecord.setVersion(version);
+            }else{
+                simsTokenVersionRecord = new SimsTokenVersion();
+                simsTokenVersionRecord.setId(simsStudentResult.getId());
+                simsTokenVersionRecord.setVersion(version);
+            }
+
+            simsTokenVersionService.saveOrUpdate(simsTokenVersionRecord);
+            String token = SimsJWTUtil.createToken(simsStudentResult.getId(), simsStudentResult.getMobilePhone(), version+"", simsStudentResult.getSimsPassword(), "deviceVersion", "deviceType", "serverNode", "serverVersion", Integer.MAX_VALUE).getToken();
+            simsStudentResult.setToken(token);
+            simsStudentResult.setOnline(PetrusConstant.ONLINE.ON);
+            queryFlag = simsStudentService.updateById(simsStudentResult);
+
+        }
+
+
+
+
+
+
+        if(queryFlag){
+
+            result.successInterface("登录成功",simsStudentResult);
+        }else{
+            result.errorInterface("登录失败",null);
+        }
+        return result;
+    }
+
+
+
+
+    /**
+     * 退出接口
      *
      * @param mobilePhone
      * @param req
      * @return
      */
-    @ApiOperation(value = "学生登出接口", notes = "通过账号退出登录")
+    @ApiOperation(value = "学生登出接口(2.1.0)", notes = "通过账号退出登录")
     @PostMapping(value = "/loginOut")
     @PermissionData(pageComponent="jeecg/loginOut")
     @ApiImplicitParams({
@@ -150,6 +224,40 @@ public class PrSimsAuthStudentController {
         Map map = new HashMap<>();
         map.put("mobilePhone",mobilePhone);
         SimsStudent simsStudent =  new SimsStudent(map);
+        Result<SimsStudent> result = new Result<SimsStudent>();
+        QueryWrapper<SimsStudent> queryWrapper = QueryGenerator.initQueryWrapper(simsStudent, req.getParameterMap());
+        SimsStudent simsStudentResult  = simsStudentService.getOne(queryWrapper);
+        if(simsStudentResult!=null){
+            queryFlag = true;
+            simsStudentResult.setOnline(PetrusConstant.ONLINE.OFF);
+            simsStudentResult.setToken(null);
+            queryFlag = simsStudentService.updateById(simsStudentResult);
+        }
+        if(queryFlag){
+            simsStudentResult.setToken(null);
+            result.successInterface("登出成功",simsStudentResult);
+        }else{
+            result.errorInterface("登出失败",null);
+        }
+        return result;
+    }
+
+
+    /**
+     * 退出接口
+     *
+     * @param simsStudent
+     * @param req
+     * @return
+     */
+    @ApiOperation(value = "学生登出接口", notes = "通过账号退出登录")
+    @PostMapping(value = "/loginOutStudent")
+    @PermissionData(pageComponent="jeecg/loginOutStudent")
+    @Transactional
+    public Result<SimsStudent> loginOutStudent(@RequestBody SimsStudent simsStudent ,
+                                        HttpServletRequest req) {
+        boolean queryFlag = false;
+        Map map = new HashMap<>();
         Result<SimsStudent> result = new Result<SimsStudent>();
         QueryWrapper<SimsStudent> queryWrapper = QueryGenerator.initQueryWrapper(simsStudent, req.getParameterMap());
         SimsStudent simsStudentResult  = simsStudentService.getOne(queryWrapper);

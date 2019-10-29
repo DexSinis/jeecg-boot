@@ -44,63 +44,7 @@ public class PrSimsStudentController {
 
     @Autowired
     private RedisUtil redisUtil;
-//
-//    /**
-//     * 分页列表查询
-//     *
-//     * @param simsStudent
-//     * @param pageNo
-//     * @param pageSize
-//     * @param req
-//     * @return
-//     */
-//    @ApiOperation(value = "获取学生数据列表", notes = "获取所有学生数据列表")
-//    @GetMapping(value = "/list")
-//    @PermissionData(pageComponent="jeecg/SimsStudentList")
-//    public Result<IPage<SimsStudent>> list(SimsStudent simsStudent, @RequestParam(name = "pageNo", defaultValue = "1") Integer pageNo, @RequestParam(name = "pageSize", defaultValue = "10") Integer pageSize,
-//                                           HttpServletRequest req) {
-//        Result<IPage<SimsStudent>> result = new Result<IPage<SimsStudent>>();
-//        /*
-//         * QueryWrapper<SimsStudent> queryWrapper = null;
-//         * //===========================================================================
-//         * ===== //高级组合查询 try { String superQueryParams =
-//         * req.getParameter("superQueryParams");
-//         * if(oConvertUtils.isNotEmpty(superQueryParams)) { // 解码 superQueryParams =
-//         * URLDecoder.decode(superQueryParams, "UTF-8"); List<QueryRuleVo> userList =
-//         * JSON.parseArray(superQueryParams, QueryRuleVo.class);
-//         * log.info(superQueryParams); queryWrapper = new QueryWrapper<SimsStudent>(); for
-//         * (QueryRuleVo rule : userList) { if(oConvertUtils.isNotEmpty(rule.getField())
-//         * && oConvertUtils.isNotEmpty(rule.getRule()) &&
-//         * oConvertUtils.isNotEmpty(rule.getVal())){
-//         * ObjectParseUtil.addCriteria(queryWrapper, rule.getField(),
-//         * QueryRuleEnum.getByValue(rule.getRule()), rule.getVal()); } } } } catch
-//         * (UnsupportedEncodingException e) { e.printStackTrace(); }
-//         * //===========================================================================
-//         * =====
-//         *
-//         * // 手工转换实体驼峰字段为下划线分隔表字段 queryWrapper = queryWrapper==null?new
-//         * QueryWrapper<SimsStudent>(simsStudent):queryWrapper; Page<SimsStudent> page = new
-//         * Page<SimsStudent>(pageNo, pageSize);
-//         *
-//         * // 排序逻辑 处理 String column = req.getParameter("column"); String order =
-//         * req.getParameter("order"); if (oConvertUtils.isNotEmpty(column) &&
-//         * oConvertUtils.isNotEmpty(order)) { if ("asc".equals(order)) {
-//         * queryWrapper.orderByAsc(oConvertUtils.camelToUnderline(column)); } else {
-//         * queryWrapper.orderByDesc(oConvertUtils.camelToUnderline(column)); } }
-//         */
-//
-//        QueryWrapper<SimsStudent> queryWrapper = QueryGenerator.initQueryWrapper(simsStudent, req.getParameterMap());
-//        Page<SimsStudent> page = new Page<SimsStudent>(pageNo, pageSize);
-//
-//        IPage<SimsStudent> pageList = simsStudentService.page(page, queryWrapper);
-////		log.info("查询当前页：" + pageList.getCurrent());
-////		log.info("查询当前页数量：" + pageList.getSize());
-////		log.info("查询结果数量：" + pageList.getRecords().size());
-////		log.info("数据总数：" + pageList.getTotal());
-//        result.setSuccess(true);
-//        result.setResult(pageList);
-//        return result;
-//    }
+
 
 
     /**
@@ -110,7 +54,7 @@ public class PrSimsStudentController {
      * @param req
      * @return
      */
-    @ApiOperation(value = "获取学生信息接口", notes = "通过电话号码获取当前学生信息接口")
+    @ApiOperation(value = "获取学生信息接口(2.1.0)", notes = "通过电话号码获取当前学生信息接口")
     @PostMapping(value = "/studentInfo")
     @PermissionData(pageComponent="jeecg/studentInfo")
     @ApiImplicitParams({
@@ -137,6 +81,36 @@ public class PrSimsStudentController {
         return result;
     }
 
+
+
+    /**
+     * 获取学生信息接口
+     *
+     * @param simsStudent
+     * @param req
+     * @return
+     */
+    @ApiOperation(value = "获取学生信息接口", notes = "通过电话号码获取当前学生信息接口")
+    @PostMapping(value = "/studentInformation")
+    @PermissionData(pageComponent="jeecg/studentInformation")
+    @Transactional
+    public Result<SimsStudent> studentInformation(@RequestBody SimsStudent simsStudent ,
+                                           HttpServletRequest req) {
+        boolean queryFlag = false;
+        Map map = new HashMap<>();
+        Result<SimsStudent> result = new Result<SimsStudent>();
+        QueryWrapper<SimsStudent> queryWrapper = QueryGenerator.initQueryWrapper(simsStudent, req.getParameterMap());
+        SimsStudent simsStudentResult  = simsStudentService.getOne(queryWrapper);
+        if(simsStudentResult!=null){
+            queryFlag = true;
+        }
+        if(queryFlag){
+            result.successInterface("获取信息成功",simsStudentResult);
+        }else{
+            result.errorInterface("获取信息失败",null);
+        }
+        return result;
+    }
 
 
     /**

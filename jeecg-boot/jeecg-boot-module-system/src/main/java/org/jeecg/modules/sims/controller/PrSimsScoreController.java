@@ -14,10 +14,7 @@ import org.jeecg.common.aspect.annotation.PermissionData;
 import org.jeecg.common.constant.PetrusConstant;
 import org.jeecg.common.util.FileTypeUtils;
 import org.jeecg.common.util.upload.FileUtils;
-import org.jeecg.modules.sims.entity.SimsFile;
-import org.jeecg.modules.sims.entity.SimsRescource;
-import org.jeecg.modules.sims.entity.SimsRescourceOpernStudent;
-import org.jeecg.modules.sims.entity.SimsTeacher;
+import org.jeecg.modules.sims.entity.*;
 import org.jeecg.modules.sims.service.ISimsRescourceService;
 import org.jeecg.modules.sims.service.ISimsRescourceOpernStudentService;
 import org.jeecg.modules.sims.service.ISimsStudentService;
@@ -117,6 +114,81 @@ public class PrSimsScoreController {
                 simsRescourceService.save(simsRescource);
 
                 params.put("opernId",opernId);
+                params.put("resourceId",simsRescource.getId());
+                simsRescourceOpernStudent = new SimsRescourceOpernStudent(params);
+                uploadFlag = simsRescourceOpernStudentService.save(simsRescourceOpernStudent);
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return result.errorInterface(e.getMessage(),"");
+        }finally {
+            if(uploadFlag){
+                result.setResult(simsRescource);
+                result.setSuccess(true);
+                result.setMessage("上传文件成功");
+                result.setCode(PetrusConstant.CODE_TYPE.SUCCESS);
+            }else{
+                result.setResult(simsRescource);
+                result.setSuccess(false);
+                result.setMessage("上传文件失败");
+                result.setCode(PetrusConstant.CODE_TYPE.ERROR);
+            }
+        }
+        return result;
+    }
+
+
+
+    @ApiOperation(value = "OSS乐章上传接口", notes = "OSS乐章上传接口")
+    @PostMapping(value = "/ossUploadOpern")
+    @PermissionData(pageComponent="jeecg/ossUploadOpern")
+    @Transactional
+    @ApiImplicitParams({
+    })
+    public Result ossUploadOpern(@RequestBody SimsOpern simsOpern , @RequestParam("fileName") MultipartFile file, HttpServletResponse response, HttpServletRequest request) {
+        String ossUrl = null;
+        Map m = Maps.newHashMap();
+        SimsRescource simsRescource = null;
+        SimsRescourceOpernStudent simsRescourceOpernStudent = null;
+        boolean uploadFlag = false;
+
+        Result result = new Result();
+        try {
+            QETag tag = new QETag();
+            String hash = tag.calcETag(file);
+            QueryWrapper<SimsRescource> wrapper = new QueryWrapper<SimsRescource>();
+            wrapper.eq("hash",hash);
+            wrapper.eq("source","oss");
+//            simsRescource = simsRescourceService.getOne(wrapper);
+            if( simsRescource!= null&&1==0){
+                result.setResult(simsRescource);
+                result.setSuccess(true);
+                result.setMessage("上传文件成功");
+                result.setCode(PetrusConstant.CODE_TYPE.SUCCESS);
+            }else{
+                String realName = UUIDUtil.createUUId()+ FileUtil.getExtensionName(file.getOriginalFilename());
+                ossUrl = ossService.upload(file,realName);                //解析结果
+                String id=request.getAttribute("id").toString();
+                String mobilePhone=request.getAttribute("mobilePhone").toString();
+                String version=request.getAttribute("version").toString();
+                String simsPassword=request.getAttribute("simsPassword").toString();
+                Map params = new HashMap();
+                params.put("mobilePhone",mobilePhone);
+                params.put("version",version);
+                params.put("simsPassword",simsPassword);
+                params.put("webUrl",ossUrl);
+                params.put("fileName",file.getName());
+                params.put("fileSize",new java.text.DecimalFormat("#.##").format(file.getSize()/1024)+"kb");
+                params.put("fileType", FileUtil.getExtensionName(file.getOriginalFilename()));
+                params.put("source",id);
+                params.put("hash",hash);
+                params.put("opernId",simsOpern.getId());
+                simsRescource = new SimsRescource(params);
+                simsRescourceService.save(simsRescource);
+
+                params.put("opernId",simsOpern.getId());
                 params.put("resourceId",simsRescource.getId());
                 simsRescourceOpernStudent = new SimsRescourceOpernStudent(params);
                 uploadFlag = simsRescourceOpernStudentService.save(simsRescourceOpernStudent);

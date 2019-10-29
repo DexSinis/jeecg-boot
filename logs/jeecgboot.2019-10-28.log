@@ -1049,3 +1049,12 @@ javax.mail.AuthenticationFailedException: 535 Error: authentication failed
 2019-10-28 18:12:20.422 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet:546 - Completed initialization in 23 ms
 2019-10-28 18:12:20.547 [RMI TCP Connection(6)-127.0.0.1] INFO  io.lettuce.core.EpollProvider:68 - Starting without optional epoll library
 2019-10-28 18:12:20.549 [RMI TCP Connection(6)-127.0.0.1] INFO  io.lettuce.core.KqueueProvider:70 - Starting without optional kqueue library
+2019-10-29 09:19:38.716 [Thread-59] INFO  org.quartz.core.QuartzScheduler:585 - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2019-10-29 09:19:38.721 [Thread-59] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-29 09:19:38.726 [Thread-59] INFO  o.s.scheduling.quartz.SchedulerFactoryBean:844 - Shutting down Quartz Scheduler
+2019-10-29 09:19:38.726 [Thread-59] INFO  org.quartz.core.QuartzScheduler:666 - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2019-10-29 09:19:38.726 [Thread-59] INFO  org.quartz.core.QuartzScheduler:585 - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2019-10-29 09:19:38.727 [Thread-59] INFO  org.quartz.core.QuartzScheduler:740 - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2019-10-29 09:19:38.736 [Thread-59] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:182 - closing dynamicDatasource  ing....
+2019-10-29 09:19:38.740 [Thread-59] INFO  com.alibaba.druid.pool.DruidDataSource:1948 - {dataSource-1} closing ...
+2019-10-29 09:19:38.743 [Thread-59] INFO  com.alibaba.druid.pool.DruidDataSource:2020 - {dataSource-1} closed

@@ -49,7 +49,7 @@ public class PrSimsTeacherController {
      * @param req
      * @return
      */
-    @ApiOperation(value = "获取教师信息接口", notes = "通过电话号码获取当前教师信息接口")
+    @ApiOperation(value = "获取教师信息接口(2.1.0)", notes = "通过电话号码获取当前教师信息接口")
     @PostMapping(value = "/teacherInfo")
     @PermissionData(pageComponent="jeecg/teacherInfo")
     @ApiImplicitParams({
@@ -62,6 +62,37 @@ public class PrSimsTeacherController {
         Map map = new HashMap<>();
         map.put("mobilePhone",mobilePhone);
         SimsTeacher simsTeacher =  new SimsTeacher(map);
+        Result<SimsTeacher> result = new Result<SimsTeacher>();
+        QueryWrapper<SimsTeacher> queryWrapper = QueryGenerator.initQueryWrapper(simsTeacher, req.getParameterMap());
+        SimsTeacher simsTeacherResult  = simsTeacherService.getOne(queryWrapper);
+        if(simsTeacherResult!=null){
+            queryFlag = true;
+        }
+        if(queryFlag){
+            result.successInterface("获取信息成功",simsTeacherResult);
+        }else{
+            result.errorInterface("获取信息失败",null);
+        }
+        return result;
+    }
+
+
+
+    /**
+     * 获取教师信息接口
+     *
+     * @param simsTeacher
+     * @param req
+     * @return
+     */
+    @ApiOperation(value = "获取教师信息接口", notes = "通过电话号码获取当前教师信息接口")
+    @PostMapping(value = "/teacherInfo")
+    @PermissionData(pageComponent="jeecg/teacherInfo")
+    @Transactional
+    public Result<SimsTeacher> teacherInfo(@RequestBody SimsTeacher simsTeacher ,
+                                           HttpServletRequest req) {
+        boolean queryFlag = false;
+        Map map = new HashMap<>();
         Result<SimsTeacher> result = new Result<SimsTeacher>();
         QueryWrapper<SimsTeacher> queryWrapper = QueryGenerator.initQueryWrapper(simsTeacher, req.getParameterMap());
         SimsTeacher simsTeacherResult  = simsTeacherService.getOne(queryWrapper);
