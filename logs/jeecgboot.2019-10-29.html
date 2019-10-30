@@ -34538,3 +34538,285 @@ The last packet successfully received from the server was 18,965 milliseconds ag
 <td class="FileOfCaller">BaseJdbcLogger.java</td>
 <td class="LineOfCaller">143</td>
 </tr>
+
+<tr class="error even">
+<td class="Level">ERROR</td>
+<td class="Date">2019-10-29 18:42:55,668</td>
+<td class="Message">No error handling configured for [org.jeecg.modules.message.websocket.WebSocket] and the following error occurred</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">DirectJDKLog.java</td>
+<td class="LineOfCaller">175</td>
+</tr>
+<tr><td class="Exception" colspan="6">java.io.EOFException: null
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.fillReadBuffer(NioEndpoint.java:1206)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.read(NioEndpoint.java:1140)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.apache.tomcat.websocket.server.WsFrameServer.onDataAvailable(WsFrameServer.java:72)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.apache.tomcat.websocket.server.WsFrameServer.doOnDataAvailable(WsFrameServer.java:171)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.apache.tomcat.websocket.server.WsFrameServer.notifyDataAvailable(WsFrameServer.java:151)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.apache.tomcat.websocket.server.WsHttpUpgradeHandler.upgradeDispatch(WsHttpUpgradeHandler.java:148)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.apache.coyote.http11.upgrade.UpgradeProcessorInternal.dispatch(UpgradeProcessorInternal.java:54)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:53)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2019-10-29 18:42:55,778</td>
+<td class="Message">【websocket消息】连接断开，总数为:0</td>
+<td class="MethodOfCaller">onClose</td>
+<td class="FileOfCaller">WebSocket.java</td>
+<td class="LineOfCaller">46</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2019-10-29 18:43:00,635</td>
+<td class="Message">【websocket消息】有新的连接，总数为:1</td>
+<td class="MethodOfCaller">onOpen</td>
+<td class="FileOfCaller">WebSocket.java</td>
+<td class="LineOfCaller">37</td>
+</tr>
+
+<tr class="error odd">
+<td class="Level">ERROR</td>
+<td class="Date">2019-10-30 01:57:53,376</td>
+<td class="Message">discard connection</td>
+<td class="MethodOfCaller">handleFatalError</td>
+<td class="FileOfCaller">DruidDataSource.java</td>
+<td class="LineOfCaller">1777</td>
+</tr>
+<tr><td class="Exception" colspan="6">com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 44,489 milliseconds ago.  The last packet sent successfully to the server was 18,287 milliseconds ago.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at sun.reflect.GeneratedConstructorAccessor136.newInstance(Unknown Source)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:990)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3562)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3462)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3905)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2683)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2491)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.ConnectionImpl.setAutoCommit(ConnectionImpl.java:4807)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.FilterChainImpl.connection_setAutoCommit(FilterChainImpl.java:738)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.logging.LogFilter.connection_setAutoCommit(LogFilter.java:445)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.FilterChainImpl.connection_setAutoCommit(FilterChainImpl.java:733)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.FilterAdapter.connection_setAutoCommit(FilterAdapter.java:986)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.FilterChainImpl.connection_setAutoCommit(FilterChainImpl.java:733)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.FilterAdapter.connection_setAutoCommit(FilterAdapter.java:986)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.FilterChainImpl.connection_setAutoCommit(FilterChainImpl.java:733)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl.setAutoCommit(ConnectionProxyImpl.java:429)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.pool.DruidPooledConnection.setAutoCommit(DruidPooledConnection.java:712)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.AttributeRestoringConnectionInvocationHandler.setAutoCommit(AttributeRestoringConnectionInvocationHandler.java:98)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.AttributeRestoringConnectionInvocationHandler.invoke(AttributeRestoringConnectionInvocationHandler.java:66)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.sun.proxy.$Proxy362.setAutoCommit(Unknown Source)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.JobStoreCMT.getNonManagedTXConnection(JobStoreCMT.java:191)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.JobStoreSupport.executeInNonManagedTXLock(JobStoreSupport.java:3846)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.JobStoreSupport.acquireNextTriggers(JobStoreSupport.java:2802)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.core.QuartzSchedulerThread.run(QuartzSchedulerThread.java:287)
+<br />Caused by: java.net.SocketException: Operation timed out (Read failed)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.SocketInputStream.socketRead0(Native Method)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.SocketInputStream.read(SocketInputStream.java:171)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.SocketInputStream.read(SocketInputStream.java:141)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.util.ReadAheadInputStream.fill(ReadAheadInputStream.java:101)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.util.ReadAheadInputStream.readFromUnderlyingStreamIfNecessary(ReadAheadInputStream.java:144)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.util.ReadAheadInputStream.read(ReadAheadInputStream.java:174)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:3011)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3472)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;	... 22 common frames omitted
+</td></tr>
+<tr class="warn even">
+<td class="Level">WARN</td>
+<td class="Date">2019-10-30 01:57:53,403</td>
+<td class="Message">Failed to override connection auto commit/transaction isolation.</td>
+<td class="MethodOfCaller">getNonManagedTXConnection</td>
+<td class="FileOfCaller">JobStoreCMT.java</td>
+<td class="LineOfCaller">198</td>
+</tr>
+<tr><td class="Exception" colspan="6">com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 44,489 milliseconds ago.  The last packet sent successfully to the server was 18,287 milliseconds ago.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at sun.reflect.GeneratedConstructorAccessor136.newInstance(Unknown Source)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:990)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3562)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3462)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3905)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2683)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2491)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.ConnectionImpl.setAutoCommit(ConnectionImpl.java:4807)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.FilterChainImpl.connection_setAutoCommit(FilterChainImpl.java:738)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.logging.LogFilter.connection_setAutoCommit(LogFilter.java:445)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.FilterChainImpl.connection_setAutoCommit(FilterChainImpl.java:733)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.FilterAdapter.connection_setAutoCommit(FilterAdapter.java:986)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.FilterChainImpl.connection_setAutoCommit(FilterChainImpl.java:733)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.FilterAdapter.connection_setAutoCommit(FilterAdapter.java:986)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.FilterChainImpl.connection_setAutoCommit(FilterChainImpl.java:733)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl.setAutoCommit(ConnectionProxyImpl.java:429)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.pool.DruidPooledConnection.setAutoCommit(DruidPooledConnection.java:712)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.AttributeRestoringConnectionInvocationHandler.setAutoCommit(AttributeRestoringConnectionInvocationHandler.java:98)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.AttributeRestoringConnectionInvocationHandler.invoke(AttributeRestoringConnectionInvocationHandler.java:66)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.sun.proxy.$Proxy362.setAutoCommit(Unknown Source)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.JobStoreCMT.getNonManagedTXConnection(JobStoreCMT.java:191)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.JobStoreSupport.executeInNonManagedTXLock(JobStoreSupport.java:3846)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.JobStoreSupport.acquireNextTriggers(JobStoreSupport.java:2802)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.core.QuartzSchedulerThread.run(QuartzSchedulerThread.java:287)
+<br />Caused by: java.net.SocketException: Operation timed out (Read failed)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.SocketInputStream.socketRead0(Native Method)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.SocketInputStream.read(SocketInputStream.java:171)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.SocketInputStream.read(SocketInputStream.java:141)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.util.ReadAheadInputStream.fill(ReadAheadInputStream.java:101)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.util.ReadAheadInputStream.readFromUnderlyingStreamIfNecessary(ReadAheadInputStream.java:144)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.util.ReadAheadInputStream.read(ReadAheadInputStream.java:174)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:3011)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3472)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;	... 22 common frames omitted
+</td></tr>
+<tr class="warn odd">
+<td class="Level">WARN</td>
+<td class="Date">2019-10-30 01:57:53,494</td>
+<td class="Message">Failed restore connection&#39;s original auto commit setting.</td>
+<td class="MethodOfCaller">restoreOriginalAtributes</td>
+<td class="FileOfCaller">AttributeRestoringConnectionInvocationHandler.java</td>
+<td class="LineOfCaller">144</td>
+</tr>
+<tr><td class="Exception" colspan="6">java.sql.SQLException: connection disabled
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.pool.DruidPooledConnection.checkStateInternal(DruidPooledConnection.java:1163)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.pool.DruidPooledConnection.checkState(DruidPooledConnection.java:1148)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.pool.DruidPooledConnection.setAutoCommit(DruidPooledConnection.java:701)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.AttributeRestoringConnectionInvocationHandler.restoreOriginalAtributes(AttributeRestoringConnectionInvocationHandler.java:141)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.JobStoreSupport.cleanupConnection(JobStoreSupport.java:3662)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.JobStoreSupport.executeInNonManagedTXLock(JobStoreSupport.java:3881)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.JobStoreSupport.acquireNextTriggers(JobStoreSupport.java:2802)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.core.QuartzSchedulerThread.run(QuartzSchedulerThread.java:287)
+<br />Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 44,489 milliseconds ago.  The last packet sent successfully to the server was 18,287 milliseconds ago.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at sun.reflect.GeneratedConstructorAccessor136.newInstance(Unknown Source)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:990)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3562)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3462)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3905)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2683)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2491)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.ConnectionImpl.setAutoCommit(ConnectionImpl.java:4807)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.FilterChainImpl.connection_setAutoCommit(FilterChainImpl.java:738)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.logging.LogFilter.connection_setAutoCommit(LogFilter.java:445)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.FilterChainImpl.connection_setAutoCommit(FilterChainImpl.java:733)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.FilterAdapter.connection_setAutoCommit(FilterAdapter.java:986)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.FilterChainImpl.connection_setAutoCommit(FilterChainImpl.java:733)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.FilterAdapter.connection_setAutoCommit(FilterAdapter.java:986)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.FilterChainImpl.connection_setAutoCommit(FilterChainImpl.java:733)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl.setAutoCommit(ConnectionProxyImpl.java:429)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.pool.DruidPooledConnection.setAutoCommit(DruidPooledConnection.java:712)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.AttributeRestoringConnectionInvocationHandler.setAutoCommit(AttributeRestoringConnectionInvocationHandler.java:98)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.AttributeRestoringConnectionInvocationHandler.invoke(AttributeRestoringConnectionInvocationHandler.java:66)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.sun.proxy.$Proxy362.setAutoCommit(Unknown Source)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.JobStoreCMT.getNonManagedTXConnection(JobStoreCMT.java:191)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.JobStoreSupport.executeInNonManagedTXLock(JobStoreSupport.java:3846)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;	... 2 common frames omitted
+<br />Caused by: java.net.SocketException: Operation timed out (Read failed)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.SocketInputStream.socketRead0(Native Method)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.SocketInputStream.read(SocketInputStream.java:171)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.SocketInputStream.read(SocketInputStream.java:141)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.util.ReadAheadInputStream.fill(ReadAheadInputStream.java:101)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.util.ReadAheadInputStream.readFromUnderlyingStreamIfNecessary(ReadAheadInputStream.java:144)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.util.ReadAheadInputStream.read(ReadAheadInputStream.java:174)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:3011)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3472)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;	... 22 common frames omitted
+</td></tr>
+<tr class="error even">
+<td class="Level">ERROR</td>
+<td class="Date">2019-10-30 01:57:53,507</td>
+<td class="Message">An error occurred while scanning for the next triggers to fire.</td>
+<td class="MethodOfCaller">schedulerError</td>
+<td class="FileOfCaller">QuartzScheduler.java</td>
+<td class="LineOfCaller">2401</td>
+</tr>
+<tr><td class="Exception" colspan="6">org.quartz.JobPersistenceException: Couldn&#39;t acquire next trigger: connection disabled
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.JobStoreSupport.acquireNextTrigger(JobStoreSupport.java:2910)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.JobStoreSupport$41.execute(JobStoreSupport.java:2805)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.JobStoreSupport$41.execute(JobStoreSupport.java:2803)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.JobStoreSupport.executeInNonManagedTXLock(JobStoreSupport.java:3849)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.JobStoreSupport.acquireNextTriggers(JobStoreSupport.java:2802)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.core.QuartzSchedulerThread.run(QuartzSchedulerThread.java:287)
+<br />Caused by: java.sql.SQLException: connection disabled
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.pool.DruidPooledConnection.checkStateInternal(DruidPooledConnection.java:1163)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.pool.DruidPooledConnection.checkState(DruidPooledConnection.java:1148)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.pool.DruidPooledConnection.prepareStatement(DruidPooledConnection.java:336)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at sun.reflect.GeneratedMethodAccessor306.invoke(Unknown Source)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.lang.reflect.Method.invoke(Method.java:498)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.AttributeRestoringConnectionInvocationHandler.invoke(AttributeRestoringConnectionInvocationHandler.java:73)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.sun.proxy.$Proxy362.prepareStatement(Unknown Source)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.StdJDBCDelegate.selectTriggerToAcquire(StdJDBCDelegate.java:2599)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.JobStoreSupport.acquireNextTrigger(JobStoreSupport.java:2844)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;	... 5 common frames omitted
+<br />Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 44,489 milliseconds ago.  The last packet sent successfully to the server was 18,287 milliseconds ago.
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at sun.reflect.GeneratedConstructorAccessor136.newInstance(Unknown Source)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:990)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3562)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3462)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3905)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2683)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2491)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.ConnectionImpl.setAutoCommit(ConnectionImpl.java:4807)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.FilterChainImpl.connection_setAutoCommit(FilterChainImpl.java:738)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.logging.LogFilter.connection_setAutoCommit(LogFilter.java:445)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.FilterChainImpl.connection_setAutoCommit(FilterChainImpl.java:733)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.FilterAdapter.connection_setAutoCommit(FilterAdapter.java:986)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.FilterChainImpl.connection_setAutoCommit(FilterChainImpl.java:733)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.FilterAdapter.connection_setAutoCommit(FilterAdapter.java:986)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.filter.FilterChainImpl.connection_setAutoCommit(FilterChainImpl.java:733)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl.setAutoCommit(ConnectionProxyImpl.java:429)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.alibaba.druid.pool.DruidPooledConnection.setAutoCommit(DruidPooledConnection.java:712)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.AttributeRestoringConnectionInvocationHandler.setAutoCommit(AttributeRestoringConnectionInvocationHandler.java:98)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.AttributeRestoringConnectionInvocationHandler.invoke(AttributeRestoringConnectionInvocationHandler.java:66)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.sun.proxy.$Proxy362.setAutoCommit(Unknown Source)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.JobStoreCMT.getNonManagedTXConnection(JobStoreCMT.java:191)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at org.quartz.impl.jdbcjobstore.JobStoreSupport.executeInNonManagedTXLock(JobStoreSupport.java:3846)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;	... 2 common frames omitted
+<br />Caused by: java.net.SocketException: Operation timed out (Read failed)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.SocketInputStream.socketRead0(Native Method)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.SocketInputStream.read(SocketInputStream.java:171)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.net.SocketInputStream.read(SocketInputStream.java:141)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.util.ReadAheadInputStream.fill(ReadAheadInputStream.java:101)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.util.ReadAheadInputStream.readFromUnderlyingStreamIfNecessary(ReadAheadInputStream.java:144)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.util.ReadAheadInputStream.read(ReadAheadInputStream.java:174)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:3011)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3472)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;	... 22 common frames omitted
+</td></tr>
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2019-10-30 15:07:42,415</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzIzMzkxMzIsInVzZXJuYW1lIjoiYWRtaW4ifQ.tukIjF3l7OW0jUBCisCM_-OvLEprHqLmZkV7RCPnPtY</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
