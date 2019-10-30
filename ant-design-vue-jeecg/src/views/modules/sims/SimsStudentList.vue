@@ -141,11 +141,11 @@
               return parseInt(index)+1;
             }
            },
-      {
-           title: '学生编号',
-           align:"center",
-           dataIndex: 'id'
-          },
+      // {
+      //      title: '学生编号',
+      //      align:"center",
+      //      dataIndex: 'id'
+      //     },
 		   // {
        //      title: '所在学院',
        //      align:"center",
@@ -196,11 +196,11 @@
             align:"center",
             dataIndex: 'gender'
            },
-		   {
-            title: '出生日期',
-            align:"center",
-            dataIndex: 'birth'
-           },
+		   // {
+       //      title: '出生日期',
+       //      align:"center",
+       //      dataIndex: 'birth'
+       //     },
 		   // {
        //      title: '头像',
        //      align:"center",
@@ -251,21 +251,21 @@
        //      align:"center",
        //      dataIndex: 'hobby'
        //     },
-		   {
-            title: '简要介绍',
-            align:"center",
-            dataIndex: 'intro'
-           },
-		   {
-            title: '居住地址',
-            align:"center",
-            dataIndex: 'presentAddress'
-           },
-		   {
-            title: '电子邮件',
-            align:"center",
-            dataIndex: 'email'
-           },
+		   // {
+       //      title: '简要介绍',
+       //      align:"center",
+       //      dataIndex: 'intro'
+       //     },
+		   // {
+       //      title: '居住地址',
+       //      align:"center",
+       //      dataIndex: 'presentAddress'
+       //     },
+		   // {
+       //      title: '电子邮件',
+       //      align:"center",
+       //      dataIndex: 'email'
+       //     },
 		   // {
        //      title: '入学日期',
        //      align:"center",
